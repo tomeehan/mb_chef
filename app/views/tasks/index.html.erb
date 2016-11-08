@@ -1,44 +1,46 @@
-<div class="row">
-  <div class="col-md-9">
-    <div class="container">
-      <h1>Tasks</h1>
-    </div>  
-  </div>
-  <div class="col-md-3">
-    <div class="new-btn">
-      <%= link_to '+ Create a new task', new_task_path, :class => 'waves-effect btn-large' %>
+<% if user_signed_in? %>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="container">
+        <h1>Tasks</h1>
+      </div>  
+    </div>
+    <div class="col-md-3">
+      <div class="new-btn">
+        <%= link_to '+ Create a new task', new_task_path, :class => 'waves-effect btn-large' %>
+      </div>
+    </div>
+  </div>  
+  <hr>  
+  <div class="row container">
+    <div class="col-md-5">
+      <h2>Checks</h2>
+        <div class="book-index-desc">
+          <div class="book-index-content">  
+            <% @tasks.each do |task| %>
+              <% if task.category.name == "Check" %>
+                <h4><%= link_to task.name, task %></h4>
+                <p><%= task.description %></p>
+                <hr>
+              <% end %>
+            <% end %>
+          </div>  
+        </div>            
+    </div>
+
+    <div class="col-md-5">
+      <h2>Temperatures</h2>
+        <div class="book-index-desc">
+          <div class="book-index-content">  
+            <% @tasks.each do |task| %>
+              <% if task.category.name == "Temperature" %>
+                <h4><%= link_to task.name, task, :class => "link" %></h4>
+                <p><%= task.description %></p>
+                <hr>
+              <% end %>
+            <% end %>
+          </div>  
+        </div>            
     </div>
   </div>
-</div>  
-<hr>  
-<div class="row container">
-  <div class="col-md-5">
-    <h2>Checks</h2>
-      <div class="book-index-desc">
-        <div class="book-index-content">  
-          <% @tasks.each do |task| %>
-            <% if task.category.name == "Check" %>
-              <h4><%= link_to task.name, task %></h4>
-              <p><%= task.description %></p>
-              <hr>
-            <% end %>
-          <% end %>
-        </div>  
-      </div>            
-  </div>
-
-  <div class="col-md-5">
-    <h2>Temperatures</h2>
-      <div class="book-index-desc">
-        <div class="book-index-content">  
-          <% @tasks.each do |task| %>
-            <% if task.category.name == "Temperature" %>
-              <h4><%= link_to task.name, task, :class => "link" %></h4>
-              <p><%= task.description %></p>
-              <hr>
-            <% end %>
-          <% end %>
-        </div>  
-      </div>            
-  </div>
-</div>
+<% end %>  
