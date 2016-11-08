@@ -1,0 +1,17 @@
+<div class="col-md-6 col-md-offset-3">
+	<div class="new-book-form">
+		<h1>Edit Task</h1>
+		<%= simple_form_for @task do |f| %>
+		  <div class="form-material">
+		    <p>Category: <%= @task.category.name %></p>
+		    <%= f.input :name %>
+		    <%= f.input :description %>
+		</div>
+		  <div class="new-btn">
+		    <%= f.button :submit, :class => 'waves-effect btn-large' %>
+		  </div>
+		<% end %>
+
+		<%= link_to 'Back', @task %>
+	</div>
+</div>

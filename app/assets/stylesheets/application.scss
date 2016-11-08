@@ -1,0 +1,592 @@
+
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url(http://fonts.googleapis.com/css?family=Pacifico|Open+Sans:300,400,500); 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/* Variables, mixins, etc.. */
+
+.user-list {
+	text-align: center;
+}
+
+.user-social {
+	background-color: #f5f5f5;
+	padding: 10px;
+	margin-bottom: 25px;
+}
+
+.user-social h6 {
+	text-align: right;
+}
+
+.user-password-change {
+	background-color: #f5f5f5;
+	padding: 10px;
+}
+
+.post-desc {
+	background-color: #f5f5f5;
+	border: 0.5px solid gray;
+	padding: 5px;
+	margin-bottom: 25px;
+}
+
+@mixin background-tile {
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 1px 3px 10px 2px rgba(0, 0, 0, 0.1);;
+	padding: 0.35em 1.25em;
+}
+
+@mixin okr-background-tile {
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 1px 3px 10px 2px rgba(0, 0, 0, 0.1);;
+
+}
+
+
+
+.post-img-container img {
+	max-width: 250px;
+	float: left;
+	}
+
+/* General styles */
+
+body {
+	background-color: #f5f5f5;
+	font-family: 'Open Sans', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	color: #404040;
+}
+
+p.alert, p.notice {
+	margin: 0;
+}
+
+
+/* Navbar/navigation styles */
+
+.navbar {
+	font-family: 'Open Sans', sans-serif;
+}
+.navbar-default {
+	background-color: #F86624;
+	padding-top: 5px;
+
+	.navbar-nav > li > a {
+		color: #fff;
+		font-family: 'Open sans', sans-serif;
+		font-size: 125%;
+		font-weight: 600;
+		&:hover {
+			color: darken(#fff, 5%);
+			transition: 0.1s;
+		}
+	}
+
+	.navbar-header {
+
+		.navbar-brand {
+			color: #fff;
+			font-family: 'Open sans', sans-serif;
+			font-weight: 100;
+			text-transformation: lowercase;
+			font-size: 150%;
+		}
+
+	}
+
+	.dropdown-menu > li > a:hover {
+		background-color: darken(#fff, 5%);
+		color: #fff;
+	}
+
+	.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+		background-color: darken(#ff5f5e, 5%);
+		color: #fff;	
+	}
+
+}
+
+.dropdown-menu > .active > a {
+	background-color: #ff5f5e;
+	color: #fff;
+}
+
+
+/* Button/link styles */
+
+.btn-custom {
+	color: darken(#ff5f5e, 5%);
+	background-color: #fff;
+	border: 1px solid darken(#ff5f5e, 5%);
+	padding: 8px 20px;
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+	&:hover {
+		text-decoration: none;
+		background-color: darken(#ff5f5e, 5%);
+		color: #fff;
+		transition: 0.25s;
+	}
+}
+
+.btn-custom2 {
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #222;
+	padding: 8px 20px;
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+	&:hover {
+		text-decoration: none;
+		background-color: #333;
+		color: #fff;
+		transition: 0.5s;
+	}	
+}
+
+.links {
+	
+	
+
+	.btn-custom {
+		padding: 3px 10px;
+		font-weight: 300;
+		margin-bottom: 15px;
+	}
+
+}
+
+.book-links {
+
+	.btn-custom {
+		padding: 3px 10px;
+		font-weight: 300;
+		margin-top: 40px;	
+	}
+
+}
+
+/* Post styles */
+
+.book {
+	height: 350px;
+	width: 250px;
+	margin-bottom: 40px;
+	@include okr-background-tile;
+	float: left;
+}
+
+.book-index-desc {
+	@include background-tile;
+	margin-top: 25px;
+}
+
+.book-index-content h4 {
+	font-weight: 500;
+
+}
+
+.snippet-index-desc {
+	@include background-tile;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+.snippet-index-content h4 {
+	font-weight: 500;
+}
+
+.new-btn {
+	margin-bottom: 25px;
+}
+
+.goal-index-desc {
+	@include okr-background-tile;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.goal-index-desc:hover {
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+}
+
+.goal-index-content h4 {
+	font-weight: 500;
+}
+
+.okr-index-container {
+	padding: 0.35em 1.25em;
+}
+
+.okr-index-container h6 {
+	font-weight: 300;
+	color: #ff5f5e;
+}
+
+.okr-index-container p {
+	margin-bottom: 15px;
+}
+
+.edit-goal-index-button {
+	background-color: #ff5f5e;
+	color: white;
+	text-align: center;
+}
+
+
+.edit-goal-index-button a {
+	color: white;
+	display:inline-block;
+    width:100%;
+    height:100%;
+    padding: 25px;
+    font-weight: 300;
+    font-size: 1.2em;
+
+
+      -o-transition:.5s;
+	  -ms-transition:.5s;
+	  -moz-transition:.5s;
+	  -webkit-transition:.5s;
+
+	  transition:.5s;
+}
+.edit-goal-index-button a:hover {
+	background-color: #e55554;
+	text-decoration: none;
+
+}
+
+.complete-goal-index-button {
+	background-color: #3ddc97 ;
+	color: white;
+	text-align: center;
+}
+
+.complete-goal-index-button a {
+
+	color: white;
+	display:inline-block;
+    width:100%;
+    height:100%;
+    padding: 25px;
+    font-weight: 300;
+    font-size: 1.2em;
+
+
+      -o-transition:.5s;
+ 	 -ms-transition:.5s;
+  	-moz-transition:.5s;
+  	-webkit-transition:.5s;
+
+  	transition:.5s;
+	
+}
+
+.complete-goal-index-button a:hover {
+	background-color: #36c687;
+	text-decoration: none;
+}
+.post-show {
+	height: 475px;
+	width: 325px;
+	@include background-tile;
+}
+
+.post-info {
+	@include background-tile;
+
+	.post-title {
+		margin-top: 15px;
+		font-size: 2em;
+	}
+
+	.avg-rating {
+		font-size: 1.5em;
+		margin-top: 15px;
+		margin-bottom: 5px;
+	}
+
+	.number-of-reviews {
+		font-size: 0.85em;
+		font-style: italic;
+	}
+
+	.book-author {
+		font-size: 1.5em;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		span {
+			font-size: 0.80em;
+		}	
+	}
+
+	.book-desc {
+		font-size: 1.05em;
+		line-height: 1.5;
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}
+
+}
+
+
+/* current-category styles */
+
+.current-category {
+	margin-bottom: 40px;
+}
+
+
+/* Reviews styles */
+
+.reviews {
+
+	@include background-tile;
+	margin-top: 40px;
+
+	h1 {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		font-size: 2em;
+	}
+
+	.review {
+		border-bottom: 1px solid gainsboro;
+		margin-bottom: 15px;
+		padding-bottom: 10px;
+
+		.review-comment {
+			font-size: 1.05em;
+			line-height: 1.5;
+		}
+
+	}
+
+	.new-review {
+		padding-top: 8px;
+	}
+
+}
+
+/* New Book Form styles */
+
+.new-book-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#category_id {
+		margin-bottom: 10px;
+	}
+
+	#book_book_img {
+		margin-bottom: 10px;
+	}
+
+}
+
+
+/* Edit Book Form styles */
+
+.edit-book-form {
+
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#book_category_id {
+		margin-bottom: 10px;
+	}
+
+	#book_book_img {
+		margin-bottom: 10px;
+	}
+
+}
+
+/* New/Edit review form styles */
+
+.new-review-form, .edit-review-form {
+	@include background-tile;
+
+	h1 {
+		margin-top: 0;
+	}
+
+	#rating-form {
+		margin-bottom: 15px;
+
+		label {
+			display: block;
+		}
+
+	}
+
+}
+
+
+/* Signup/Login form styles */
+
+.signup-form {
+	@include background-tile;
+
+	h2 {
+		margin-top: 0;
+	}
+
+}
+
+.login-form {
+	@include background-tile;
+
+	h2 {
+		margin-top: 0;
+	}
+
+}
+
+
+.btn-large {
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+	border: none;
+	border-radius: 3px;
+	display: inline-block;
+	height: 36px;
+	line-height: 36px;
+	outline: 0;
+	padding: 0 3rem;
+	vertical-align: middle;
+	-webkit-tap-highlight-color: transparent;
+
+	text-decoration: none;
+	color: #fff;
+	background-color: #119A65;
+	text-align: center;
+	letter-spacing: .5px;
+	transition: .2s ease-out;
+	cursor: pointer;
+	height: 54px;
+	line-height: 54px;
+}
+
+.btn-large:hover {
+	background-color: #0f8a5a;
+	text-decoration: none;
+	color: white;
+}
+
+.btn-large a {
+	color: white;
+}
+
+.waves-effect {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	-webkit-user-select: none;
+
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color:  transparent;
+	vertical-align: middle;
+	z-index: 1;
+	will-change: opacity, transform;
+	transition: all .3s ease-out;
+}
+	
+.new-btn a {
+	color: white;
+}
+
+.form-material input {
+	background-color: white;
+	border: 0px;
+	border-bottom: 3px solid rgba(39, 44, 44, 0.2);
+	border-radius: 0px;
+	box-shadow: none;
+	outline: none;
+	font-weight: 600;
+}
+
+textarea, input { outline: none; }
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: grey;
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.footer {
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+
+.footer p {
+	color: #ff5f5e;
+	text-align: center;
+	font-family: Pacifico;
+	font-size: 125%;
+}
+
+.alert {
+	padding: 0px;
+}
+
+#notice {
+	margin: 0px;
+}
