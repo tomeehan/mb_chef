@@ -15,32 +15,35 @@
   <div class="row container">
     <div class="col-md-5">
       <h2>Checks</h2>
-        <div class="book-index-desc">
-          <div class="book-index-content">  
-            <% @tasks.each do |task| %>
-              <% if task.category.name == "Check" %>
-                <h4><%= link_to task.name, task %></h4>
+         <% @tasks.each do |task| %>
+          <% if task.category.name == "Check" %>
+            <div class="book-index-desc">
+              <div class="book-index-content">  
+                <h4><%= link_to task.name, task, :class => "link" %></h4>
                 <p><%= task.description %></p>
                 <hr>
-              <% end %>
-            <% end %>
-          </div>  
-        </div>            
+              </div>  
+            </div>            
+          <% end %>
+        <% end %>         
     </div>
 
     <div class="col-md-5">
       <h2>Temperatures</h2>
-        <div class="book-index-desc">
-          <div class="book-index-content">  
-            <% @tasks.each do |task| %>
-              <% if task.category.name == "Temperature" %>
+        
+        <% @tasks.each do |task| %>
+          <% if task.category.name == "Temperature" %>
+            <div class="book-index-desc">
+              <div class="book-index-content">  
                 <h4><%= link_to task.name, task, :class => "link" %></h4>
                 <p><%= task.description %></p>
                 <hr>
-              <% end %>
-            <% end %>
-          </div>  
-        </div>            
+              </div>  
+            </div>            
+          <% end %>
+        <% end %>
+        
     </div>
   </div>
 <% end %>  
+

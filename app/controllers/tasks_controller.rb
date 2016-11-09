@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = current_user.tasks.build
-
+    @ticks = current_user.ticks.build
     @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
@@ -30,12 +30,15 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build(task_params)
 
     @task.category_id = params[:category_id]
-
+    # @task.ticks.build(user_id: @user, complete: false) # throws NoMethodError in Tasks#create ... undefined method `map' for nil:NilClass
 
     respond_to do |format|
       if @task.save
+      @task.ticks.create(user_id: current_user.id, complete: false) # doesn't create tick, but shows no error
         format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
+      
+      # Tick.create(user_id: @user.id, tick_id: @tick.id, complete: false) #error: undefined method `id' for nil:NilClass
       else
         format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }

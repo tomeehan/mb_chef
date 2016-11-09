@@ -207,12 +207,37 @@ p.alert, p.notice {
 .book-index-desc {
 	@include background-tile;
 	margin-top: 25px;
+	height: 100px;
 }
 
 .book-index-content h4 {
 	font-weight: 500;
-
 }
+
+.book-index-left {
+	width: 75%;
+	height: 100%;
+	float: left;
+}
+
+.book-index-right {
+	width: 25%;
+	height: 100%;
+	float: left;
+}
+
+.book-index-right .complete-true {
+	color: green;
+	font-size: 300%;
+	text-align: center;
+}
+
+.book-index-right .complete-false {
+	color: red;
+	font-size: 300%;
+	text-align: center;
+}
+
 
 .snippet-index-desc {
 	@include background-tile;
