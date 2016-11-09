@@ -17,11 +17,13 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build
     @ticks = current_user.ticks.build
     @categories = Category.all.map{ |c| [c.name, c.id] }
+    @regularities = Regularity.all.map{ |r| [r.name, r.id] } 
   end
 
   # GET /tasks/1/edit
   def edit
     @categories = Category.all.map{ |c| [c.name, c.id] }
+    @regularities = Regularity.all.map{ |r| [r.name, r.id] } 
   end
 
   # POST /tasks
@@ -30,6 +32,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build(task_params)
 
     @task.category_id = params[:category_id]
+    @task.regularity_id = params[:regularity_id]
     # @task.ticks.build(user_id: @user, complete: false) # throws NoMethodError in Tasks#create ... undefined method `map' for nil:NilClass
 
     respond_to do |format|
@@ -49,6 +52,8 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
+    @task.regularity_id = params[:regularity_id]
+    
     respond_to do |format|
       if @task.update(task_params)
         format.html { redirect_to tasks_path, notice: 'Task was successfully updated.' }
@@ -78,6 +83,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :description, :category_id)
+      params.require(:task).permit(:name, :description, :category_id, :regularity_id)
     end
 end
