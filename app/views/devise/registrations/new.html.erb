@@ -6,7 +6,18 @@
 		  <%= f.error_notification %>
 
 		  <div class="form-material">
-		    <%= f.input :email, required: true, autofocus: true %>
+		  	<br>
+		  	<h4>Personal details</h4>
+		  	<div class="first-name">
+          	  <%= f.input :first_name, required: true, autofocus: true, label: false , placeholder: "First name (required)" %>
+        	</div>
+
+	        <div class="last-name">
+	          <%= f.input :last_name, required: true, label: false, placeholder: "Last name (required)" %>
+	        </div>
+		    <%= f.input :email, required: true %>
+			<br>
+		    <h4>Choose your password</h4>
 		    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
 		    <%= f.input :password_confirmation, required: true %>
 		  </div>
