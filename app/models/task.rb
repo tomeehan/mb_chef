@@ -1,6 +1,8 @@
 class Task < ApplicationRecord
 	belongs_to :user
 	belongs_to :category
-	has_many :ticks
 	belongs_to :regularity
+	belongs_to :schedule
+	
+	has_many :ticks
 end

@@ -24,6 +24,7 @@
               <div class="book-index-left">
                 <h4><%= link_to tick.task.name, tick %></h4>
                 <p><%= tick.task.description %></p>
+                <p>Regularity: <%= tick.task.regularity.name %></p>
               </div>
               <div class="book-index-right">
                 <% if tick.complete == true %>
@@ -47,6 +48,7 @@
               <div class="book-index-left">
                 <h4><%= link_to tick.task.name, tick %></h4>
                 <p><%= tick.task.description %></p>
+                <p>Regularity: <%= tick.task.regularity.name %></p>
               </div>
               <div class="book-index-right">
                 <% if tick.complete == true %>

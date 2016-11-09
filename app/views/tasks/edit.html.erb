@@ -4,7 +4,7 @@
 		<%= simple_form_for @task do |f| %>
 		  <div class="form-material">
 		  	<div class="field">
-    		  <%= select_tag(:regularity_id, options_for_select(@regularities), :prompt => "Select a regularity") %>
+    		  <%= f.select :regularity_id, @regularities %>
   		  </div>
 		    <p>Category: <%= @task.category.name %></p>
 		    <%= f.input :name %>
@@ -15,6 +15,6 @@
 		  </div>
 		<% end %>
 
-		<%= link_to 'Back', @task %>
+		<%= link_to 'Back', tasks_path %>
 	</div>
 </div>
