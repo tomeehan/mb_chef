@@ -13,6 +13,9 @@
 	</div>    
 
   	<div class="new-btn">
-    	<%= f.button :submit, :class => 'waves-effect btn-large' %>
+    	<%= f.button :submit, "Create Task", :class => 'waves-effect btn-large' %>
   	</div>
+        <div class="new-btn">
+      <%= f.button :submit, "Create Task and create another", :class => 'waves-effect btn-large', name: 'create_and_add' %>
+    </div>
 <% end %>
