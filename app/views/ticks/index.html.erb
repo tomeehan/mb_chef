@@ -18,7 +18,7 @@
     <div class="col-md-5">
       <h2>Checks</h2>  
         <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" %>
+          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current %>
           <div class="book-index-desc">
             <div class="book-index-content">
               <div class="book-index-left">
@@ -44,7 +44,7 @@
     <div class="col-md-5">
       <h2>Temperatures</h2>  
         <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Temperature" %>
+          <% if tick.task.category.name == "Temperature" && tick.created_at.to_date == Date.current %>
           <div class="book-index-desc">
             <div class="book-index-content">
               <div class="book-index-left">

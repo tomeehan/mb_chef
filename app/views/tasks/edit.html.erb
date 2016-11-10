@@ -9,6 +9,9 @@
 		    <p>Category: <%= @task.category.name %></p>
 		    <%= f.input :name %>
 		    <%= f.input :description %>
+		    <%= f.input :starting, as: :boolean, checked_value: true, unchecked_value: false %>
+      		<%= f.input :midday, as: :boolean, checked_value: true, unchecked_value: false %>
+      		<%= f.input :ending, as: :boolean, checked_value: true, unchecked_value: false %>
 		</div>
 		  <div class="new-btn">
 		    <%= f.button :submit, :class => 'waves-effect btn-large' %>

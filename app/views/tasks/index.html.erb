@@ -19,7 +19,7 @@
           <% if task.category.name == "Check" %>
             <div class="book-index-desc">
               <div class="book-index-content">  
-                <h4><%= link_to task.name, task, :class => "link" %></h4>
+                <h4><%= link_to task.name, edit_task_path(task), :class => "link" %></h4>
                 <p><%= task.description %></p>
                 <p><%= task.starting %></p>
                 <p><%= task.midday %></p>
@@ -38,7 +38,7 @@
           <% if task.category.name == "Temperature" %>
             <div class="book-index-desc">
               <div class="book-index-content">  
-                <h4><%= link_to task.name, task, :class => "link" %></h4>
+                <h4><%= link_to task.name, edit_task_path(task), :class => "link" %></h4>
                 <p><%= task.description %></p>
                 <p><%= task.starting %></p>
                 <p><%= task.midday %></p>
