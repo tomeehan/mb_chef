@@ -13,7 +13,7 @@
 			 <div class="form-material">
 			 	<%= f.input :complete %>
 			 	<% if @tick.task.category.name == "Temperature" %>
-			 		<%= f.input :temperature %>
+			 		<%= f.input :temperature, autofocus: true %>
 			 	<% end %>
 			 </div>
 
