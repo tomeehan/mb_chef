@@ -211,7 +211,7 @@ p.alert, p.notice {
 }
 
 .book-index-content h4 {
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .book-index-left {
@@ -625,4 +625,8 @@ input[type="color"]:focus,
 .last-name {
 	width: 47.5%;
 	float: left;
+}
+
+.create-btn-container {
+	float: right;
 }

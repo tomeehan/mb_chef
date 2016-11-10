@@ -18,11 +18,13 @@
 			 </div>
 
 			  <div class="new-btn">
-			  	<%= f.button :submit, :class => 'waves-effect btn-large' %>
+			  	<%= f.button :submit, "Update #{@tick.task.category.name}" , :class => 'waves-effect btn-large' %>
 			  </div>
 		<% end %>
 
 		<%= link_to 'Show', @tick %> |
 		<%= link_to 'Back', ticks_path %>
+
 	</div>
 </div>
+

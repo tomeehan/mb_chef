@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-9">
       <div class="container">
-        <h1>Tasks</h1>
+        <h1>Today</h1>
       </div>  
     </div>
     <div class="col-md-3">
@@ -12,8 +12,10 @@
     </div>
   </div>  
   <hr>  
+
+
   <div class="row container">
-    <div class="col-md-5">
+    <div class="col-md-4">
       <h2>Checks</h2>
          <% @tasks.each do |task| %>
           <% if task.category.name == "Check" %>
@@ -31,7 +33,7 @@
         <% end %>         
     </div>
 
-    <div class="col-md-5">
+    <div class="col-md-4">
       <h2>Temperatures</h2>
         
         <% @tasks.each do |task| %>
