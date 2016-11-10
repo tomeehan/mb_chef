@@ -2,20 +2,21 @@
 
 <% if user_signed_in? %>
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-sm-9">
       <div class="container">
         <h1>Today</h1>
       </div>  
     </div>
-    <div class="col-md-3">
+    <div class="col-sm-3">
       <div class="new-btn">
         <%= link_to '+ Create a new task', new_task_path, :class => 'waves-effect btn-large' %>
       </div>
     </div>
   </div>  
   <hr>  
+
   <div class="row container">
-    <div class="col-md-5">
+    <div class="col-sm-5">
       <h2>Checks</h2>  
         <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current %>
@@ -41,7 +42,7 @@
           <% end %>
         <% end %>
     </div>
-    <div class="col-md-5">
+    <div class="col-sm-5">
       <h2>Temperatures</h2>  
         <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Temperature" && tick.created_at.to_date == Date.current %>
