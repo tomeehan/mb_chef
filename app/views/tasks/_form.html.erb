@@ -10,6 +10,9 @@
 	<div class="form-material">
 	    <%= f.input :name, placeholder: "Name your shit" %>
 	    <%= f.input :description, placeholder: "Describe your shit" %>
+      <%= f.input :opening, as: :boolean, checked_value: true, unchecked_value: false %>
+      <%= f.input :middle, as: :boolean, checked_value: true, unchecked_value: false %>
+      <%= f.input :closing, as: :boolean, checked_value: true, unchecked_value: false %>
 	</div>    
 
   	<div class="new-btn">
