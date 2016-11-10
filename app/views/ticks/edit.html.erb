@@ -1,6 +1,28 @@
-<h1>Editing Tick</h1>
+<div class="container">
+	<br>
+	<br>
+	<br>
+</div>
+<div class="col-md-6 col-md-offset-3">
+	<div class="new-book-form">
+		<h1>Editing <%= @tick.task.name %></h1>
 
-<%= render 'form', tick: @tick %>
 
-<%= link_to 'Show', @tick %> |
-<%= link_to 'Back', ticks_path %>
+		<%= simple_form_for(@tick) do |f| %>
+
+			 <div class="form-material">
+			 	<%= f.input :complete %>
+			 	<% if @tick.task.category.name == "Temperature" %>
+			 		<%= f.input :temperature %>
+			 	<% end %>
+			 </div>
+
+			  <div class="new-btn">
+			  	<%= f.button :submit, :class => 'waves-effect btn-large' %>
+			  </div>
+		<% end %>
+
+		<%= link_to 'Show', @tick %> |
+		<%= link_to 'Back', ticks_path %>
+	</div>
+</div>

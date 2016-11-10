@@ -48,7 +48,7 @@
           <div class="book-index-desc">
             <div class="book-index-content">
               <div class="book-index-left">
-                <h4><%= link_to tick.task.name, tick %></h4>
+                <h4><%= link_to tick.task.name, edit_tick_path(tick) %></h4>
                 <p><%= tick.task.description %></p>
                 <p><%= tick.task.starting %></p>
                 <p><%= tick.task.midday %></p>

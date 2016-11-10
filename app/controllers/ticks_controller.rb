@@ -47,7 +47,7 @@ class TicksController < ApplicationController
   def update
     respond_to do |format|
       if @tick.update(tick_params)
-        format.html { redirect_to @tick, notice: 'Tick was successfully updated.' }
+        format.html { redirect_to ticks_path, notice: 'Tick was successfully updated.' }
         format.json { render :show, status: :ok, location: @tick }
       else
         format.html { render :edit }
