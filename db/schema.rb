@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109213557) do
+ActiveRecord::Schema.define(version: 20161109202257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,14 +27,6 @@ ActiveRecord::Schema.define(version: 20161109213557) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "schedules", force: :cascade do |t|
-    t.boolean  "open"
-    t.boolean  "mid"
-    t.boolean  "close"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -43,7 +35,6 @@ ActiveRecord::Schema.define(version: 20161109213557) do
     t.integer  "category_id"
     t.integer  "user_id"
     t.integer  "regularity_id"
-    t.integer  "schedule_id"
   end
 
   create_table "ticks", force: :cascade do |t|
