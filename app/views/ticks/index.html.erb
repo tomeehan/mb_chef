@@ -17,7 +17,41 @@
   </div>  
   <hr>  
 
-
+  <div class="row container">
+    <div class="col-sm-5">
+      <h2>Checks</h2>  
+        <% @ticks.each do |tick| %>
+          <%= link_to edit_tick_path(tick) do %>
+            <div class="book-index-desc task">
+              <div class="book-index-content">
+                <div class="left">
+                  <p><%= tick.task.description %></p>
+                </div>
+                <div class="right">
+                  <div class="regularity">
+                    <% if tick.task.regularity.name == "Daily" %>
+                    <p class="tick-daily">.</p>
+                    <% end %>
+                    <% if tick.task.regularity.name == "Weekly" %>
+                      <p>Weekly</p>
+                    <% end %>
+                    <% if tick.task.regularity.name == "Monthly" %>
+                      <p>Monthly</p>
+                    <% end %>
+                  </div>
+                  <% if tick.complete == true %>
+                    <p class="complete-true">&#10003;</p>
+                  <% else %>
+                    <p class="complete-false">&#x2716;</p>
+                  <% end %>
+                </div>
+                <hr>
+                </div>  
+              </div>   
+            <% end %>
+          <% end %>
+        <% end %>
+    </div>
 
    
   </div>
