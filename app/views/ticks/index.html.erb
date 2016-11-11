@@ -22,54 +22,74 @@
       <h2>Checks</h2>  
         <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current %>
-          <div class="book-index-desc">
-            <div class="book-index-content">
-              <div class="book-index-left">
-                <h4><%= link_to tick.task.name, tick %></h4>
-                <p><%= tick.task.description %></p>
-                <p><%= tick.task.starting %></p>
-                <p><%= tick.task.midday %></p>
-                <p><%= tick.task.ending %></p>
-              </div>
-              <div class="book-index-right">
-                <% if tick.complete == true %>
-                  <p class="complete-true">&#10003;</p>
-                <% else %>
-                  <p class="complete-false">&#x2716;</p>
-                <% end %>
-              </div>
-              <hr>
-            </div>  
-            </div>            
+          <%= link_to edit_tick_path(tick) do %>
+            <div class="book-index-desc task">
+              <div class="book-index-content">
+                <div class="left">
+                  <h4><%= link_to tick.task.name, tick %></h4>
+                  <p><%= tick.task.description %></p>
+                </div>
+                <div class="right">
+                  <div class="regularity">
+                    <% if tick.task.regularity.name == "Daily" %>
+                    <p class="tick-daily">.</p>
+                    <% end %>
+                    <% if tick.task.regularity.name == "Weekly" %>
+                      <p>Weekly</p>
+                    <% end %>
+                    <% if tick.task.regularity.name == "Monthly" %>
+                      <p>Monthly</p>
+                    <% end %>
+                  </div>
+                  <% if tick.complete == true %>
+                    <p class="complete-true">&#10003;</p>
+                  <% else %>
+                    <p class="complete-false">&#x2716;</p>
+                  <% end %>
+                </div>
+                <hr>
+                </div>  
+              </div>   
+            <% end %>
           <% end %>
         <% end %>
     </div>
+
     <div class="col-sm-5">
       <h2>Temperatures</h2>  
         <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Temperature" && tick.created_at.to_date == Date.current %>
-          <div class="book-index-desc">
-            <div class="book-index-content">
-              <div class="book-index-left">
-                <h4><%= link_to tick.task.name, edit_tick_path(tick) %></h4>
-                <p><%= tick.task.description %></p>
-                <p><%= tick.task.starting %></p>
-                <p><%= tick.task.midday %></p>
-                <p><%= tick.task.ending %></p>                  
-              </div>
-              <div class="book-index-right">
-                <% if tick.complete == true %>
-                  <p class="complete-true"><%= tick.temperature %>&deg;</p>
-                <% else %>
-                  <p class="complete-false">&#x2716;</p>
-                <% end %>
-              </div>
-              <hr>
-            </div>  
-            </div>            
+            <%= link_to edit_tick_path(tick) do %>
+              <div class="book-index-desc task">
+                <div class="book-index-content">
+                  <div class="left">
+                    <h4><%= tick.task.name %></h4>
+                    <p><%= tick.task.description %></p>
+                  </div>
+                  <div class="right">
+                    <div class="regularity">
+                      <% if tick.task.regularity.name == "Daily" %>
+                      <p class="tick-daily">.</p>
+                      <% end %>
+                      <% if tick.task.regularity.name == "Weekly" %>
+                        <p>Weekly</p>
+                      <% end %>
+                      <% if tick.task.regularity.name == "Monthly" %>
+                        <p>Monthly</p>
+                      <% end %>
+                    </div>
+                    <% if tick.complete == true %>
+                      <p class="complete-temperature"><%= tick.temperature %>&deg;</p>
+                    <% else %>
+                      <p class="complete-false">&#x2716;</p>
+                    <% end %>
+                  </div>
+                  <hr>
+                </div>  
+                </div>
+            <% end %>
           <% end %>
         <% end %>
-    </div>
-  
+    </div>  
   </div>
 <% end %>

@@ -24,6 +24,11 @@
 
 /* Variables, mixins, etc.. */
 
+body {
+	font-family: 'Open sans', sans-serif;
+	font-size: 16px;
+}
+
 .user-list {
 	text-align: center;
 }
@@ -55,7 +60,7 @@
 	background-color: #fff;
 	border-radius: 2px;
 	box-shadow: 1px 3px 10px 2px rgba(0, 0, 0, 0.1);;
-	padding: 0.35em 1.25em;
+	padding: 1px 1.25em;
 }
 
 @mixin okr-background-tile {
@@ -208,7 +213,51 @@ p.alert, p.notice {
 .book-index-desc {
 	@include background-tile;
 	margin-top: 25px;
-	height: 100px;
+	height: 100px;	
+}
+
+.book-index-content .left {
+	width: 60%;
+	float: left;
+}
+
+.task {
+	background-color: #FBFBFB;
+
+        -webkit-transition: background 0.5s linear;
+        -moz-transition: background 0.5s linear;
+        -ms-transition: background 0.5s linear;
+        -o-transition: background 0.5s linear;
+        transition: background 0.5s linea	
+}
+
+.task:hover {
+	background-color: #fff;
+	box-shadow: 1px 3px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.book-index-content .right {
+	width: 40%;
+	float: right;
+}
+
+.book-index-content .right .schedule-icons {
+	float: right;
+}
+
+.book-index-content .right .regularity {
+	text-align: right;
+	width: 100%;
+}
+
+.book-index-content .right .regularity p {
+	color: #F86624;
+	font-weight: 600;
+}
+
+.book-index-content .right .regularity .tick-daily {
+	color: rgba(255,255,255,0.1);
+	font-weight: 600;
 }
 
 .book-index-content h4 {
@@ -221,24 +270,24 @@ p.alert, p.notice {
 	float: left;
 }
 
-.book-index-right {
-	width: 25%;
-	height: 100%;
-	float: left;
+.right .complete-temperature {
+	color: green;
+	font-size: 150%;
+	font-weight: 600;
+	text-align: right;
 }
 
-.book-index-right .complete-true {
+.right .complete-true {
 	color: green;
 	font-size: 300%;
-	text-align: center;
+	text-align: right;
 }
 
-.book-index-right .complete-false {
+.right .complete-false {
 	color: red;
 	font-size: 300%;
-	text-align: center;
+	text-align: right;
 }
-
 
 .snippet-index-desc {
 	@include background-tile;

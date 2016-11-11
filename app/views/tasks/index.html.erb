@@ -21,35 +21,90 @@
       <h2>Checks</h2>
          <% @tasks.each do |task| %>
           <% if task.category.name == "Check" %>
-            <div class="book-index-desc">
-              <div class="book-index-content">  
-                <h4><%= link_to task.name, edit_task_path(task), :class => "link" %></h4>
-                <p><%= task.description %></p>
-                <p><%= task.starting %></p>
-                <p><%= task.midday %></p>
-                <p><%= task.ending %></p>
-                <hr>
-              </div>  
-            </div>            
+            <%= link_to edit_task_path(task) do %>
+              <div class="book-index-desc task">
+                <div class="book-index-content">  
+                  <div class="left">
+                    <h4><%= task.name %></h4>
+                    <p><%= task.description %></p>
+                  </div> 
+                  <div class="right">
+                    <div class="regularity">
+                      <p><%= task.regularity.name %></p>
+                    </div>
+                    <div class="schedule-icons">
+                      <% if task.starting %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                      <% else %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                      <% end %>
+
+                      <% if task.midday %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                      <% else %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                      <% end %>
+
+                      <% if task.ending %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                      <% else %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                      <% end %>                  
+                    </div>
+                    
+                  </div>
+                  <hr>
+                </div>  
+              </div>
+            <% end %>
           <% end %>
         <% end %>         
     </div>
 
     <div class="col-sm-5">
       <h2>Temperatures</h2>
-        
         <% @tasks.each do |task| %>
           <% if task.category.name == "Temperature" %>
-            <div class="book-index-desc">
-              <div class="book-index-content">  
-                <h4><%= link_to task.name, edit_task_path(task), :class => "link" %></h4>
-                <p><%= task.description %></p>
-                <p><%= task.starting %></p>
-                <p><%= task.midday %></p>
-                <p><%= task.ending %></p>
-                <hr>
-              </div>  
-            </div>            
+            <%= link_to edit_task_path(task) do %>
+              <div class="book-index-desc task">
+
+                <div class="book-index-content">  
+                  <div class="left">
+                    <h4><%= task.name %></h4>
+                    <p><%= task.description %></p>
+                  </div> 
+
+                  
+                  <div class="right">
+                    <div class="regularity">
+                      <p><%= task.regularity.name %></p>
+                    </div>
+                    <div class="schedule-icons">
+                      <% if task.starting %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                      <% else %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                      <% end %>
+
+                      <% if task.midday %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                      <% else %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                      <% end %>
+
+                      <% if task.ending %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                      <% else %>
+                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                      <% end %>                  
+                    </div>
+                    
+                  </div>
+                  <hr>
+                </div>  
+                
+              </div>        
+            <% end %>
           <% end %>
         <% end %>
         
