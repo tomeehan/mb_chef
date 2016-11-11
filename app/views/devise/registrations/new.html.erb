@@ -2,8 +2,8 @@
 	<div class="new-book-form">
 		<h2>Sign up</h2>
 
-		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-		  <%= f.error_notification %>
+			<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+		  	<%= f.error_notification %>
 
 		  <div class="form-material">
 		  	<br>
@@ -25,8 +25,9 @@
 		  <div class="new-btn">
 			<%= f.button :submit, :class => 'waves-effect btn-large' %>
 		  </div>
-		<% end %>
-
+		
+		
 		<%= render "devise/shared/links" %>
-	</div>
+
+	<% end %>
 </div>
