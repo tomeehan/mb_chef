@@ -78,6 +78,6 @@ class TicksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tick_params
-      params.require(:tick).permit(:complete, :temperature, :task_id)
+      params.require(:tick).permit(:complete, :temperature, :task_id, :category_id)
     end
 end
