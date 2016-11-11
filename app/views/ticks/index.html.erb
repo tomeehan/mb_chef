@@ -21,13 +21,14 @@
     <div class="col-sm-5">
       <h2>Checks</h2>  
         <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current %>
+
           <%= link_to edit_tick_path(tick) do %>
             <div class="book-index-desc task">
               <div class="book-index-content">
                 <div class="left">
                   <h4><%= link_to tick.task.name, tick %></h4>
                   <p><%= tick.task.description %></p>
+                  <p><%= tick.task.category.name %></p>
                 </div>
                 <div class="right">
                   <div class="regularity">
@@ -51,14 +52,14 @@
                 </div>  
               </div>   
             <% end %>
-          <% end %>
+
         <% end %>
     </div>
 
     <div class="col-sm-5">
       <h2>Temperatures</h2>  
         <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Temperature" && tick.created_at.to_date == Date.current %>
+
             <%= link_to edit_tick_path(tick) do %>
               <div class="book-index-desc task">
                 <div class="book-index-content">
@@ -87,7 +88,7 @@
                   <hr>
                 </div>  
                 </div>
-            <% end %>
+
           <% end %>
         <% end %>
     </div>  
