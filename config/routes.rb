@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :staffs
   resources :ticks
   devise_for :users
   resources :tasks

@@ -1,0 +1,21 @@
+<%= simple_form_for(@staff) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-material">
+    <br>
+    <div class="first-name">
+       <%= f.input :first_name, required: true, autofocus: true, label: false , placeholder: "First name (required)" %>
+    </div>
+    <div class="last-name">
+       <%= f.input :surname, required: true, label: false, placeholder: "Last name (required)" %>
+    </div>
+    <%= f.input :email, label: false, placeholder: "Email" %>
+    <%= f.input :job_title, label: false, placeholder: "Job Title" %>
+    <%= f.input :manager %>
+    <%= f.input :pin %>
+  </div>
+
+  <div class="new-btn">
+    <%= f.button :submit, :class => 'waves-effect btn-large' %>
+  </div>
+<% end %>
