@@ -3,13 +3,14 @@
       <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
     </div>
 
-    <div class="field">
-      <%= select_tag(:regularity_id, options_for_select(@regularities), :prompt => "Select a regularity") %>
-    </div>
+
 
 	<div class="form-material">
 	    <%= f.input :name, placeholder: "Name your shit" %>
 	    <%= f.input :description, placeholder: "Describe your shit" %>
+          <div class="field">
+      <%= select_tag(:regularity_id, options_for_select(@regularities), :prompt => "Select a regularity") %>
+    </div>
       <%= f.input :starting, as: :boolean, checked_value: true, unchecked_value: false %>
       <%= f.input :midday, as: :boolean, checked_value: true, unchecked_value: false %>
       <%= f.input :ending, as: :boolean, checked_value: true, unchecked_value: false %>
