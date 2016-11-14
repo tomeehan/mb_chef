@@ -33,16 +33,14 @@ class TasksController < ApplicationController
 
     @task.category_id = params[:category_id]
     @task.regularity_id = params[:regularity_id]
-    # @task.ticks.build(user_id: @user, complete: false) # throws NoMethodError in Tasks#create ... undefined method `map' for nil:NilClass
 
     if params[:create_and_add]
         respond_to do |format|
-          if @task.save
-          @task.ticks.create(user_id: current_user.id, complete: false) # doesn't create tick, but shows no error
+          if @task.save!
+            @task.ticks.create(user: current_user, complete: false, staff_id: 1) # doesn't create tick, but shows no error
             format.html { redirect_to new_task_path, notice: 'Task was successfully created.' }
             format.json { render :show, status: :created, location: @task }
           
-          # Tick.create(user_id: @user.id, tick_id: @tick.id, complete: false) #error: undefined method `id' for nil:NilClass
           else
             format.html { render :new }
             format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -50,12 +48,11 @@ class TasksController < ApplicationController
         end
     else
         respond_to do |format|
-          if @task.save
-          @task.ticks.create(user_id: current_user.id, complete: false) # doesn't create tick, but shows no error
+          if @task.save!
+            @task.ticks.create(user: current_user, complete: false, staff_id: 1) # doesn't create tick, but shows no error
             format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
             format.json { render :show, status: :created, location: @task }
           
-          # Tick.create(user_id: @user.id, tick_id: @tick.id, complete: false) #error: undefined method `id' for nil:NilClass
           else
             format.html { render :new }
             format.json { render json: @task.errors, status: :unprocessable_entity }
