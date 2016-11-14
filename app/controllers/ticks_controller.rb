@@ -22,12 +22,14 @@ class TicksController < ApplicationController
   # GET /ticks/1/edit
   def edit
     @tasks = Task.all.map{ |t| [t.name, t.id] }
+    @staffs = Staff.all.map{ |s| [s.first_name + " " + s.surname, s.id]}
   end
 
   # POST /ticks
   # POST /ticks.json
   def create
     @tick = current_user.ticks.build(tick_params)
+
 
     @tick.task_id = params[:task_id]
 
@@ -45,6 +47,13 @@ class TicksController < ApplicationController
   # PATCH/PUT /ticks/1
   # PATCH/PUT /ticks/1.json
   def update
+    @tick.staff_id = params[:staff_id]
+    @staffs = Staff.all.map{ |s| [s.first_name, s.id]}
+    if @tick.temperature != nil 
+        @tick.complete = true
+    end
+
+
     respond_to do |format|
       if @tick.update(tick_params)
         format.html { redirect_to ticks_path, notice: 'Tick was successfully updated.' }
@@ -54,9 +63,7 @@ class TicksController < ApplicationController
         format.json { render json: @tick.errors, status: :unprocessable_entity }
       end
 
-      if @tick.temperature != nil 
-        @tick.complete = true
-      end
+
     end
   end
 
@@ -78,6 +85,6 @@ class TicksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tick_params
-      params.require(:tick).permit(:complete, :temperature, :task_id, :category_id)
+      params.require(:tick).permit(:complete, :temperature, :task_id, :category_id, :staff_id)
     end
 end
