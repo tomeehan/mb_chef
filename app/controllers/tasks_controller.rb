@@ -37,7 +37,7 @@ class TasksController < ApplicationController
     if params[:create_and_add]
         respond_to do |format|
           if @task.save!
-            @task.ticks.create(user: current_user, complete: false, staff_id: 1) # doesn't create tick, but shows no error
+            @task.ticks.create(user: current_user, complete: false, staff_id: 1) # 'staff_id: 1' is a hack — must fix
             format.html { redirect_to new_task_path, notice: 'Task was successfully created.' }
             format.json { render :show, status: :created, location: @task }
           
@@ -49,7 +49,7 @@ class TasksController < ApplicationController
     else
         respond_to do |format|
           if @task.save!
-            @task.ticks.create(user: current_user, complete: false, staff_id: 1) # doesn't create tick, but shows no error
+            @task.ticks.create(user: current_user, complete: false, staff_id: 1) # 'staff_id: 1' is a hack — must fix
             format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
             format.json { render :show, status: :created, location: @task }
           
