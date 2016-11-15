@@ -1,5 +1,6 @@
 class TicksController < ApplicationController
   before_action :set_tick, only: [:show, :edit, :update, :destroy]
+  # before_filter :update_active
 
   # GET /ticks
   # GET /ticks.json
@@ -77,7 +78,21 @@ class TicksController < ApplicationController
     end
   end
 
+  
+  # def update_active
+  #   @ticks = Tick.all
+  #   @ticks.update_all(active: false)
+  #   flash[:notice] = "marked as false"
+  # end
+
+  def completed
+    @ticks = Tick.where(:active => 'false').all
+  end
+
   private
+    
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_tick
       @tick = Tick.find(params[:id])
@@ -85,6 +100,6 @@ class TicksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tick_params
-      params.require(:tick).permit(:complete, :temperature, :task_id, :category_id, :staff_id)
+      params.require(:tick).permit(:complete, :temperature, :task_id, :category_id, :staff_id, :active)
     end
 end
