@@ -10,11 +10,17 @@
 
 		<%= simple_form_for(@tick) do |f| %>
 
+
+			<%= f.input :complete, as: :boolean, checked_value: true, unchecked_value: false %>
+
 			 <div class="form-material">
-			 	<%= f.input :complete %>
-			 	<% if @tick.task.category.name == "Temperature" %>
-			 		<%= f.input :temperature, autofocus: true %>
+			 	<% if @tick.task.category.name == "Check" %>
+					<div style="display: none;">
+				<% else %>
+					<div>
 			 	<% end %>
+			 			<%= f.input :temperature, autofocus: true %>
+			 		</div>
 
 			<div class="field">
 				<%= select_tag(:staff_id, options_for_select(@staffs), :prompt => "Select a staff") %>
@@ -23,7 +29,7 @@
 			 </div>
 
 			  <div class="new-btn">
-			  	<%= f.button :submit, "Update #{@tick.task.category.name}" , :class => 'waves-effect btn-large' %>
+			  	<%= f.button :submit, "Update #{@tick.task.category.name}" , name: :active, :class => 'waves-effect btn-large' %>
 			  </div>
 		<% end %>
 

@@ -106,5 +106,11 @@ class TicksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tick_params
       params.require(:tick).permit(:complete, :temperature, :task_id, :category_id, :staff_id, :active)
+
+        if params[:active]
+          return params.require(:tick).permit(:name, :body).merge(active: true)
+        else    
+          return params.require(:tick).permit(:name, :body).merge(active: false)
+        end
     end
 end
