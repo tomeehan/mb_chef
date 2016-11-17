@@ -7,7 +7,11 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="container">
-        <h1>Today</h1>
+        <% if params[:active] == "false" %>
+          <h1>Reports</h1>
+        <% else %>
+          <h1>Today</h1>
+        <% end %>
       </div>  
     </div>
     <div class="col-sm-6">
@@ -17,14 +21,17 @@
         </div>
       </div>  
     </div>
-  </div>  
+  </div>
+
+
+
   <hr>  
 
   <div class="row container">
     <div class="col-sm-5">
       <h2>Checks</h2>  
         <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current %>
+          <% if tick.task.category.name == "Check" %>
           <%= link_to edit_tick_path(tick) do %>
             <div class="book-index-desc task">
               <div class="book-index-content">
@@ -61,7 +68,7 @@
     <div class="col-sm-5">
       <h2>Temperatures</h2>  
         <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Temperature" && tick.created_at.to_date == Date.current %>
+          <% if tick.task.category.name == "Temperature" %>
             <%= link_to edit_tick_path(tick) do %>
               <div class="book-index-desc task">
                 <div class="book-index-content">
@@ -96,7 +103,12 @@
     </div>
 
     <div class="col-sm-2">
-      <%= link_to 'Call Action', completed_ticks_path %>
+      <div class="container">
+        <% if params[:active] == "false" %>
+          <h4>Check date:</h4>
+          <p>[Choose date here]</p>
+        <% end %>
+      </div>  
 
     </div>
   </div>

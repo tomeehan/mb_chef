@@ -5,7 +5,12 @@ class TicksController < ApplicationController
   # GET /ticks
   # GET /ticks.json
   def index
-    @ticks = Tick.all
+    if params[:active].blank?
+      @ticks = Tick.all.order("created_at DESC")
+    else 
+      # code here
+      @ticks = Tick.where(:active => params[:active]).order("created_at DESC")
+    end
   end
 
   # GET /ticks/1
