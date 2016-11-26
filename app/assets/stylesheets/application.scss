@@ -731,8 +731,56 @@ footer .footer-logo a {
 	100% {opacity: 0; transform: scale(2.5);}
 }
 
+/* Schedule Button */
+
+.schedule-selector {
+	margin-top: 25px;
+	float:right;
+}
+
+.schedule-selector .schedule-btn {
+	border: 2px solid #F86624;
+	margin-right: -6.5px;
+	padding: 10px 40px;
+	color: #F86624;
+	font-size: 0.75em;
+	font-weight: 600;
+
+	-moz-transition: all .1s ease-in;
+    -o-transition: all .1s ease-in;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+}
+
+.schedule-selector .schedule-btn:hover {
+	color: white;
+	background-color: #F86624;
+	text-decoration: none;
+}
+
+.schedule-selector .schedule-btn:active {
+	color: white;
+	background-color: #df5b20;
+	text-decoration: none;
+}
 
 
+.schedule-selector .schedule-btn:first-of-type {
+    -webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
 
+.schedule-selector .schedule-btn:last-of-type {
+    -webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
 
 

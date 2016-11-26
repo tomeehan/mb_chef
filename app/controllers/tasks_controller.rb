@@ -37,7 +37,19 @@ class TasksController < ApplicationController
     if params[:create_and_add]
         respond_to do |format|
           if @task.save!
-            @task.ticks.create(user: current_user, complete: false, staff_id: 1) # 'staff_id: 1' is a hack — must fix
+              
+              if @task.starting == true       
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "starting") # 'staff_id: 1' is a hack — must fix
+              end 
+
+              if @task.middle == true
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "middle") # 'staff_id: 1' is a hack — must fix
+              end
+
+              if @task.ending == true
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "ending") # 'staff_id: 1' is a hack — must fix
+              end
+
             format.html { redirect_to new_task_path, notice: 'Task was successfully created.' }
             format.json { render :show, status: :created, location: @task }
           
@@ -49,7 +61,17 @@ class TasksController < ApplicationController
     else
         respond_to do |format|
           if @task.save!
-            @task.ticks.create(user: current_user, complete: false, staff_id: 1) # 'staff_id: 1' is a hack — must fix
+              if @task.starting = true       
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "starting") # 'staff_id: 1' is a hack — must fix
+              end 
+
+              if @task.middle = true
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "middle") # 'staff_id: 1' is a hack — must fix
+              end
+
+              if @task.ending = true
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "ending") # 'staff_id: 1' is a hack — must fix
+              end
             format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
             format.json { render :show, status: :created, location: @task }
           

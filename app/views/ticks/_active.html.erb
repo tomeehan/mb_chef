@@ -1,0 +1,135 @@
+<% if !params[:stage] || params[:stage] == "Morning" %>
+    <div class="col-sm-4">
+      <h1>Morning</h1>
+         <% @ticks.each do |tick| %>
+          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
+            <% if tick.task.starting == true && tick.stage = "morning" %>
+              <%= link_to edit_tick_path(tick) do %>
+                <div class="book-index-desc task">
+                  <div class="book-index-content">
+                    <div class="left">
+                      <h4><%= tick.task.name %></h4>
+                      <p><%= tick.task.description %></p>
+                      <p><%= tick.stage %></p>
+                    </div>
+                    <div class="right">
+                      <div class="regularity">
+                        <% if tick.task.regularity.name == "Daily" %>
+                        <p class="tick-daily">.</p>
+                        <% end %>
+                        <% if tick.task.regularity.name == "Weekly" %>
+                          <p>Weekly</p>
+                        <% end %>
+                        <% if tick.task.regularity.name == "Monthly" %>
+                          <p>Monthly</p>
+                        <% end %>
+                      </div>
+                      <% if tick.complete == true %>
+                        <p class="complete-true">&#10003;</p>
+                      <% else %>
+                        <p class="complete-false">&#x2716;</p>
+                      <% end %>
+                    </div>
+                    <hr>
+                    </div>  
+                  </div>   
+                <% end %>
+
+            <% end %>    
+          <% end %>
+        <% end %>
+    </div>
+
+<% else %>
+  <% if params[:stage] == "Afternoon" %>
+
+    <div class="col-sm-4">
+      <h1>Middle</h1>
+         <% @ticks.each do |tick| %>
+          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
+            <% if tick.task.midday == true && tick.stage = "middle" %>
+              <%= link_to edit_tick_path(tick) do %>
+                <div class="book-index-desc task">
+                  <div class="book-index-content">
+                    <div class="left">
+                      <h4><%= tick.task.name %></h4>
+                      <p><%= tick.task.description %></p>
+                      <p><%= tick.stage %></p>
+                    </div>
+                    <div class="right">
+                      <div class="regularity">
+                        <% if tick.task.regularity.name == "Daily" %>
+                        <p class="tick-daily">.</p>
+                        <% end %>
+                        <% if tick.task.regularity.name == "Weekly" %>
+                          <p>Weekly</p>
+                        <% end %>
+                        <% if tick.task.regularity.name == "Monthly" %>
+                          <p>Monthly</p>
+                        <% end %>
+                      </div>
+                      <% if tick.complete == true %>
+                        <p class="complete-true">&#10003;</p>
+                      <% else %>
+                        <p class="complete-false">&#x2716;</p>
+                      <% end %>
+                    </div>
+                    <hr>
+                    </div>  
+                  </div>   
+                <% end %>
+
+            <% end %>    
+          <% end %>
+        <% end %>
+    </div>
+
+  <% end %>
+
+  <% if params[:stage] == "Evening" %>
+    <div class="col-sm-4">
+      <h1>Ending</h1>
+         <% @ticks.each do |tick| %>
+          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
+            <% if tick.task.ending == true && tick.stage = "ending" %>
+              <%= link_to edit_tick_path(tick) do %>
+                <div class="book-index-desc task">
+                  <div class="book-index-content">
+                    <div class="left">
+                      <h4><%= tick.task.name %></h4>
+                      <p><%= tick.task.description %></p>
+                      <p><%= tick.stage %></p>
+                    </div>
+                    <div class="right">
+                      <div class="regularity">
+                        <% if tick.task.regularity.name == "Daily" %>
+                        <p class="tick-daily">.</p>
+                        <% end %>
+                        <% if tick.task.regularity.name == "Weekly" %>
+                          <p>Weekly</p>
+                        <% end %>
+                        <% if tick.task.regularity.name == "Monthly" %>
+                          <p>Monthly</p>
+                        <% end %>
+                      </div>
+                      <% if tick.complete == true %>
+                        <p class="complete-true">&#10003;</p>
+                      <% else %>
+                        <p class="complete-false">&#x2716;</p>
+                      <% end %>
+                    </div>
+                    <hr>
+                    </div>  
+                  </div>   
+                <% end %>
+
+            <% end %>    
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+
+
+  <% end %>
+
+<% end %>
