@@ -10,12 +10,15 @@
       </div>  
     </div>
     <div class="col-sm-8">
+      <% if params[:active] == "false" %>
+      <% else %>
       <div class="schedule-selector">
         <div class="links btn-group"></div>
           <%= link_to "Morning", ticks_path(:stage => "Morning"), class: "schedule-btn" %>
           <%= link_to "Afternoon", ticks_path(:stage => "Afternoon"), class: "schedule-btn" %>
           <%= link_to "Evening", ticks_path(:stage => "Evening"), class: "schedule-btn" %>
         </div>
+        <% end %>
       </div>
     </div>
 
