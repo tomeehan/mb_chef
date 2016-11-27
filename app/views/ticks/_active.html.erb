@@ -3,7 +3,7 @@
       <h1>Morning</h1>
          <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
-            <% if tick.stage == "morning" %>
+            <% if tick.stage == "starting" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
                   <div class="book-index-content">
