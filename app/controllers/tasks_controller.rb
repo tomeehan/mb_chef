@@ -94,7 +94,6 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
-    @task.regularity_id = params[:regularity_id]
     
     respond_to do |format|
       if @task.update(task_params)
