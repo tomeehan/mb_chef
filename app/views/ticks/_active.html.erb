@@ -46,10 +46,10 @@
   <% if params[:stage] == "Afternoon" %>
 
     <div class="col-sm-4">
-      <h1>Middle</h1>
+      <h1>Afternoon</h1>
          <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
-            <% if tick.task.midday == true && tick.stage = "middle" %>
+            <% if tick.stage == "middle" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
                   <div class="book-index-content">
