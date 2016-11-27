@@ -14,9 +14,23 @@
       <% else %>
       <div class="schedule-selector">
         <div class="links btn-group"></div>
-          <%= link_to "Morning", ticks_path(:stage => "Morning"), class: "schedule-btn" %>
-          <%= link_to "Afternoon", ticks_path(:stage => "Afternoon"), class: "schedule-btn" %>
-          <%= link_to "Evening", ticks_path(:stage => "Evening"), class: "schedule-btn" %>
+          <% if params[:stage] == "Morning" %>
+           <%= link_to "Morning", ticks_path(:stage => "Morning"), class: "schedule-btn active" %>  
+          <% else %>
+           <%= link_to "Morning", ticks_path(:stage => "Morning"), class: "schedule-btn inactive" %>
+          <% end %>
+
+          <% if params[:stage] == "Afternoon" %>
+            <%= link_to "Afternoon", ticks_path(:stage => "Afternoon"), class: "schedule-btn active" %>
+          <% else %>
+            <%= link_to "Afternoon", ticks_path(:stage => "Afternoon"), class: "schedule-btn inactive" %>
+          <% end %>  
+
+          <% if params[:stage] == "Evening" %>
+            <%= link_to "Evening", ticks_path(:stage => "Evening"), class: "schedule-btn active" %>
+          <% else %>
+            <%= link_to "Evening", ticks_path(:stage => "Evening"), class: "schedule-btn inactive" %>
+          <% end %>
         </div>
         <% end %>
       </div>

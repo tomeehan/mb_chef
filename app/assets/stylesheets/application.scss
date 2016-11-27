@@ -742,7 +742,7 @@ footer .footer-logo a {
 	border: 2px solid #F86624;
 	margin-right: -6.5px;
 	padding: 10px 40px;
-	color: #F86624;
+	
 	font-size: 0.75em;
 	font-weight: 600;
 
@@ -762,6 +762,16 @@ footer .footer-logo a {
 	color: white;
 	background-color: #df5b20;
 	text-decoration: none;
+}
+
+.schedule-selector .inactive {
+	color: #F86624;
+
+}
+
+.schedule-selector .active {
+	background-color: #F86624;
+	color: white;
 }
 
 
