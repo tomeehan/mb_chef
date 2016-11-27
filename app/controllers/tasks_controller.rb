@@ -37,16 +37,18 @@ class TasksController < ApplicationController
     if params[:create_and_add]
         respond_to do |format|
           if @task.save!
+
+
               
-              if @task.starting == true       
+              if @last_task.starting == true  
                 @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "starting") # 'staff_id: 1' is a hack — must fix
               end 
 
-              if @task.middle == true
+              if @last_task.midday == true 
                 @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "middle") # 'staff_id: 1' is a hack — must fix
               end
 
-              if @task.ending == true
+              if @last_task.ending == true 
                 @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "ending") # 'staff_id: 1' is a hack — must fix
               end
 
@@ -61,15 +63,18 @@ class TasksController < ApplicationController
     else
         respond_to do |format|
           if @task.save!
-              if @task.starting = true       
+
+              @last_task = Task.last
+
+              if @last_task.starting == true        
                 @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "starting") # 'staff_id: 1' is a hack — must fix
               end 
 
-              if @task.middle = true
+              if @last_task.midday == true 
                 @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "middle") # 'staff_id: 1' is a hack — must fix
               end
 
-              if @task.ending = true
+              if @last_task.ending == true 
                 @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "ending") # 'staff_id: 1' is a hack — must fix
               end
             format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }

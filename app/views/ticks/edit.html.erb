@@ -13,14 +13,14 @@
 
 			<%= f.input :complete,as: :boolean, checked_value: true, unchecked_value: false, :class => "with-font" %>
 
-			 <div class="form-material">w
+			 <div class="form-material">
 			 	<% if @tick.task.category.name == "Check" %>
 					<div style="display: none;">
 				<% else %>
 					<div>
 			 	<% end %>
 			 			<%= f.input :temperature, autofocus: true %>
-			 		</div>
+			 </div>
 
 			<div class="field">
 				<%= select_tag(:staff_id, options_for_select(@staffs), :prompt => "Select a staff") %>

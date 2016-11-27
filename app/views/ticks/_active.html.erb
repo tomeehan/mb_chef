@@ -3,7 +3,7 @@
       <h1>Morning</h1>
          <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
-            <% if tick.task.starting == true && tick.stage = "morning" %>
+            <% if tick.stage == "morning" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
                   <div class="book-index-content">
@@ -39,6 +39,8 @@
           <% end %>
         <% end %>
     </div>
+
+<%= render 'temperature'  %>
 
 <% else %>
   <% if params[:stage] == "Afternoon" %>
@@ -84,6 +86,9 @@
         <% end %>
     </div>
 
+
+    <%= render partial: 'temperature' %>
+
   <% end %>
 
   <% if params[:stage] == "Evening" %>
@@ -127,7 +132,10 @@
           <% end %>
         <% end %>
     </div>
+    <%= render 'temperature'  %>
   </div>
+
+
 
 
   <% end %>

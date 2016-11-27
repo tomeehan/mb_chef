@@ -62,9 +62,13 @@ class TicksController < ApplicationController
   def update
     @tick.staff_id = params[:staff_id]
     @staffs = Staff.all.map{ |s| [s.first_name, s.id]}
+
     if @tick.temperature != nil 
         @tick.complete = true
     end
+
+    @tick.update(tick_params)
+
 
 
     respond_to do |format|
