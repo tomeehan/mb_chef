@@ -6,8 +6,8 @@
 
 
 	<div class="form-material">
-	    <%= f.input :name, placeholder: "Name your shit" %>
-	    <%= f.input :description, placeholder: "Describe your shit" %>
+	    <%= f.input :name, placeholder: "Task Name" %>
+	    <%= f.input :description, placeholder: "Task description" %>
           <div class="field">
       <%= select_tag(:regularity_id, options_for_select(@regularities), :prompt => "Select a regularity") %>
     </div>
