@@ -1,19 +1,20 @@
 <% if !params[:stage] || params[:stage] == "Morning" %>
-  
-      <div class="col-sm-4">
-        <h1>Temperatures</h1>
-        <% @ticks.each do |tick| %>
-        <% if tick.stage == "Morning" %>
+    <div class="col-sm-4">
+      <h1>Temperatures</h1>
+         <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Temperature" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
-          <%= link_to edit_tick_path(tick) do %>
-            <div class="book-index-desc task">
-              <div class="book-index-content">
-                <div class="left">
-                  <h4><%= tick.task.name %></h4>
-                  <p><%= tick.task.description %></p>
-                  <p><%= tick.stage %></p>
-                </div>
+            <% if tick.stage == "starting" %>
+              <%= link_to edit_tick_path(tick) do %>
+                <div class="book-index-desc task">
+                  <div class="book-index-content">
+                    <div class="left">
+                      <h4><%= tick.task.name %></h4>
+                      <p><%= tick.task.description %></p>
+                      <p><%= tick.stage %></p>
+                    </div>
                 <div class="right">
+                  <div class="regularity"></div>
+                  <p class="tick-daily">.</p>
                   <% if tick.complete %>
                     <p><%= tick.temperature %></p>
                   <% else %>
@@ -21,12 +22,13 @@
                   <% end %>
 
                 </div>
-              </div>
-            </div>
-            <% end %>
+                    <hr>
+                    </div>  
+                  </div>   
+                <% end %>
+
+            <% end %>    
           <% end %>
         <% end %>
-          <% end %>
-      </div>
-
-<% end %>  
+    </div>
+<% end %>
