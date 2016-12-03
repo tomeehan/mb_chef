@@ -37,8 +37,6 @@ class TasksController < ApplicationController
     if params[:create_and_add]
         respond_to do |format|
           if @task.save!
-
-
               
               if @last_task.starting == true  
                 @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "starting") # 'staff_id: 1' is a hack — must fix

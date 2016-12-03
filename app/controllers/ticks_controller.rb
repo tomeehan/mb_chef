@@ -46,6 +46,8 @@ class TicksController < ApplicationController
 
     @tick.task_id = params[:task_id]
 
+    
+
     respond_to do |format|
       if @tick.save
         format.html { redirect_to @tick, notice: 'Tick was successfully created.' }
@@ -66,6 +68,10 @@ class TicksController < ApplicationController
     if @tick.temperature != nil 
         @tick.complete = true
     end
+
+    @last_tick = Tick.last
+    @last_tick.update(active: false)
+
 
     @tick.update(tick_params)
 
