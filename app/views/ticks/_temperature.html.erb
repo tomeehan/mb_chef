@@ -49,9 +49,9 @@
                     </div>
                 <div class="right">
                   <div class="regularity"></div>
-                  <p class="tick-daily">.</p>
+                   <p class="tick-daily" style="color: white;">.</p>
                   <% if tick.complete %>
-                    <p><%= tick.temperature %></p>
+                    <p class="complete-temperature"><%= tick.temperature %>&deg;C</p>
                   <% else %>
                     <p class="complete-false">&#x2716;</p>
                   <% end %>
@@ -84,9 +84,9 @@
                     </div>
                 <div class="right">
                   <div class="regularity"></div>
-                  <p class="tick-daily">.</p>
+                  <p class="tick-daily" style="color: white;">.</p>
                   <% if tick.complete %>
-                    <p><%= tick.temperature %></p>
+                    <p class="complete-temperature"><%= tick.temperature %>&deg;C</p>
                   <% else %>
                     <p class="complete-false">&#x2716;</p>
                   <% end %>
