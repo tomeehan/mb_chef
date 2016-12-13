@@ -28,7 +28,7 @@
 
 			<ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
-					<li><%= link_to "Today", ticks_path %></li>
+					<li><%= link_to "Today", '/ticks?stage=Morning' %></li>
 					<li><%= link_to "Reports", ticks_path(:active => "false") %></li>
 					<li><%= link_to "Tasks", tasks_path %></li>
 					<li class="dropdown">

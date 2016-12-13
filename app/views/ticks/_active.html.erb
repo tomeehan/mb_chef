@@ -1,4 +1,4 @@
-<% if !params[:stage] || params[:stage] == "Morning" %>
+<% if params[:stage] != "Afternoon" && params[:stage] != "Evening" %>
     <div class="col-sm-4">
       <h1>Morning</h1>
          <% @ticks.each do |tick| %>
