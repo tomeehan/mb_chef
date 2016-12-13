@@ -1,6 +1,12 @@
+<%- if params[:controller] == 'tasks' and params[:action] == 'new' %>
+  <body data-turbolinks="false">
+<%- else %>
+  <body data-turbolinks="true">
+<%- end %>
+
 <script>
 	$(document).ready(function () {
-    	$('.hidden').fadeIn(500).removeClass('hidden');;
+    	$('.hidden').fadeIn(200).removeClass('hidden');;
 	});
 </script>
 
