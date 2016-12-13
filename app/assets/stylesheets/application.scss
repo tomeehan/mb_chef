@@ -807,4 +807,19 @@ footer .footer-logo a {
 	margin: 50px;
 }
 
+.disclaimer {
+	margin:  25px 50px;
+	padding: 25px 50px;
+}
+
+.disclaimer a {
+	color: green;
+	text-decoration: underline;
+	font-weight: 600;
+}
+
+.disclaimer a:hover {
+	color: blue;
+	background: none;
+}
 

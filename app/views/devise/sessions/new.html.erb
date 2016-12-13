@@ -1,3 +1,15 @@
+<% if browser.device.ipad? %>
+
+		 <div class="alert alert-info alert-dismissible disclaimer">
+		  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		  <strong>
+					<% if user_signed_in? %>
+						Hey, <%= current_user.first_name %>!
+					<% else %>
+						Hey there!
+					<% end %></strong> We noticed you're using an iPad. You can save Minibarra as a Safari Webclip for a better user experience. (<a href="#">Click here if you don't know how</a>, it'll take seconds).
+		</div>
+	<% end %>
 <div class="col-md-6 col-md-offset-3">
 	<div class="new-book-form">
 		<h2>Log in</h2>
