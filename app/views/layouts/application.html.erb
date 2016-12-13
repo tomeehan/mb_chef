@@ -3,6 +3,7 @@
   <head>
     <title>Minibarra Chef</title>
     <%= csrf_meta_tags %>
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <link rel="apple-touch-icon" href="http://www.minibarra.com/wp-content/uploads/2016/12/Minibarra-Chef-iOS-App-Icon.png">
@@ -12,6 +13,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery', 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pacifico" rel="stylesheet">
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
@@ -66,16 +68,8 @@
     
     <%= yield %>
 
-<div class="row">
-	<div class="col-sm-12">
-		<footer>
-			<div class="footer-logo">
-				<p>Prepared by your pals at <a href="#">minibarra</a></p>
 
-			</div>
-		</footer>
-	</div>	
-</div>
-</div>    
+
+
   </body>
 </html>
