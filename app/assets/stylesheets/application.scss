@@ -23,9 +23,17 @@
 
 /* Variables, mixins, etc.. */
 
-body {
+html {
+    height  : 100%;
+    overflow: hidden;
+}
+
+html, body {
 	font-family: 'Open sans', sans-serif;
 	font-size: 16px;
+	height  : 100%;
+    overflow: auto;
+    padding-top: 0px;
 }
 
 .user-list {
@@ -108,18 +116,18 @@ p.alert, p.notice {
 }
 
 .navbar-default {
-	background-color: #F86624;
+	background-color: #f2f2f2;
 	padding-top: 5px;
 	margin: 0;
 	border: 0px;
 
 	.navbar-nav > li > a {
-		color: #fff;
+		color: #404040;
 		font-family: 'Open sans', sans-serif;
 		font-size: 125%;
 		font-weight: 600;
 		&:hover {
-			color: darken(#fff, 5%);
+			color: darken(#404040, 5%);
 			transition: 0.1s;
 		}
 	}
@@ -127,7 +135,7 @@ p.alert, p.notice {
 	.navbar-header {
 
 		.navbar-brand {
-			color: #fff;
+			color: #ff5f5e;
 			font-family: 'Open sans', sans-serif;
 			font-weight: 100;
 			text-transformation: lowercase;
