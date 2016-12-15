@@ -2,16 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.row {
+	margin-left: 0px;
+    margin-right: 0px;
+}
+
 .hero-container {
 	height: 90vh;
 	padding-top: 50px;
 
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#172f4b+44,b34e58+100 */
-background: #172f4b; /* Old browsers */
-background: -moz-linear-gradient(-45deg,  #172f4b 44%, #b34e58 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg,  #172f4b 44%,#b34e58 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg,  #172f4b 44%,#b34e58 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#172f4b', endColorstr='#b34e58',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#172f4b+44,b34e58+100 */
+	background: #172f4b; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #172f4b 44%, #b34e58 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #172f4b 44%,#b34e58 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #172f4b 44%,#b34e58 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#172f4b', endColorstr='#b34e58',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .hero-container .cta {
