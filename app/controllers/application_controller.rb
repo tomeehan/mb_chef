@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  def after_sign_out_path_for(resource)
+   sign_in_url = tasks_path
+  end
+
       protected
 
         def configure_permitted_parameters
@@ -14,9 +18,14 @@ class ApplicationController < ActionController::Base
 
 private
 
+def after_sign_out_path_for(resource_or_scope)
+    root_path
+end
+
 def require_login
 	unless current_user
 	redirect_to login_url
 	end
 end
+
 end
