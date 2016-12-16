@@ -11,7 +11,20 @@
 		<%= simple_form_for(@tick) do |f| %>
 
 
-			<%= f.input :complete,as: :boolean, checked_value: true, unchecked_value: false, :class => "with-font" %>
+			
+
+
+
+			    <%= f.label :complete, :class => 'checkbox' do %>
+      				<%= f.check_box :complete,as: :boolean, checked_value: true, unchecked_value: false %>
+      				
+      					<i class="icon-"></i>
+
+   				<% end %>
+
+
+
+
 
 			 <div class="form-material">
 			 	<% if @tick.task.category.name == "Check" %>

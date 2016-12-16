@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'font-awesome-sass'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'materialize-sass'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
