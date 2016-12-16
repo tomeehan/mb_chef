@@ -59,7 +59,7 @@
 
 
 			<ul class="nav navbar-nav">		
-
+				
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
@@ -77,8 +77,9 @@
 						</ul>
 					</li>
 				<% else %>
+					<li><a href="/pricing">Pricing</a></li>
 					<li><%= link_to "Log in", new_user_session_path %></li>
-					<li><%= link_to "Sign up", new_user_registration_path %></li>
+					<li><a class="btn btn-primary btn-large" href="/users/sign_up" role="button" style="color: white;">Request an Invite</a></li>
 				<% end %>
 			</ul>
 		</div>

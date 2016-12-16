@@ -4,7 +4,7 @@
 
 .row {
 	margin-left: 0px;
-    margin-right: 0px;
+        margin-right: 0px;
 }
 
 .hero-container {
@@ -13,9 +13,9 @@
 
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#172f4b+44,b34e58+100 */
 	background: #172f4b; /* Old browsers */
-	background: -moz-linear-gradient(-45deg,  #172f4b 44%, #b34e58 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(-45deg,  #172f4b 44%,#b34e58 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(135deg,  #172f4b 44%,#b34e58 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(-45deg,    #172f4b 44%, #b34e58 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,    #172f4b 44%,#b34e58 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,    #172f4b 44%,#b34e58 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#172f4b', endColorstr='#b34e58',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
@@ -45,6 +45,10 @@
 	margin: 5px;
 }
 
+.btn-container .btn-primary a {
+	color: white;
+}
+
 	.btn-container .btn-primary:visited {
 		color: white;
 	}
@@ -70,7 +74,18 @@
 .minibarra-usp {
 	padding: 25px;
 	text-align: center;
+}
 
+.minibarra-usp p a {
+	color: #139A6C;
+	text-decoration: underline;
+	font-size: 1.5em;
+	font-weight: 500;
+}
+
+.minibarra-usp p a:hover {
+	text-decoration: underline;
+	background: transparent;
 }
 
 .seperator {
@@ -104,7 +119,7 @@
 }
 
 .minibarra-benefits p {
-	color: grey;
+	color: gray;
 	font-family: 'Open sans';
 	font-weight: 500;
 	font-size: 16px;
@@ -182,3 +197,225 @@
 	font-weight: 300;
 	color: white;
 }
+
+
+.image-wrap {
+        max-height: 450px;
+        max-width: 800px;             
+        -webkit-transition: max-width .5s ease-out;    /* Saf3.2+, Chrome */
+        -moz-transition: max-width .5s ease-out;    /* FF4+ */
+        -ms-transition: max-width .5s ease-out;    /* IE10? */
+        -o-transition: max-width .5s ease-out;    /* Opera 10.5+ */
+        transition: max-width .5s ease-out;
+}
+ 
+        .image-wrap img {
+                width: 100%;
+                -webkit-transition: margin-top .5s ease-out;    /* Saf3.2+, Chrome */
+                -moz-transition: margin-top .5s ease-out;    /* FF4+ */
+                -ms-transition: margin-top .5s ease-out;    /* IE10? */
+                -o-transition: margin-top .5s ease-out;    /* Opera 10.5+ */
+                transition: margin-top .5s ease-out;
+        }
+         
+@media only screen and (min-width: 1160px) {
+        .image-wrap { max-width: 1000px; }
+}
+
+
+/* Pricing Table */
+
+/***
+Content
+***/
+.content {
+        padding: 30px 0;
+}
+
+/***
+Pricing table
+***/
+.pricing {
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    font-family: 'Open sans', sans-serif;
+}
+
+.pricing-active {
+    border: 3px solid #119A65;
+    margin-top: -10px;
+    border-radius: 5px;
+    
+}
+
+.pricing-active:hover {
+    border: 3px solid #139A6C;
+}
+
+.pricing:hover {
+	box-shadow: 1px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.pricing:hover h4 {
+    color: #139A6C;
+}
+
+.pricing-head {
+    text-align: center;
+    border-radius: 5px;
+}
+
+.pricing-head h3,
+.pricing-head h4 {
+    margin: 0;
+    line-height: normal;
+    
+}
+
+.pricing-head h3 span,
+.pricing-head h4 span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.pricing-head h3 {
+    color: #fafafa;
+    padding: 12px 0;
+    font-size: 27px;
+    background: #ff5f5e;
+    border-bottom: solid 1px #ff5f5e;
+    font-weight: 600;
+}
+
+.pricing-head h4 {
+    color: #404040;
+    padding: 5px 0;
+    font-size: 54px;
+    font-weight: 600;
+    background: #eee;
+    border-bottom: solid 1px #D7D7D7;
+}
+
+.pricing-head-active h4 {
+	color: #139A6C;
+	border-bottom: solid 1px #D7D7D7;
+}
+
+.pricing-head-active h3 {
+	background: #119A65;
+	border: none;
+}
+
+.pricing-head h4 i {
+    top: -8px;
+    font-size: 28px;
+    font-style: normal;
+    position: relative;
+}
+
+.pricing-head h4 span {
+    top: -10px;
+    font-size: 14px;
+    font-style: normal;
+    position: relative;
+}
+
+/*Pricing Content*/
+
+.pricing-content {
+
+}
+.pricing-content li {
+    color: #888;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Open sans', sans-serif;
+    padding: 10px 15px;
+    border-bottom: solid 1px #f5f9e7;
+}
+
+/*Pricing Footer*/
+.pricing-footer {
+    color: #777;
+    font-size: 11px;
+    line-height: 17px;
+    text-align: center;
+    padding: 0 20px 19px;
+    font-family: 'Open sans', sans-serif;
+}
+
+/*Priceing Active*/
+.price-active,
+.pricing:hover {
+    z-index: 9;
+}
+
+.price-active h4 {
+    color: #139A6C;
+}
+
+.no-space-pricing .pricing:hover {
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.no-space-pricing .price-active .pricing-head h4,
+.no-space-pricing .pricing:hover .pricing-head h4 {
+    color: #139A6C;
+    padding: 15px 0;
+    font-size: 80px;
+    transition: color 0.5s ease-in-out;
+}
+
+.yellow-crusta.btn {
+    color: #FFFFFF;
+    background-color: #139A6C;
+}
+.yellow-crusta.btn:hover,
+.yellow-crusta.btn:focus,
+.yellow-crusta.btn:active,
+.yellow-crusta.btn.active {
+    color: #FFFFFF;
+    background-color: #139A6C;
+}
+
+.pricing .btn-container .btn-secondary {
+	border: 1px solid #404040;
+	color: #404040;
+}
+
+.pricing .btn-container .btn-secondary:hover {
+	background-color: #404040;
+	color: white;
+}
+
+.notice p {
+	margin-top: 15px;
+	text-align: center;
+	font-family: 'Open sans', sans-serif;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

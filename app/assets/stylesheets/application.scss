@@ -36,6 +36,10 @@ html, body {
     padding-top: 0px;
 }
 
+a {
+	background: transparent;
+}
+
 .user-list {
 	text-align: center;
 }
@@ -130,6 +134,10 @@ p.alert, p.notice {
 			color: darken(#404040, 5%);
 			transition: 0.1s;
 		}
+
+	.navbar-nav > li > .btn-primary > a {
+		color: white !important;
+	}	
 	}
 
 	.navbar-header {
