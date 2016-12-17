@@ -5,21 +5,27 @@
 
 
 
-	<div class="form-material">
-	    <%= f.input :name, placeholder: "Task Name" %>
-	    <%= f.input :description, placeholder: "Task description" %>
+
+	    <%= f.input :name, label: false, placeholder: "Task Name" %>
+	    <%= f.input :description, label: false, placeholder: "Task description" %>
           <div class="field">
       <%= select_tag(:regularity_id, options_for_select(@regularities), :prompt => "Select a regularity") %>
     </div>
-      <%= f.input :starting, as: :boolean, checked_value: true, unchecked_value: false %>
-      <%= f.input :midday, as: :boolean, checked_value: true, unchecked_value: false %>
-      <%= f.input :ending, as: :boolean, checked_value: true, unchecked_value: false %>
-	</div>    
+              <%= f.label :starting, :class => 'starting-checkbox' do %>
+                <%= f.check_box :starting,as: :boolean, checked_value: true, unchecked_value: false %>
+                <i class="icon-"></i>
+            <% end %>
+              <%= f.label :midday, :class => 'midday-checkbox' do %>
+                <%= f.check_box :midday,as: :boolean, checked_value: true, unchecked_value: false %>
+                <i class="icon-"></i>
+            <% end %>
+          <%= f.label :ending, :class => 'ending-checkbox' do %>
+                <%= f.check_box :ending,as: :boolean, checked_value: true, unchecked_value: false %>
+                <i class="icon-"></i>
+            <% end %> 
+
 
   	<div class="new-btn">
-    	<%= f.button :submit, "Create Task", :class => 'waves-effect btn-large' %>
+    	<%= f.button :submit, "Create Task", :class => 'btn-primary btn-block btn-lg' %>
   	</div>
-        <div class="new-btn">
-      <%= f.button :submit, "Create Task and create another", :class => 'waves-effect btn-large', name: 'create_and_add' %>
-    </div>
 <% end %>
