@@ -1,25 +1,16 @@
 <div class="row sep-white">
-	<div class="col-md-3">
-		
-	</div>
-	<div class="col-md-6">
-		<div class="minibarra-usp">
-			<h1>What Minibarra Can Do Fo You.</h1>
-			<h4>Built by chefs, Minibarra powers kitchens around the world. Check out which option is right for you.</h4>
-			<p><a href="/users/sign_up">Get an invitation</a></p>
-		</div>
-	</div>
-	<div class="col-md-3">
-		
-	</div>
+	
 </div>
 
-<!--
-User Profile Sidebar by @keenthemes
-A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
-Licensed under MIT
--->
+
 <div class="sep-gray">
+	<div class="col-md-12">
+		<div class="minibarra-usp">
+			<h1>It will pay off.</h1>
+			<h4>Every plan comes with a <strong>60 day money back guarantee.</strong></h4>
+
+		</div>
+	</div>
 <div class="container content">
 	<div class="row">
 		<!-- Pricing -->
@@ -173,3 +164,111 @@ Licensed under MIT
 <div class="col-md-3"></div>
 </div>
 </div>
+
+<div class="row">
+	<div class="blue-pane-gradient">
+		<h4>Looking for a higher level of control over product features and integrations?</h4>
+		<p>Minibarra Enterprise gives you access to multiple organisation accounts, custom features, and a dedicated account manager.</p>
+		<div class="btn-container">
+			<a href="/enterprise" class="btn btn-secondary btn-large">Learn about Minibarra Enterprise</a>
+		</div>
+</div>
+</div>
+
+<div class="row">
+	<div class="faq-container">
+          <h1 class="heading-primary">Still not convinced?</h1>
+          <div class="accordion">
+            <dl>
+              <dt>
+                <a href="#accordion1" aria-expanded="false" aria-controls="accordion1" class="accordion-title accordionTitle js-accordionTrigger">First Accordion heading</a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" id="accordion1" aria-hidden="true">
+                <p>Lorem ipsum dolor sit amet, consectetur <a href="http://www.google.com">Test</a>adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
+                <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
+              </dd>
+              <dt>
+                <a href="#accordion2" aria-expanded="false" aria-controls="accordion2" class="accordion-title accordionTitle js-accordionTrigger">
+                  Second Accordion heading</a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" id="accordion2" aria-hidden="true">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
+                <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
+              </dd>
+              <dt>
+                <a href="#accordion3" aria-expanded="false" aria-controls="accordion3" class="accordion-title accordionTitle js-accordionTrigger">
+                  Third Accordion heading
+                </a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" id="accordion3" aria-hidden="true">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu interdum diam. Donec interdum porttitor risus non bibendum. Maecenas sollicitudin eros in quam imperdiet placerat. Cras justo purus, rhoncus nec lobortis ut, iaculis vel ipsum. Donec dignissim arcu nec elit faucibus condimentum. Donec facilisis consectetur enim sit amet varius. Pellentesque justo dui, sodales quis luctus a, iaculis eget mauris. </p>
+                <p>Aliquam dapibus, ante quis fringilla feugiat, mauris risus condimentum massa, at elementum libero quam ac ligula. Pellentesque at rhoncus dolor. Duis porttitor nibh ut lobortis aliquam. Nullam eu dolor venenatis mauris placerat tristique eget id dolor. Quisque blandit adipiscing erat vitae dapibus. Nulla aliquam magna nec elementum tincidunt.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+</div>
+
+<script>
+	//uses classList, setAttribute, and querySelectorAll
+//if you want this to work in IE8/9 youll need to polyfill these
+(function(){
+	var d = document,
+	accordionToggles = d.querySelectorAll('.js-accordionTrigger'),
+	setAria,
+	setAccordionAria,
+	switchAccordion,
+  touchSupported = ('ontouchstart' in window),
+  pointerSupported = ('pointerdown' in window);
+  
+  skipClickDelay = function(e){
+    e.preventDefault();
+    e.target.click();
+  }
+
+		setAriaAttr = function(el, ariaType, newProperty){
+		el.setAttribute(ariaType, newProperty);
+	};
+	setAccordionAria = function(el1, el2, expanded){
+		switch(expanded) {
+      case "true":
+      	setAriaAttr(el1, 'aria-expanded', 'true');
+      	setAriaAttr(el2, 'aria-hidden', 'false');
+      	break;
+      case "false":
+      	setAriaAttr(el1, 'aria-expanded', 'false');
+      	setAriaAttr(el2, 'aria-hidden', 'true');
+      	break;
+      default:
+				break;
+		}
+	};
+//function
+switchAccordion = function(e) {
+  console.log("triggered");
+	e.preventDefault();
+	var thisAnswer = e.target.parentNode.nextElementSibling;
+	var thisQuestion = e.target;
+	if(thisAnswer.classList.contains('is-collapsed')) {
+		setAccordionAria(thisQuestion, thisAnswer, 'true');
+	} else {
+		setAccordionAria(thisQuestion, thisAnswer, 'false');
+	}
+  	thisQuestion.classList.toggle('is-collapsed');
+  	thisQuestion.classList.toggle('is-expanded');
+		thisAnswer.classList.toggle('is-collapsed');
+		thisAnswer.classList.toggle('is-expanded');
+ 	
+  	thisAnswer.classList.toggle('animateIn');
+	};
+	for (var i=0,len=accordionToggles.length; i<len; i++) {
+		if(touchSupported) {
+      accordionToggles[i].addEventListener('touchstart', skipClickDelay, false);
+    }
+    if(pointerSupported){
+      accordionToggles[i].addEventListener('pointerdown', skipClickDelay, false);
+    }
+    accordionToggles[i].addEventListener('click', switchAccordion, false);
+  }
+})();
+</script>

@@ -826,7 +826,7 @@ footer .footer-logo a {
 }
 
 .disclaimer {
-	margin:  25px 50px;
+	margin: 25px 50px;
 	padding: 25px 50px;
 }
 
@@ -849,8 +849,8 @@ footer .footer-logo a {
 }
 
 label.checkbox {
-	width:100%; 
-	cursor:pointer;
+	width: 100%; 
+	cursor: pointer;
 	text-align: center;
 	margin-top: 75px;
 	margin-bottom: 75px;
@@ -863,7 +863,7 @@ label.checkbox {
    		margin-left:-9999px;
    	}
 
-   i:before {
+   	i:before {
    		width:25px; 
    		font-family: FontAwesome, 'Open sans';
    		content: "\f057    Incomplete";
@@ -880,20 +880,14 @@ label.checkbox {
         -o-transition: all 0.1s linear;
         transition: all 0.1s linear;
    	}
-   input[type=checkbox]:checked + i:before {
-   	content: "\f058    Complete!";
-   	background-color: #119A65;
-   	border: 18px solid #119A65;
-   	border-radius: 20px;
+
+	input[type=checkbox]:checked + i:before {
+   		content: "\f058    Complete!";
+   		background-color: #119A65;
+   		border: 18px solid #119A65;
+   		border-radius: 10px;
    }
 }
-
-
-
-
-
-
-
 
 
 
