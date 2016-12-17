@@ -141,7 +141,7 @@ label.ending-checkbox {
 	text-decoration: none;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 667px) and (orientation : portrait)  {
+@media  (min-device-width : 320px) and (max-device-width : 667px) {
 
 	label.starting-checkbox {
 		width: 100%; 
