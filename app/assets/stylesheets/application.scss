@@ -979,8 +979,50 @@ label.checkbox {
 
 #e2 {
 	width: 100%;
-}
+} 
 
 .select-container {
 	padding: 0 25%;
 }
+
+
+/* Phone Navbar */
+
+.fixed-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 60px;
+  background-color: #ff5f5e;
+  padding-top: 10px;
+}
+
+.fixed-nav-bar .fixed-nav-bar-item {
+	text-align: center;
+	color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
