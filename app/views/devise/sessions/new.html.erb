@@ -1,36 +1,34 @@
-<% if browser.device.ipad? %>
+<div class="container sep-gray">
+	<div class="col-md-4 col-md-offset-4 well signin">
+	  <h2>Sign in</h2>
 
-	 <div class="alert alert-info alert-dismissible disclaimer">
-	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	  <strong>
-				<% if user_signed_in? %>
-					Hey, <%= current_user.first_name %>!
-				<% else %>
-					Hey there!
-				<% end %></strong> We noticed you're using an iPad. You can save Minibarra as a Safari Webclip for a better user experience. (<a href="#">Click here if you don't know how</a>, it'll take seconds).
-	</div>
-<% end %>
-<div class="col-md-6 col-md-offset-3">
-	<div class="new-book-form">
-		<h2>Log in</h2>
+	  <%= simple_form_for(resource, :as => resource_name,
+	                      :url => session_path(resource_name),
+	                      wrapper_mappings: { boolean: :vertical_boolean }) do |f| %>
+	    <%= f.input :email, label: false do %>
+	      <div class="input-group">
+	        <%= f.input_field :email, class: 'form-control input-lg', placeholder: 'Email' %>
+	        <span class="input-group-addon glyphicon glyphicon-user"></span>
+	      </div>
+	    <% end %>
 
-		<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-		  <div class="form-material">
-		    <%= f.input :email, required: false, autofocus: true %>
-		    <%= f.input :password, required: false %>
-		    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-		    <% if browser.device.ipad? %>
-				<p>Click remember me for a better user experience.</p>
-		    <% end %>
+	    <%= f.input :password, label: false do %>
+	      <div class="input-group">
+	        <%= f.input_field :password, class: 'form-control input-lg', placeholder: 'Password' %>
+	        <span class="input-group-addon glyphicon glyphicon-lock"></span>
+	      </div>
+	    <% end %>
 
-		  </div>
+	    <% if devise_mapping.rememberable? -%>
+	      <%= f.input :remember_me, as: :boolean %>
+	    <% end -%>
 
-		  <div class="new-btn">
-		    <%= f.button :submit, "Log in", :class => 'waves-effect btn-large' %>
-		  </div>
-		<% end %>
+	    <%= f.button :submit, "Sign in", class: 'btn-primary btn-block btn-lg' %>
+	  <% end %>
+		
+		<br>
+	  <%= flash_messages layout_flash: false %>
 
-		<%= render "devise/shared/links" %>
-
+	  <%= render "devise/shared/links" %>
 	</div>
 </div>

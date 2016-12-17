@@ -38,6 +38,20 @@ html, body {
     padding-top: 0px;
 }
 
+#flash_notice {
+  @extend .alert;
+  @extend .alert-success;
+}
+#flash_error, #flash_alert {
+  @extend .alert;
+  @extend .alert-danger;
+  padding: 25px;
+}
+#flash_warning {
+  @extend .alert;
+  @extend .alert-warning;
+}
+
 a {
 	background: transparent;
 }
@@ -888,6 +902,53 @@ label.checkbox {
    		border-radius: 10px;
    }
 }
+
+/* Sign in */
+ .signin {
+ 	margin-top: 50px;
+ }
+
+ .signin a {
+ 	color: #404040;
+
+ }
+
+ .signin a:hover {
+ 	background: rgba(87, 127, 123, 0);
+ }
+
+.btn-block {
+	background-color: #119A65;
+	border: none;
+	font-family: 'Open sans', sans-serif;
+	transition: 0.25s;
+}
+
+.btn-block:hover {
+	background-color: darken(#119A65, 5%);
+}
+
+.form_control {
+	height: 30px;
+}
+
+.signup {
+	h2 {
+		margin-top: 0;
+	}
+
+	form {
+		margin-bottom: 20px;
+	}
+
+	.glyphicon {
+		top: 0;
+	}
+}
+
+
+
+
 
 
 
