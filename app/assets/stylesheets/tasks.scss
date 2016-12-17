@@ -140,3 +140,25 @@ label.ending-checkbox {
 .back-btn a:hover {
 	text-decoration: none;
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 667px) and (orientation : portrait)  {
+
+	label.starting-checkbox {
+		width: 100%; 
+	}
+
+	label.midday-checkbox {
+		width: 100%; 
+	}
+
+	label.ending-checkbox {
+		width: 100%;
+	}
+
+}
+
+
+
+
+
+
