@@ -1,6 +1,6 @@
 <%= simple_form_for @task do |f| %>
     <div class="field">
-      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
+      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category", :id => "e2") %>
     </div>
 
 
@@ -9,7 +9,7 @@
 	    <%= f.input :name, label: false, placeholder: "Task Name" %>
 	    <%= f.input :description, label: false, placeholder: "Task description" %>
           <div class="field">
-      <%= select_tag(:regularity_id, options_for_select(@regularities), :prompt => "Select a regularity") %>
+      <%= select_tag(:regularity_id, options_for_select(@regularities), :prompt => "Regularity" , :id => "e1") %>
     </div>
               <%= f.label :starting, :class => 'starting-checkbox' do %>
                 <%= f.check_box :starting,as: :boolean, checked_value: true, unchecked_value: false %>
@@ -29,3 +29,12 @@
     	<%= f.button :submit, "Create Task", :class => 'btn-primary btn-block btn-lg' %>
   	</div>
 <% end %>
+<script>$( "#e1" ).select2({
+    theme: "bootstrap"
+});</script>
+  <script>
+    $(document).ready(function() { $("#e1").select2(); });
+  </script>
+  <script>
+    $(document).ready(function() { $("#e2").select2(); });
+  </script>

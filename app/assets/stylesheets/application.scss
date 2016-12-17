@@ -15,7 +15,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require select2
+ *= require select2-bootstrap
  */
+
+ /*
+
+*/
 
 @import url(http://fonts.googleapis.com/css?family=Pacifico|Open+Sans:300,400,500); 
 @import "bootstrap-sprockets";
@@ -958,8 +964,10 @@ label.checkbox {
 	height: 100vh;
 }
 
+/* Select2 */
 
-
-
-
+.select2 .select2-container {
+	width: 200px;
+	margin: 15%;
+}
 

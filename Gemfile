@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "select2-rails"
 gem 'font-awesome-sass'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'materialize-sass'
