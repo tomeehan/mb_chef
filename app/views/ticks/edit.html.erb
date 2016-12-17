@@ -42,12 +42,14 @@
 						    <% end %>
 
 				 </div>
-
+				<br>
 				<div class="field">
-					<%= select_tag(:staff_id, options_for_select(@staffs), :prompt => "Select a staff") %>
+					<div class="select-container">
+					<%= select_tag(:staff_id, options_for_select(@staffs), :prompt => "Select a staff" , :id => "e1") %>
+				</div>
 				</div>
 				 </div>
-
+<br>
 				  <div class="new-btn">
 				  	<%= f.button :submit, "Update #{@tick.task.category.name}" , name: :active, :class => 'btn-primary btn-block btn-lg' %>
 				  </div>
@@ -55,3 +57,10 @@
 
 	</div>
 </div>
+
+<script>$( "#e1" ).select2({
+    theme: "bootstrap"
+});</script>
+  <script>
+    $(document).ready(function() { $("#e1").select2(); });
+  </script>
