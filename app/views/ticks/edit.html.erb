@@ -1,53 +1,57 @@
 <div class="container">
-	<br>
-	<br>
-	<br>
-</div>
-<div class="col-md-6 col-md-offset-3">
-	<div class="new-book-form">
-		<h1>Editing <%= @tick.task.name %></h1>
+	<div class="col-md-4 col-md-offset-4 well signin">
+		<div class="back-btn">
+			<%= link_to tasks_path do %>
+				<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+			<% end %>
+		</div>
+		
+		<h1>Updating <%= @tick.task.name %></h1>
 
 
-		<%= simple_form_for(@tick) do |f| %>
+			<%= simple_form_for(@tick) do |f| %>
 
 
-			
-
-
-
-			    <%= f.label :complete, :class => 'checkbox' do %>
-      				<%= f.check_box :complete,as: :boolean, checked_value: true, unchecked_value: false %>
-      				
-      					<i class="icon-"></i>
-
-   				<% end %>
+				
 
 
 
+				    <%= f.label :complete, :class => 'checkbox' do %>
+	      				<%= f.check_box :complete,as: :boolean, checked_value: true, unchecked_value: false %>
+	      				
+	      					<i class="icon-"></i>
+
+	   				<% end %>
 
 
-			 <div class="form-material">
-			 	<% if @tick.task.category.name == "Check" %>
-					<div style="display: none;">
-				<% else %>
-					<div>
-			 	<% end %>
-			 			<%= f.input :temperature, autofocus: true %>
-			 </div>
 
-			<div class="field">
-				<%= select_tag(:staff_id, options_for_select(@staffs), :prompt => "Select a staff") %>
-			</div>
-			 </div>
 
-			  <div class="new-btn">
-			  	<%= f.button :submit, "Update #{@tick.task.category.name}" , name: :active, :class => 'waves-effect btn-large' %>
-			  </div>
-		<% end %>
 
-		<%= link_to 'Show', @tick %> |
-		<%= link_to 'Back', ticks_path %>
+				 <div class="">
+				 	<% if @tick.task.category.name == "Check" %>
+						<div style="display: none;">
+					<% else %>
+						<div>
+				 	<% end %>
+
+							<%= f.input :temperature, label: false do %>
+						      <div class="input-group">
+						        <%= f.input_field :temperature, class: 'form-control input-lg', placeholder: 'Password' %>
+						        <span class="input-group-addon">°C</span>
+						      </div>
+						    <% end %>
+
+				 </div>
+
+				<div class="field">
+					<%= select_tag(:staff_id, options_for_select(@staffs), :prompt => "Select a staff") %>
+				</div>
+				 </div>
+
+				  <div class="new-btn">
+				  	<%= f.button :submit, "Update #{@tick.task.category.name}" , name: :active, :class => 'btn-primary btn-block btn-lg' %>
+				  </div>
+			<% end %>
 
 	</div>
 </div>
-
