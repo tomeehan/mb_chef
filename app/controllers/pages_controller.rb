@@ -13,10 +13,13 @@ class PagesController < ApplicationController
 	def pricing
 	end
 
-	def contact
+	def enterprise
 	end
 
 	def privacy
+	end
+
+	def team
 	end
 
 end

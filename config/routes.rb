@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/home", :to => 'pages#home'
   get "/pricing", :to => 'pages#pricing'
   get "/about", :to => 'pages#about'
-  get "/contact", :to => 'pages#contact'
+  get "/enterprise", :to => 'pages#enterprise'
   get "/privacy", :to => 'pages#privacy'
+  get "/team", :to => 'pages#team'
 end
