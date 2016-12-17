@@ -1,3 +1,142 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+label.starting-checkbox {
+	width: 30%; 
+	cursor: pointer;
+	text-align: center;
+	margin-top: 25px;
+	/*overflow: hidden;*/
+	
+   
+   	input[type=checkbox] {
+   		float:left; 
+   		position:relative; 
+   		margin-left:-9999px;
+   	}
+
+   	i:before {
+   		width:25px; 
+   		font-family: FontAwesome, 'Open sans';
+   		content: "\f057    Morning";
+   		color: white;
+   		background-color: #404040;
+   		font-style: normal;
+   		font-size: 25px;
+   		font-size: 12px;
+
+   		padding: 15px;
+   		border-radius: 10px;
+		-webkit-transition: all 0.1s linear;
+       	-moz-transition: all 0.1s linear;
+        -ms-transition: all 0.1s linear;
+        -o-transition: all 0.1s linear;
+        transition: all 0.1s linear;
+   	}
+
+	input[type=checkbox]:checked + i:before {
+   		content: "\f0f4    Morning";
+   		background-color: #3891A6;
+   		border-radius: 10px;
+   }
+}
+
+
+label.midday-checkbox {
+	width: 30%; 
+	cursor: pointer;
+	text-align: center;
+	/*overflow: hidden;*/
+	margin-top: 25px;
+	
+   
+   	input[type=checkbox] {
+   		float:left; 
+   		position:relative; 
+   		margin-left:-9999px;
+   	}
+
+   	i:before {
+   		width:25px; 
+   		font-family: FontAwesome, 'Open sans';
+   		content: "\f057    Afternoon";
+   		color: white;
+   		background-color: #404040;
+   		font-style: normal;
+   		font-size: 12px;
+   		
+   		padding: 15px;
+   		border-radius: 10px;
+		-webkit-transition: all 0.1s linear;
+       	-moz-transition: all 0.1s linear;
+        -ms-transition: all 0.1s linear;
+        -o-transition: all 0.1s linear;
+        transition: all 0.1s linear;
+   	}
+
+	input[type=checkbox]:checked + i:before {
+   		content: "\f185    Afternoon";
+   		background-color: #3891A6;
+   		border-radius: 10px;
+   }
+}
+
+label.ending-checkbox {
+	width: 30%; 
+	cursor: pointer;
+	text-align: center;
+	/*overflow: hidden;*/
+	margin-top: 25px;
+	margin-bottom: 25px;
+	
+   
+   	input[type=checkbox] {
+   		float:left; 
+   		position:relative; 
+   		margin-left:-9999px;
+   	}
+
+   	i:before {
+   		width:25px; 
+   		font-family: FontAwesome, 'Open sans';
+   		content: "\f057    Evening";
+   		color: white;
+   		background-color: #404040;
+   		font-style: normal;
+   		font-size: 12px;
+   		
+   		padding: 15px;
+   		border-radius: 10px;
+		-webkit-transition: all 0.1s linear;
+       	-moz-transition: all 0.1s linear;
+        -ms-transition: all 0.1s linear;
+        -o-transition: all 0.1s linear;
+        transition: all 0.1s linear;
+   	}
+
+	input[type=checkbox]:checked + i:before {
+   		content: "\f186    Evening";
+   		background-color: #3891A6;
+   		border-radius: 10px;
+   }
+}
+
+.back-btn {
+
+}
+
+.back-btn span {
+	color: #ff5f5e;
+}
+
+.back-btn p {
+	color: #ff5f5e;
+	display: inline;
+	line-height: 2em;
+	font-size: 16px;
+}
+
+.back-btn a:hover {
+	text-decoration: none;
+}
