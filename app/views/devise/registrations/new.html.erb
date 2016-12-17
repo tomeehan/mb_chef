@@ -1,33 +1,36 @@
-<div class="col-md-6 col-md-offset-3">
-	<div class="new-book-form">
-		<h2>Sign up</h2>
+<div class="blue-background">
+	<div class="container">	
+		<div class="col-md-6 col-md-offset-3 well signin">
 
-			<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-		  	<%= f.error_notification %>
+				<h2>Request invite</h2>
 
-		  <div class="form-material">
-		  	<br>
-		  	<h4>Personal details</h4>
-		  	<div class="first-name">
-          	  <%= f.input :first_name, required: true, autofocus: true, label: false , placeholder: "First name (required)" %>
-        	</div>
+					<%= simple_form_for(resource, :as => resource_name,
+		                      :url => registration_path(resource_name),
+		                      wrapper_mappings: { boolean: :vertical_boolean }) do |f| %>
+				  	<%= f.error_notification %>
 
-	        <div class="last-name">
-	          <%= f.input :last_name, required: true, label: false, placeholder: "Last name (required)" %>
-	        </div>
-		    <%= f.input :email, required: true, placeholder: "Email (required)" %>
-			<br>
-		    <h4>Choose your password</h4>
-		    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-		    <%= f.input :password_confirmation, required: true %>
-		  </div>
 
-		  <div class="new-btn">
-			<%= f.button :submit, :class => 'waves-effect btn-large' %>
-		  </div>
-		
-		
-		<%= render "devise/shared/links" %>
+				  	<div class="first-name">
+		          	  <%= f.input :first_name, required: true, autofocus: true, label: false , placeholder: "First name (required)" %>
+		        	</div>
 
-	<% end %>
-</div>
+			        <div class="last-name">
+			          <%= f.input :last_name, required: true, label: false, placeholder: "Last name (required)" %>
+			        </div>
+				    <%= f.input :email, required: true, label: false, placeholder: "Email (required)" %>
+				    <%= f.input :password, required: true, label: false, placeholder: "Password (required)", hint: ("  #{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+				    <%= f.input :password_confirmation, label: false, placeholder: "Password confirmation (required)",required: true %>
+
+
+				  <div class="new-btn">
+					<%= f.button :submit, 'Request Invitation',:class => 'btn-primary btn-block btn-lg' %>
+				  </div>
+				  <br>
+				
+				
+				<%= render "devise/shared/links" %>
+
+			<% end %>
+		</div>
+	</div>
+</div>	

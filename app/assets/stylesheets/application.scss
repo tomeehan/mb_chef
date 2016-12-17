@@ -906,11 +906,11 @@ label.checkbox {
 /* Sign in */
  .signin {
  	margin-top: 50px;
+ 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
  }
 
  .signin a {
  	color: #404040;
-
  }
 
  .signin a:hover {
@@ -922,6 +922,9 @@ label.checkbox {
 	border: none;
 	font-family: 'Open sans', sans-serif;
 	transition: 0.25s;
+	border-radius: 3px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	padding: 20px;
 }
 
 .btn-block:hover {
@@ -932,7 +935,7 @@ label.checkbox {
 	height: 30px;
 }
 
-.signup {
+.signin {
 	h2 {
 		margin-top: 0;
 	}
@@ -946,7 +949,14 @@ label.checkbox {
 	}
 }
 
-
+.blue-background {
+	background: #172f4b; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,    #172f4b 44%, #b34e58 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,    #172f4b 44%,#b34e58 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,    #172f4b 44%,#b34e58 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#172f4b', endColorstr='#b34e58',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	height: 100vh;
+}
 
 
 
