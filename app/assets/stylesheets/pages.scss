@@ -37,6 +37,10 @@
 	margin-bottom: 25px;
 }
 
+.hero-container .cta a:hover {
+	color: #404040;
+}
+
 .image-container img {
 	height: 70%;
 }
@@ -62,6 +66,10 @@
 	.btn-container .btn-secondary:hover {
 		background: white;
 		color: #404040;
+	}
+
+	.btn-container .btn-secondary a:hover {
+		color: blue;
 	}
 
 	.btn-container .btn-secondary:visited {
@@ -212,6 +220,10 @@
 	margin-bottom: 25px;
 	font-weight: 300;
 	color: white;
+}
+
+.minibarra-team .btn-container a:hover {
+	color: #404040;
 }
 
 
