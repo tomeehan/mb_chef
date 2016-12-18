@@ -1,12 +1,35 @@
-<div class="form-container">  
-  <div class="col-md-6 col-md-offset-3">
-    <div class="new-book-form">
-      <h2>Update your account </h2>
+<div class="container">  
+  <div class="col-md-4 col-md-offset-4 well signin">
+        <div class="back-btn">
+          <%= link_to :back %>
+            <span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+          <% end %>
+
+        </div>  
+      <h2>My Account</h2>
+        <%= link_to staffs_path do %>
+          <div class="account-item">
+        
+            <i class="fa fa-users"></i>
+            <h4>Staff</h4>
+        </div>
+      <% end %>
+      <%= link_to staffs_path do %>
+          <div class="account-item">
+        
+            <i class="fa fa-support"></i>
+            <h4>Support</h4>
+        </div>
+      <% end %>    
+
+
+
+
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-material">
+        
           <br>
           <h4>Personal details</h4>
           <div class="first-name">
@@ -22,26 +45,39 @@
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
           <br>
-          <h4>Update your password</h4>
 
-          <p>(Leave it blank if you don't want to change it)</p>
-          <%= f.input :password, autocomplete: "off",  required: false, label: false, placeholder: "New password" %>
-          <%= f.input :password_confirmation, required: false, label: false, placeholder: "New password confirmation" %>
+              <h4>Confirm Current Password</h4>
+                          <div id="showmenu" class="change-password-wrap"><p>Change password</p></div>
+            <div class="menu" style="display: none;">
+                <div class="change-password">
+                      <h4>Update your password</h4>
 
-          <br>
-          <h4 style="color: #ff5f5e">Confirm your password to make changes</h4>
-          <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, label: false, placeholder: "Current password" %>
-        </div>
+                      <p>(Leave it blank if you don't want to change it)</p>
+                      <%= f.input :password, autocomplete: "off",  required: false, label: false, placeholder: "New password" %>
+                      <%= f.input :password_confirmation, required: false, label: false, placeholder: "New password confirmation" %>
+                </div>
+            </div>
+                      <%= f.input :current_password, hint: "Cofirm your password to make changes", required: true, label: false, placeholder: "Current password" %>
+          
+
 
         <div class="new-btn">
-          <%= f.button :submit, :class => 'waves-effect btn-large' %>
+          <%= f.button :submit, "Update Account", :class => 'btn-primary btn-block btn-lg' %>
         </div>
       <% end %>
 
-      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-      <%= link_to "Back", :back %>
-      <p> </p>
-    </div>
   </div>
+
 </div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#showmenu').click(function() {
+                $('.menu').slideToggle("fast");
+        });
+    });
+
+</script>

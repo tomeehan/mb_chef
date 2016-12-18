@@ -42,7 +42,6 @@ html, body {
 	height  : 100%;
     overflow: auto;
     padding-top: 0px;
-    padding-bottom: 70px;
 }
 
 #flash_notice {
@@ -1005,6 +1004,45 @@ label.checkbox {
 	color: white;
 
 }
+
+.bottom-padding {
+	height: 70px;
+}
+
+/* Edit user registration */
+
+.change-password-wrap p {
+	cursor: pointer;
+	text-decoration: underline;
+	font-family: 'Open sans', sans-serif;
+}
+
+.change-password {
+	padding: 10px;
+	background-color: #f2f2f2;
+	border-radius: 5px;
+	border: 1px solid #404040;
+	margin-bottom: 15px;
+}
+
+.account-item {
+	width: 30%;
+	display: block;
+	float: left;
+	color: #ff5f5e;
+	text-align: center;
+	margin: 10%;
+	padding-top: 10px;
+}
+
+.account-item i {
+	font-size: 2em;
+}
+
+.signout p {
+	text-align: center;
+}
+
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 /* Styles */
