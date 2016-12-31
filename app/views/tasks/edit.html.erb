@@ -7,24 +7,31 @@
 			</div>
 				<h1>Edit Task</h1>
 				<%= simple_form_for @task do |f| %>
-
+					
+					<%# LOCAL LABEL %>
 				    <p>Category: <%= @task.category.name %></p>
+				    <%# LOCAL TEXT BOX LABEL %>
 				    <%= f.input :name %>
+				    <%# LOCAL TEXT BOX LABEL %>
 				    <%= f.input :description %>
+				    <%# LOCAL TOGGLE SWITCH %>
 	   			    <%= f.label :starting, :class => 'starting-checkbox' do %>
       					<%= f.check_box :starting,as: :boolean, checked_value: true, unchecked_value: false %>
       					<i class="icon-"></i>
    					<% end %>
+   					<%# LOCAL TOGGLE SWITCH %>
 	   			    <%= f.label :midday, :class => 'midday-checkbox' do %>
       					<%= f.check_box :midday,as: :boolean, checked_value: true, unchecked_value: false %>
       					<i class="icon-"></i>
    					<% end %>
+   					<%# LOCAL TOGGLE SWITCH %>
 					<%= f.label :ending, :class => 'ending-checkbox' do %>
       					<%= f.check_box :ending,as: :boolean, checked_value: true, unchecked_value: false %>
       					<i class="icon-"></i>
    					<% end %>   					
 
 				  <div class="new-btn">
+				  	<%# LOCAL BUTTON %>
 				    <%= f.button :submit, :class => 'btn-primary btn-block btn-lg' %>
 				  </div>
 				<% end %>
