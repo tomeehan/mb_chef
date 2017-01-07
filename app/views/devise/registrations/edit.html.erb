@@ -40,17 +40,17 @@
           <% end %>
           <br>
 
-              <h4>Confirm Current Password</h4>
-                          <div id="showmenu" class="change-password-wrap"><p>Change password</p></div>
-            <div class="menu" style="display: none;">
-                <div class="change-password">
+            <h4>Confirm Current Password</h4>
+                <div id="showmenu" class="change-password-wrap"><p>Click here to change password</p></div>
+                  <div class="menu" style="display: none;">
+                    <div class="change-password">
                       <h4>Update your password</h4>
 
                       <p>(Leave it blank if you don't want to change it)</p>
                       <%= f.input :password, autocomplete: "off",  required: false, label: false, placeholder: "New password" %>
                       <%= f.input :password_confirmation, required: false, label: false, placeholder: "New password confirmation" %>
-                </div>
-            </div>
+                    </div>
+                  </div>
                       <%= f.input :current_password, hint: "Cofirm your password to make changes", required: true, label: false, placeholder: "Current password" %> <%# LOCAL TODO %>
           
 
