@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get "/enterprise", :to => 'pages#enterprise'
   get "/privacy", :to => 'pages#privacy'
   get "/team", :to => 'pages#team'
+  get "/support", :to => 'pages#support'
 end
