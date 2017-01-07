@@ -178,9 +178,11 @@
 }
 
 .invite h4 {
-	color: gray;
+	color: #8091A5;
 	width: 100%;
 	margin-bottom: 25px;
+	font-weight: 500;
+	font-size: 1.5em;
 }
 
 .sep-gray {
@@ -225,18 +227,20 @@
 	color: white;
 }
 
-.minibarra-team p {
-	font-family: 'Courier';
-	font-size: 1.2em;
-	color: rgb(0, 227, 73);
-	margin-bottom: 25px;
-}
 .minibarra-team h4 {
 	width: 100%;
 	margin-bottom: 25px;
 	font-weight: 300;
 	color: white;
 }
+
+.minibarra-team p {
+	font-family: 'Courier';
+	font-size: 1.2em;
+	color: rgb(0, 227, 73);
+	margin-bottom: 25px;
+}
+
 
 .minibarra-team .btn-container a:hover {
 	color: #404040;
@@ -678,7 +682,8 @@ Pricing table
 }
 
 .team p {
-	margin: 0 25%;
+	font-size: 16px;
+	margin: 0 15%;
 }
 
 .team-container {

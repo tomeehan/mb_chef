@@ -1063,6 +1063,14 @@ label.checkbox {
 	text-align: center;
 }
 
+.logout {
+	background-color: #ff5f5e;
+}
+
+.logout:hover {
+	background-color: darken(#ff5f5e, 10%);
+}
+
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 /* Styles */
