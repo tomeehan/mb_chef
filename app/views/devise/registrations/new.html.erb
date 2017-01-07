@@ -25,12 +25,22 @@
 				  <div class="new-btn">
 					<%= f.button :submit, 'Request Invitation',:class => 'btn-primary btn-block btn-lg' %>
 				  </div>
-				  <br>
+
 				
 				
-				<%= render "devise/shared/links" %>
+				
 
 			<% end %>
+		</div>
+		
+		<div class="col-md-6 col-md-offset-3 shared">
+			<%= render "devise/shared/links" %>
+		</div>	
+
+		<div class="col-md-6 col-md-offset-3 well signin">
+			<h4>Why is Minibarra invite only?</h4>
+			<hr>
+			<p>Because</p>
 		</div>
 	</div>
 </div>	

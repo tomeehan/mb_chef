@@ -29,6 +29,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+
 /* Variables, mixins, etc.. */
 
 html {
@@ -38,7 +39,7 @@ html {
 
 html, body {
 	font-family: 'Open sans', sans-serif;
-	font-size: 16px;
+	font-size: 12px;
 	height  : 100%;
     overflow: auto;
     padding-top: 0px;
@@ -920,6 +921,20 @@ label.checkbox {
  }
 
  .signin a:hover {
+ 	background: rgba(87, 127, 123, 0);
+ }
+
+ .shared {
+ 	text-align: center;
+ }
+
+ .shared a {
+ 	color: white;
+ 	font-weight: 600;
+ }
+
+ .shared a:hover {
+ 	background-color: blue;
  	background: rgba(87, 127, 123, 0);
  }
 
