@@ -1,8 +1,52 @@
+<div class="row container">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <th>Task Name</th>
+        <th>Completed?</th>
+        <th>Staff</th>
+        <th>Edit</th>
+      </thead>
+      <tbody>
+        <% @ticks.each do |tick| %>
+          <% if tick.task.category.name == "Check" %>
+            <tr>
+              <td><%= tick.task.name %></td>
+              <td>
+                <% if tick.complete == true %>
+                  <p class="complete-true"><span class="glyphicon glyphicon-ok"></span></p>
+                <% else %>
+                  <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
+                <% end %>
+              </td>
+              <td>
+                <% if tick.staff_id != 1 %>
+                  <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
+                <% else %>
+                  <p>-</p>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to edit_tick_path(tick) do %>
+                  <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+      
+    </table>
+  </div>
+</div>
+
   <div class="row container">
     <div class="col-sm-4">
       <h2>Checks</h2>  
         <% @ticks.each do |tick| %>
+
           <% if tick.task.category.name == "Check" %>
+
           <%= link_to edit_tick_path(tick) do %>
             <div class="book-index-desc task">
               <div class="book-index-content">
@@ -34,6 +78,7 @@
               </div>   
             <% end %>
           <% end %>
+
         <% end %>
     </div>
 

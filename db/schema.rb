@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126153017) do
+ActiveRecord::Schema.define(version: 20170108025334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20161126153017) do
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "category_id"
     t.integer  "user_id"
     t.integer  "regularity_id"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20161126153017) do
     t.boolean  "starting"
     t.boolean  "midday"
     t.boolean  "ending"
+    t.boolean  "archived",      default: false
   end
 
   create_table "ticks", force: :cascade do |t|
