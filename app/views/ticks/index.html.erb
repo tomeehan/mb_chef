@@ -40,13 +40,13 @@
 
   <hr>  
 
-<% if params[:active] == "false" %>
+<% if !params[:active] && !params[:stage] %>
 
-  <%= render 'active'  %>
+  <%= render 'inactive'  %>
 
   <% else %>
 
-  <%= render 'inactive' %> 
+  <%= render 'active' %> 
 
   <% end %>
 <% end %>

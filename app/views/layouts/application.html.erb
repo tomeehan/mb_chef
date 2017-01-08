@@ -40,7 +40,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<% if user_signed_in? %>
 							<li class="<%= 'active-nav' if params[:stage] == "Morning" || params[:stage] == "Afternoon" ||params[:stage] == "Evening" %>"><%= link_to "Today", '/ticks?stage=Morning' %></li>
-							<li class="<%= 'active-nav' if params[:active] == "false" %>"><%= link_to "Reports", ticks_path(:active => "false") %></li>
+							<li class="<%= 'active-nav' if !params[:active] && !params[:stage] %>"><%= link_to "Reports", ticks_path %></li>
 							<li class="<%= 'active-nav' if current_page?(tasks_path) %>"><%= link_to "Tasks", tasks_path %></li>
 							<li>
 								<%= link_to edit_user_registration_path, class: "btn btn-default" do %>
