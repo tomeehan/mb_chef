@@ -14,7 +14,7 @@
           <% @ticks.each do |tick| %>
             <% if tick.task.category.name == "Check" && tick.stage == "starting" %>
               <tr>
-                <td><%= tick.stage %> <%= tick.task.name %></td>
+                <td><%= tick.task.name %></td>
                 <td>
                   <% if tick.complete == true %>
                     <p class="complete-true"><span class="glyphicon glyphicon-ok"></span></p>
@@ -57,7 +57,7 @@
           <% @ticks.each do |tick| %>
             <% if tick.task.category.name == "Temperature" && tick.stage == "starting" %>
               <tr>
-                <td><%= tick.stage %> <%= tick.task.name %></td>
+                <td><%= tick.task.name %></td>
                 <td>
                   <% if tick.complete == true %>
                     <p class="complete-temperature"><%= tick.temperature %> °C</p>
@@ -105,7 +105,7 @@
           <% @ticks.each do |tick| %>
             <% if tick.task.category.name == "Check" && tick.stage == "middle" %>
               <tr>
-                <td><%= tick.stage %> <%= tick.task.name %></td>
+                <td><%= tick.task.name %></td>
                 <td>
                   <% if tick.complete == true %>
                     <p class="complete-true"><span class="glyphicon glyphicon-ok"></span></p>
@@ -149,7 +149,7 @@
         <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Temperature" && tick.stage == "middle" %>
             <tr>
-              <td><%= tick.stage %> <%= tick.task.name %></td>
+              <td><%= tick.task.name %></td>
               <td>
                 <% if tick.complete == true %>
                   <p class="complete-temperature"><%= tick.temperature %> °C</p>
@@ -197,7 +197,7 @@
           <% @ticks.each do |tick| %>
             <% if tick.task.category.name == "Check" && tick.stage == "ending" %>
               <tr>
-                <td><%= tick.stage %> <%= tick.task.name %></td>
+                <td><%= tick.task.name %></td>
                 <td>
                   <% if tick.complete == true %>
                     <p class="complete-true"><span class="glyphicon glyphicon-ok"></span></p>
@@ -240,7 +240,7 @@
           <% @ticks.each do |tick| %>
             <% if tick.task.category.name == "Temperature" && tick.stage == "ending" %>
               <tr>
-                <td><%= tick.stage %> <%= tick.task.name %></td>
+                <td><%= tick.task.name %></td>
                 <td>
                   <% if tick.complete == true %>
                     <p class="complete-temperature"><%= tick.temperature %> °C</p>
