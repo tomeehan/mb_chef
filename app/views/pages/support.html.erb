@@ -1,5 +1,55 @@
-<div class="row">
-	<h2>Support</h2>
+<div class="row sep-gray">
+	<div class="col-md-12">
+		<div class="minibarra-usp team">
+			<h1>Support</h1>
+			
+			<% if user_signed_in? %>
+				<h4>We're sorry it had to come to this :(</h4>
+				<p>Whatever is wrong, it's probably our fault. But we're ready to move heaven and earth to make you happy.</p>
+			<% else %>
+				<h4>We'll move heaven and earth to make you happy.</h4>
+			<% end %>
+
+		</div>
+	</div>
+
+	<div class="team-container">
+		<div class="col-md-4">
+			<div class="team-member">
+				<div class="support-icon">
+					<i class="glyphicon glyphicon-envelope"></i>
+				</div>
+				<h4>Email Us</h4>
+				<h6>For non-urgent stuff and thank you notes.</h6>
+			    <div class="new-btn">
+			    	<a href="mailto:tom.meehan@minibarra.com" class="btn-primary btn-block btn-lg">tom.meehan@minibarra.com</a>
+				</div>
+			</div>	
+		</div>
+		<div class="col-md-4">
+			<div class="team-member">
+				<div class="support-icon">
+					<i class="glyphicon glyphicon-phone-alt"></i>
+				</div>
+				<h4>Call us</h4>
+				<h6>Drop us a line.</h6>
+			    <div class="new-btn">
+			    	<a href="tel:+4402081232715" class="btn-primary btn-block btn-lg">(+44) 020 8123 2715</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="team-member">
+				<div class="support-icon">
+					<i class="glyphicon glyphicon-comment"></i>
+				</div>
+				<h4>Chat</h4>
+				<h6>Quick chat</h6>
+			    (Tap on that red box in the bottom right)
+			</div>	
+		</div>
+
+	</div>
 </div>
 
 <!-- Start of Async Drift Code -->
