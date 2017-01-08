@@ -61,8 +61,11 @@
     			</div><!-- /.navbar-collapse -->
   			</div><!-- /.container-fluid -->
 </nav>
-
-
+<% if user_signed_in? %>
+  <div class="fixed-nav-padding">
+    
+  </div>
+<% end %>
 <script>
 	$(document).on('click','.navbar-collapse.in',function(e) {
     if( $(e.target).is('a') ) {
