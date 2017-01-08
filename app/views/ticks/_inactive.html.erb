@@ -7,6 +7,7 @@
           <th>Check</th>
           <th>Completed?</th>
           <th>Staff</th>
+          <th>Updated At</th>
           <th>Edit</th>
         </thead>
         <tbody>
@@ -29,6 +30,9 @@
                   <% end %>
                 </td>
                 <td>
+                  <%= tick.updated_at %>
+                </td>
+                <td>
                   <%= link_to edit_tick_path(tick) do %>
                     <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
                   <% end %>
@@ -46,6 +50,7 @@
           <th>Temperature</th>
           <th>Completed?</th>
           <th>Staff</th>
+          <th>Updated At</th>
           <th>Edit</th>
         </thead>
         <tbody>
@@ -66,6 +71,9 @@
                   <% else %>
                     <p>-</p>
                   <% end %>
+                </td>
+                <td>
+                  <%= tick.updated_at %>
                 </td>
                 <td>
                   <%= link_to edit_tick_path(tick) do %>
@@ -90,6 +98,7 @@
           <th>Check</th>
           <th>Completed?</th>
           <th>Staff</th>
+          <th>Updated At</th>
           <th>Edit</th>
         </thead>
         <tbody>
@@ -112,6 +121,9 @@
                   <% end %>
                 </td>
                 <td>
+                  <%= tick.updated_at %>
+                </td>
+                <td>
                   <%= link_to edit_tick_path(tick) do %>
                     <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
                   <% end %>
@@ -130,6 +142,7 @@
         <th>Temperature</th>
         <th>Completed?</th>
         <th>Staff</th>
+        <th>Updated At</th>
         <th>Edit</th>
       </thead>
       <tbody>
@@ -150,6 +163,9 @@
                 <% else %>
                   <p>-</p>
                 <% end %>
+              </td>
+              <td>
+                <%= tick.updated_at %>
               </td>
               <td>
                 <%= link_to edit_tick_path(tick) do %>
@@ -174,6 +190,7 @@
           <th>Check</th>
           <th>Completed?</th>
           <th>Staff</th>
+          <th>Updated At</th>
           <th>Edit</th>
         </thead>
         <tbody>
@@ -196,6 +213,9 @@
                   <% end %>
                 </td>
                 <td>
+                  <%= tick.updated_at %>
+                </td>
+                <td>
                   <%= link_to edit_tick_path(tick) do %>
                     <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
                   <% end %>
@@ -213,6 +233,7 @@
           <th>Temperature</th>
           <th>Completed?</th>
           <th>Staff</th>
+          <th>Updated At</th>
           <th>Edit</th>
         </thead>
         <tbody>
@@ -233,6 +254,9 @@
                   <% else %>
                     <p>-</p>
                   <% end %>
+                </td>
+                <td>
+                  <%= tick.updated_at %>
                 </td>
                 <td>
                   <%= link_to edit_tick_path(tick) do %>
