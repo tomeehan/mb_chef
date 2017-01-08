@@ -148,6 +148,10 @@ p.alert, p.notice {
 	margin: 0;
 	border: 0px;
 
+	.navbar-nav > li {
+		line-height: 10px;
+	}
+
 	.navbar-nav > li > a {
 		color: #404040;
 		font-family: 'Open sans', sans-serif;
@@ -190,6 +194,35 @@ p.alert, p.notice {
 .dropdown-menu > .active > a {
 	background-color: #ff5f5e;
 	color: #fff;
+}
+
+.navbar-btn {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+.nav-btn {
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+	border: none;
+	border-radius: 3px;
+	outline: 0;
+	padding: 16px 2em;
+/*	vertical-align: middle;*/
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+	color: #fff;
+	background-color: #119A65;
+	/*text-align: center;*/
+	letter-spacing: .5px;
+	transition: .2s ease-out;
+	cursor: pointer;
+}
+
+
+.nav-btn:hover {
+	background-color: #0f8a5a;
+	text-decoration: none;
+	color: white;
 }
 
 
