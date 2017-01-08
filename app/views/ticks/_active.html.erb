@@ -1,6 +1,6 @@
 <% if params[:stage] != "Afternoon" && params[:stage] != "Evening" %>
     <div class="col-sm-4">
-      <h1>Morning</h1>
+      <h1>Checks</h1>
          <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
             <% if tick.stage == "starting" %>
@@ -46,7 +46,7 @@
   <% if params[:stage] == "Afternoon" %>
 
     <div class="col-sm-4">
-      <h1>Afternoon</h1>
+      <h1>Checks</h1>
          <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
             <% if tick.stage == "middle" %>
@@ -93,7 +93,7 @@
 
   <% if params[:stage] == "Evening" %>
     <div class="col-sm-4">
-      <h1>Evening</h1>
+      <h1>Checks</h1>
          <% @ticks.each do |tick| %>
           <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
             <% if tick.stage == "ending" %>
