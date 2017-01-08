@@ -1,125 +1,129 @@
 <div class="row container">
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <h4>Morning</h4>
-      <thead>
-        <th>Check</th>
-        <th>Completed?</th>
-        <th>Staff</th>
-        <th>Edit</th>
-      </thead>
-      <tbody>
-        <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.stage == "starting" %>
-            <tr>
-              <td><%= tick.stage %> <%= tick.task.name %></td>
-              <td>
-                <% if tick.complete == true %>
-                  <p class="complete-true"><span class="glyphicon glyphicon-ok"></span></p>
-                <% else %>
-                  <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
-                <% end %>
-              </td>
-              <td>
-                <% if tick.staff_id != 1 %>
-                  <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
-                <% else %>
-                  <p>-</p>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_tick_path(tick) do %>
-                  <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
-                <% end %>
-              </td>
-            </tr>
+  <div class="well signin">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <h4>Morning</h4>
+        <thead>
+          <th>Check</th>
+          <th>Completed?</th>
+          <th>Staff</th>
+          <th>Edit</th>
+        </thead>
+        <tbody>
+          <% @ticks.each do |tick| %>
+            <% if tick.task.category.name == "Check" && tick.stage == "starting" %>
+              <tr>
+                <td><%= tick.stage %> <%= tick.task.name %></td>
+                <td>
+                  <% if tick.complete == true %>
+                    <p class="complete-true"><span class="glyphicon glyphicon-ok"></span></p>
+                  <% else %>
+                    <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
+                  <% end %>
+                </td>
+                <td>
+                  <% if tick.staff_id != 1 %>
+                    <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
+                  <% else %>
+                    <p>-</p>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_tick_path(tick) do %>
+                    <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
           <% end %>
-        <% end %>
-      </tbody>
-      
-    </table>
-  </div>
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <thead>
-        <th>Temperature</th>
-        <th>Completed?</th>
-        <th>Staff</th>
-        <th>Edit</th>
-      </thead>
-      <tbody>
-        <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Temperature" && tick.stage == "starting" %>
-            <tr>
-              <td><%= tick.stage %> <%= tick.task.name %></td>
-              <td>
-                <% if tick.complete == true %>
-                  <p class="complete-temperature"><%= tick.temperature %> °C</p>
-                <% else %>
-                  <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
-                <% end %>
-              </td>
-              <td>
-                <% if tick.staff_id != 1 %>
-                  <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
-                <% else %>
-                  <p>-</p>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_tick_path(tick) do %>
-                  <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
-                <% end %>
-              </td>
-            </tr>
+        </tbody>
+        
+      </table>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <th>Temperature</th>
+          <th>Completed?</th>
+          <th>Staff</th>
+          <th>Edit</th>
+        </thead>
+        <tbody>
+          <% @ticks.each do |tick| %>
+            <% if tick.task.category.name == "Temperature" && tick.stage == "starting" %>
+              <tr>
+                <td><%= tick.stage %> <%= tick.task.name %></td>
+                <td>
+                  <% if tick.complete == true %>
+                    <p class="complete-temperature"><%= tick.temperature %> °C</p>
+                  <% else %>
+                    <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
+                  <% end %>
+                </td>
+                <td>
+                  <% if tick.staff_id != 1 %>
+                    <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
+                  <% else %>
+                    <p>-</p>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_tick_path(tick) do %>
+                    <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
           <% end %>
-        <% end %>
-      </tbody>
-      
-    </table>
-  </div>
+        </tbody>
+        
+      </table>
+    </div>
+  </div>  
 </div>
-<div class="row container sep-gray">
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <h4>Afternoon</h4>
-      <thead>
-        <th>Check</th>
-        <th>Completed?</th>
-        <th>Staff</th>
-        <th>Edit</th>
-      </thead>
-      <tbody>
-        <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.stage == "middle" %>
-            <tr>
-              <td><%= tick.stage %> <%= tick.task.name %></td>
-              <td>
-                <% if tick.complete == true %>
-                  <p class="complete-true"><span class="glyphicon glyphicon-ok"></span></p>
-                <% else %>
-                  <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
-                <% end %>
-              </td>
-              <td>
-                <% if tick.staff_id != 1 %>
-                  <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
-                <% else %>
-                  <p>-</p>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_tick_path(tick) do %>
-                  <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
-                <% end %>
-              </td>
-            </tr>
+<div class="row container">
+  <div class="well signin">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <h4>Afternoon</h4>
+        <thead>
+          <th>Check</th>
+          <th>Completed?</th>
+          <th>Staff</th>
+          <th>Edit</th>
+        </thead>
+        <tbody>
+          <% @ticks.each do |tick| %>
+            <% if tick.task.category.name == "Check" && tick.stage == "middle" %>
+              <tr>
+                <td><%= tick.stage %> <%= tick.task.name %></td>
+                <td>
+                  <% if tick.complete == true %>
+                    <p class="complete-true"><span class="glyphicon glyphicon-ok"></span></p>
+                  <% else %>
+                    <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
+                  <% end %>
+                </td>
+                <td>
+                  <% if tick.staff_id != 1 %>
+                    <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
+                  <% else %>
+                    <p>-</p>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_tick_path(tick) do %>
+                    <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
           <% end %>
-        <% end %>
-      </tbody>
-      
-    </table>
-  </div>
+        </tbody>
+        
+      </table>
+    </div>
+
   <div class="table-responsive">
     <table class="table table-hover">
       <thead>
@@ -159,85 +163,88 @@
       
     </table>
   </div>
+  </div>
 </div>
 <div class="row container">
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <h4>Evening</h4>
-      <thead>
-        <th>Check</th>
-        <th>Completed?</th>
-        <th>Staff</th>
-        <th>Edit</th>
-      </thead>
-      <tbody>
-        <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.stage == "ending" %>
-            <tr>
-              <td><%= tick.stage %> <%= tick.task.name %></td>
-              <td>
-                <% if tick.complete == true %>
-                  <p class="complete-true"><span class="glyphicon glyphicon-ok"></span></p>
-                <% else %>
-                  <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
-                <% end %>
-              </td>
-              <td>
-                <% if tick.staff_id != 1 %>
-                  <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
-                <% else %>
-                  <p>-</p>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_tick_path(tick) do %>
-                  <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
-                <% end %>
-              </td>
-            </tr>
+  <div class="well signin">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <h4>Evening</h4>
+        <thead>
+          <th>Check</th>
+          <th>Completed?</th>
+          <th>Staff</th>
+          <th>Edit</th>
+        </thead>
+        <tbody>
+          <% @ticks.each do |tick| %>
+            <% if tick.task.category.name == "Check" && tick.stage == "ending" %>
+              <tr>
+                <td><%= tick.stage %> <%= tick.task.name %></td>
+                <td>
+                  <% if tick.complete == true %>
+                    <p class="complete-true"><span class="glyphicon glyphicon-ok"></span></p>
+                  <% else %>
+                    <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
+                  <% end %>
+                </td>
+                <td>
+                  <% if tick.staff_id != 1 %>
+                    <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
+                  <% else %>
+                    <p>-</p>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_tick_path(tick) do %>
+                    <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
           <% end %>
-        <% end %>
-      </tbody>
-      
-    </table>
-  </div>
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <thead>
-        <th>Temperature</th>
-        <th>Completed?</th>
-        <th>Staff</th>
-        <th>Edit</th>
-      </thead>
-      <tbody>
-        <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Temperature" && tick.stage == "ending" %>
-            <tr>
-              <td><%= tick.stage %> <%= tick.task.name %></td>
-              <td>
-                <% if tick.complete == true %>
-                  <p class="complete-temperature"><%= tick.temperature %> °C</p>
-                <% else %>
-                  <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
-                <% end %>
-              </td>
-              <td>
-                <% if tick.staff_id != 1 %>
-                  <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
-                <% else %>
-                  <p>-</p>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_tick_path(tick) do %>
-                  <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
-                <% end %>
-              </td>
-            </tr>
+        </tbody>
+        
+      </table>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <th>Temperature</th>
+          <th>Completed?</th>
+          <th>Staff</th>
+          <th>Edit</th>
+        </thead>
+        <tbody>
+          <% @ticks.each do |tick| %>
+            <% if tick.task.category.name == "Temperature" && tick.stage == "ending" %>
+              <tr>
+                <td><%= tick.stage %> <%= tick.task.name %></td>
+                <td>
+                  <% if tick.complete == true %>
+                    <p class="complete-temperature"><%= tick.temperature %> °C</p>
+                  <% else %>
+                    <p class="complete-false"><span class="glyphicon glyphicon-remove"></span></p>
+                  <% end %>
+                </td>
+                <td>
+                  <% if tick.staff_id != 1 %>
+                    <p><%= tick.staff.first_name + " " + tick.staff.surname %></p>
+                  <% else %>
+                    <p>-</p>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to edit_tick_path(tick) do %>
+                    <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
           <% end %>
-        <% end %>
-      </tbody>
-      
-    </table>
-  </div>
+        </tbody>
+        
+      </table>
+    </div>
+  </div>  
 </div>
