@@ -44,9 +44,15 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<% if user_signed_in? %>
-							<li><%= link_to "Today", '/ticks?stage=Morning' %></li>
-							<li><%= link_to "Reports", ticks_path(:active => "false") %></li>
-							<li><%= link_to "Tasks", tasks_path %></li>
+
+							<li class="<%= 'active-nav' if params[:stage] == "Morning" || params[:stage] == "Afternoon" ||params[:stage] == "Evening" %>"><%= link_to "Today", '/ticks?stage=Morning' %></li>
+
+
+							<li class="<%= 'active-nav' if params[:active] == "false" %>"><%= link_to "Reports", ticks_path(:active => "false") %></li>
+
+
+
+							<li class="<%= 'active-nav' if current_page?(tasks_path) %>"><%= link_to "Tasks", tasks_path %></li>
 							<li>
 								<%= link_to edit_user_registration_path, class: "btn btn-default" do %>
     								<i class="glyphicon glyphicon-user"></i>
