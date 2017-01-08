@@ -1,6 +1,7 @@
 class TicksController < ApplicationController
   before_action :set_tick, only: [:show, :edit, :update, :destroy]
   # before_filter :update_active
+  caches_page :index, :new, :edit
 
   # GET /ticks
   # GET /ticks.json
