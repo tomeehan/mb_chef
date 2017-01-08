@@ -61,6 +61,11 @@ html, body {
 
 a {
 	background: transparent;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
 }
 
 .user-list {
@@ -1041,20 +1046,31 @@ label.checkbox {
   left: 0;
   z-index: 9999;
   width: 100%;
-  height: 60px;
+  height: 50px;
   background-color: #f2f2f2;
-  padding-top: 10px;
+  padding-top: 7.5px;
   border-top: 0.5px solid lighten(#404040,50%);
 }
 
-.fixed-nav-bar a:active .fixed-nav-bar-item p {
+.fixed-nav-bar a:hover .fixed-nav-bar-item p {
+	text-decoration: none;
+}
+
+.fixed-nav-bar a:hover .fixed-nav-bar-item p:hover {
 	text-decoration: none;
 }
 
 .fixed-nav-bar .fixed-nav-bar-item {
 	text-align: center;
-	color: #404040;
+	color: #929292;
+}
 
+.fixed-active {
+	color: #ff5f5e !important;
+}
+
+.fixed-nav-bar .fixed-nav-bar-item i {
+	font-size: 20px;
 }
 
 .bottom-padding {

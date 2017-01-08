@@ -3,7 +3,7 @@
 		<div class="fixed-nav-bar">
 			<div class="col-xs-3">
 				<a href="/ticks?stage=Morning">
-				<div class="fixed-nav-bar-item">
+				<div class="fixed-nav-bar-item <%= 'fixed-active' if params[:stage] == "Morning" || params[:stage] == "Afternoon" ||params[:stage] == "Evening" %>">
 					<i class="fa fa-check-square-o"></i>
 					<p>Today</p>
 				</div>
@@ -11,7 +11,7 @@
 			</div>
 			<div class="col-xs-3">
 				<a href="/ticks?active=false">
-				<div class="fixed-nav-bar-item">
+				<div class="fixed-nav-bar-item <%= 'fixed-active' if params[:active] == "false" %>">
 					<i class="fa fa-book"></i>
 					<p>Reports</p>
 				</div>
@@ -19,7 +19,7 @@
 			</div>
 			<div class="col-xs-3">
 				<a href="/tasks">
-				<div class="fixed-nav-bar-item">
+				<div class="fixed-nav-bar-item <%= 'fixed-active' if current_page?(tasks_path) %>">
 					<i class="fa fa-pencil-square-o"></i>
 					<p>Tasks</p>
 				</div>
@@ -27,7 +27,7 @@
 			</div>
 			<div class="col-xs-3">
 				<%= link_to edit_user_registration_path do %>
-				<div class="fixed-nav-bar-item">
+				<div class="fixed-nav-bar-item <%= 'fixed-active' if current_page?(edit_user_registration_path) %>">
 					<i class="fa fa-user-circle-o"></i>
 					<p>Account</p>
 				</div>
