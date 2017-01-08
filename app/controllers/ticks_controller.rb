@@ -6,14 +6,17 @@ class TicksController < ApplicationController
   # GET /ticks.json
   def index
     if params[:active].blank?
-      @ticks = Tick.all.order("created_at DESC")
+      
+      @search = TickSearch.new(params[:search])
+      @ticks = @search.scope
     else 
       # code here
-      @ticks = Tick.where(:active => params[:active]).order("created_at DESC")
+      @ticks = Tick.all.order("created_at DESC")
     end
 
     if params[:stage].blank?
-      @ticks = Tick.all.order("created_at DESC")
+      @search = TickSearch.new(params[:search])
+      @ticks = @search.scope
     else
       @ticks = Tick.all.order("created_at DESC")
       
