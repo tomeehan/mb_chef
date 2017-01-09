@@ -1,0 +1,39 @@
+// Place all the styles related to the Makers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.maker-container {
+	background: #172f4b; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,    #172f4b 44%, #b34e58 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,    #172f4b 44%,#b34e58 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,    #172f4b 44%,#b34e58 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#172f4b', endColorstr='#b34e58',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	margin: 0px;
+	padding:0px;
+}
+
+.xdp-logo-container {
+	color: white;
+	margin-top: 50px;
+}
+
+.xdp-logo-container .minibarra-logo {
+	font-family: Pacifico;
+	margin-top: 0.5em;
+	font-size: 3.5em;
+	text-align: right;
+	width: 50%;
+	float: left;
+	padding-right: 5%;
+}
+
+.xdp-logo-container .xdp-logo {
+	font-family: Open sans;
+	font-weight: 300;
+	font-size: 2em;
+	text-align: left;
+	width: 50%;	
+	float: left;
+	padding-left: 5%;
+	border-left: 2px solid white;
+}
