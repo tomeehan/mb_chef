@@ -37,27 +37,31 @@
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
-						<% if user_signed_in? %>
-							<li class="<%= 'active-nav' if params[:stage] == "Morning" || params[:stage] == "Afternoon" ||params[:stage] == "Evening" %>"><%= link_to "Today", '/ticks?stage=Morning' %></li>
-							<li class="<%= 'active-nav' if !params[:active] && !params[:stage] %>"><%= link_to "Reports", ticks_path %></li>
-							<li class="<%= 'active-nav' if current_page?(tasks_path) %>"><%= link_to "Tasks", tasks_path %></li>
-							<li>
-								<%= link_to edit_user_registration_path, class: "btn btn-default" do %>
-    								<i class="glyphicon glyphicon-user"></i>
-								<% end %>
-							</li>
-						<% else %>
-							<li ><a href="/pricing">Pricing</a></li>
-							<li><%= link_to "Log in", new_user_session_path %></li>
-							<li></li>
-							<li>
-								<p class="navbar-btn ">
-          				<a class="btn btn-default nav-btn" href="/users/sign_up" role="button" style="color: white;">Request an Invite</a>
-        				</p>
-							</li>
-						<% end %>
-					</ul>
+  					<ul class="nav navbar-nav navbar-right">
+  						<% if user_signed_in? %>
+                <% if current_user.subscribed == true %>
+    							<li class="<%= 'active-nav' if params[:stage] == "Morning" || params[:stage] == "Afternoon" ||params[:stage] == "Evening" %>"><%= link_to "Today", '/ticks?stage=Morning' %></li>
+    							<li class="<%= 'active-nav' if !params[:active] && !params[:stage] %>"><%= link_to "Reports", ticks_path %></li>
+    							<li class="<%= 'active-nav' if current_page?(tasks_path) %>"><%= link_to "Tasks", tasks_path %></li>
+    							<li>
+    								<%= link_to edit_user_registration_path, class: "btn btn-default" do %>
+        								<i class="glyphicon glyphicon-user"></i>
+    								<% end %>
+    							</li>
+                <% else %>  
+                  <li><a href="/support">Help & Support</a></li>
+                <% end %>
+  						<% else %>
+  							<li ><a href="/pricing">Pricing</a></li>
+  							<li><%= link_to "Log in", new_user_session_path %></li>
+  							<li></li>
+  							<li>
+  								<p class="navbar-btn ">
+            				<a class="btn btn-default nav-btn" href="/users/sign_up" role="button" style="color: white;">Request an Invite</a>
+          				</p>
+  							</li>
+  						<% end %>
+  					</ul>
     			</div><!-- /.navbar-collapse -->
   			</div><!-- /.container-fluid -->
     </nav>

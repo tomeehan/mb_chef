@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
    sign_in_url = tasks_path
   end
 
+
       protected
 
         def configure_permitted_parameters

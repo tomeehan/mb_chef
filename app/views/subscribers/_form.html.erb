@@ -6,16 +6,59 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: £9.99</span>
+      <span>
+        Amount: 
+        <% if current_user.plan == 1020 %>
+            £9.99
+          <% else %>
+            <% if current_user.plan == 2030 %>
+              £19.99
+            <% else %>
+              £69.99
+            <% end %>
+          <% end %>
+      </span>
     </label>
   </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Minibarra Subscription"
-          data-amount="999"
-          data-panel-label="Subscribe"
-          data-label="Subscribe"
-          data-currency="gbp"
-          data-locale="auto"></script>
+  
+
+  <% if current_user.plan == 1020 %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-description="Let's get cooking!"
+      data-amount="999"
+      data-panel-label="Pay"
+      data-image="http://www.minibarra.com/wp-content/uploads/2016/12/Minibarra-Chef-iOS-App-Icon.png"
+      data-label="Pay Now"
+      data-currency="gbp"
+      data-locale="auto">
+    </script>
+  <% else %>
+    <% if current_user.plan == 2030 %>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="Let's get cooking!"
+        data-amount="9999"
+        data-panel-label="Pay"
+        data-image="http://www.minibarra.com/wp-content/uploads/2016/12/Minibarra-Chef-iOS-App-Icon.png"
+        data-label="Pay Now"
+        data-currency="gbp"
+        data-locale="auto">
+      </script>
+    <% else %>
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="Let's get cooking!"
+        data-amount="9999"
+        data-panel-label="Subscribe"
+        data-image="http://www.minibarra.com/wp-content/uploads/2016/12/Minibarra-Chef-iOS-App-Icon.png"
+        data-label="Pay Now"
+        data-currency="gbp"
+        data-locale="auto">
+      </script>
+    <% end %>
+  <% end %>
 <% end %>
+
+

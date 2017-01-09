@@ -4,6 +4,9 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
+    if current_user.subscribed != true 
+      redirect_to new_subscriber_path
+    end
     @tasks = Task.all
   end
 

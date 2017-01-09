@@ -5,6 +5,10 @@ class TicksController < ApplicationController
   # GET /ticks
   # GET /ticks.json
   def index
+    if current_user.subscribed != true 
+      redirect_to new_subscriber_path
+    end
+
     if params[:active].blank?
       
       @search = TickSearch.new(params[:search])
