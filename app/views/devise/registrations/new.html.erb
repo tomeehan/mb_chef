@@ -20,6 +20,8 @@
 				    <%= f.input :email, required: true, label: false, placeholder: "Email (required)" %>
 				    <%= f.input :password, required: true, label: false, placeholder: "Password (required)", hint: ("  #{@minimum_password_length} characters minimum" if @minimum_password_length) %>
 				    <%= f.input :password_confirmation, label: false, placeholder: "Password confirmation (required)",required: true %>
+				    <%= f.hidden_field :plan, { :value => params[:plan]} %>
+
 
 
 				  <div class="new-btn">
