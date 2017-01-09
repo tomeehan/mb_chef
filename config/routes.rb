@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  
+  resources :subscribers
   resources :staffs
   resources :ticks do
   	collection do 
   		match 'completed', :via => [:get]
   	end	
   end
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations"}
   resources :tasks
 
   # match 'ticks/completed' => 'ticks#completed', :via => [:get],:as => 'completed_ticks'
