@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :blogs
   resources :makers
   resources :subscribers
   resources :staffs
