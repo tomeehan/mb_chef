@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
       protected
 
         def configure_permitted_parameters
-            devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :plan) }
-            devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:first_name, :last_name, :email, :password, :current_password, :company, :plan) }
+            devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :plan, :organisation) }
+            devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:first_name, :last_name, :email, :password, :current_password, :company, :plan, :organisation) }
         end
 
 

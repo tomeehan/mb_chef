@@ -8,12 +8,12 @@ class UserMailer < ApplicationMailer
   def signup_confirmation(user)
     @user = user
 
-    mail to: @user.email, subject: "Your invitation is in the works...", bcc: "tom.meehan+NEWSIGNUP@minibarra.com"
+    mail to: @user.email, subject: "Your invitation is in the works..."
   end
 
   def trello_notification(user)
   	@user = user
 
-  	mail to: "tomeehan+prtxhumb8cgrwf01tsgz@boards.trello.com", subject: "trello test"
+  	mail to: "tomeehan+prtxhumb8cgrwf01tsgz@boards.trello.com", subject: @user.organisation, bcc: "tom.meehan+NEWSIGNUP@minibarra.com"
   end
 end
