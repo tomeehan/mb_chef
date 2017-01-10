@@ -4,6 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
 		super
 		if @user.persisted?
 			UserMailer.signup_confirmation(@user).deliver!
+			UserMailer.trello_notification(@user).deliver!
 		end
 	end
 
