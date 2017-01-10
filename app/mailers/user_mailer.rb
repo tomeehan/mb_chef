@@ -9,6 +9,5 @@ class UserMailer < ApplicationMailer
     @user = user
 
     mail to: @user.email, subject: "Your invitation is in the works...", bcc: "tom.meehan+NEWSIGNUP@minibarra.com"
-    mail to: "tom.meehan@minibarra.com", subject: "new signup"
   end
 end
