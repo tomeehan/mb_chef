@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 col-md-offset-3 panel panel-default form-style">
+		<div class="col-md-6 col-md-offset-3 panel panel-default form-style payment">
 			<div class="panel-body">
 				<h2>Final Step</h2>
 				<h4>You have chosen the
@@ -15,6 +15,7 @@
 					<% end %>
 				</h4>
 				<%= render 'form' %>
+				<br>
 				<%= link_to "I've changed my mind. Get me out of here!", destroy_user_session_path, method: :delete %>
 			</div>
 		</div>

@@ -1173,13 +1173,22 @@ label.checkbox {
 	width: 50%;
 }
 
-
-
 ._2ngXYtlcHXA-EjBwuz_RKI {
 	padding-bottom: 100px !important;
 }
 
 
+.payment {
+	margin-top: 100px;
+	margin-bottom: 25px;
+}
+
+.payment .stripe-button-el span { 
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	border-radius: 4px;
+	background-color: #3ea8e5;
+	background-image: none;
+}
 
 
 

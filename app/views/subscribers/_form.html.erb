@@ -16,7 +16,7 @@
             <% else %>
               £69.99
             <% end %>
-          <% end %>
+          <% end %>/month
       </span>
     </label>
   </article>
@@ -39,7 +39,7 @@
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
         data-description="Let's get cooking!"
-        data-amount="9999"
+        data-amount="1999"
         data-panel-label="Pay"
         data-image="http://www.minibarra.com/wp-content/uploads/2016/12/Minibarra-Chef-iOS-App-Icon.png"
         data-label="Pay Now"
@@ -50,7 +50,7 @@
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
         data-description="Let's get cooking!"
-        data-amount="9999"
+        data-amount="6999"
         data-panel-label="Subscribe"
         data-image="http://www.minibarra.com/wp-content/uploads/2016/12/Minibarra-Chef-iOS-App-Icon.png"
         data-label="Pay Now"
