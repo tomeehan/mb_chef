@@ -27,7 +27,9 @@
                 <hr>
 
                 <!-- Preview Image -->
-
+				<div class="lead-img">
+					<p><%= markdown(@blog.image_link) %></p>
+				</div>
                 <!-- Post Content -->
                 <p class="lead"><%= markdown(@blog.lead) %></p>
                 

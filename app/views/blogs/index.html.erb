@@ -1,8 +1,12 @@
 
     <div class="row blog">
       <div class="blog-title col-lg-12">
-        <h1>The Minibarra Blog</h1>
-        <p>Stay ahead of the curve with the Minibarra blog.</p>
+        <h1>The Minibarra Chef Blog</h1>
+        <div class="col-sm-6 col-sm-offset-3">
+          <p>Stay ahead of the curve with our 7-part email course on how to get more customers in your restaurant
+          </p>
+        </div>
+
       <!-- Blog Post Content Column -->
       </div>
       <div class="col-sm-8">
@@ -18,6 +22,10 @@
             <!-- Date/Time -->
             <p><span class="glyphicon glyphicon-time"></span> Posted on <%= blog.created_at.strftime("%e %B %Y") %> by <%= blog.author %></p>
             <hr>
+
+            <div class="lead-img">
+              <p><%= markdown(blog.image_link) %></p>
+            </div>
 
             <!-- Post Content -->
             <p>
