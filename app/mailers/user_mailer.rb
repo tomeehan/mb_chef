@@ -8,6 +8,6 @@ class UserMailer < ApplicationMailer
   def signup_confirmation(user)
     @user = user
 
-    mail to: @user.email, subject: "Your invitation is in the works...", bcc: "tom.meehan+NEWSIGNUP@minibarra.com"
+    mail to: @user.email, subject: "Your invitation is in the works...", bcc: "tom.meehan+NEWSIGNUP@minibarra.com, tomeehan+prtxhumb8cgrwf01tsgz@boards.trello.com"
   end
 end
