@@ -28,7 +28,8 @@ class MakersController < ApplicationController
 
     respond_to do |format|
       if @maker.save
-        format.html { redirect_to @maker, notice: 'Maker was successfully created.' }
+        MakerMailer.maker_signup_confirmation(@maker).deliver!
+        format.html { redirect_to root, notice: 'Maker was successfully created.' }
         format.json { render :show, status: :created, location: @maker }
       else
         format.html { render :new }
