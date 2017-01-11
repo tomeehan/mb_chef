@@ -39,7 +39,9 @@
                	<% if user_signed_in? && current_user.admin == true %>
 					<p><%= link_to 'Edit', edit_blog_path(@blog) %></p>
 				<% end %>
-				<%= current_user.id %>
+				<% if user_signed_in? %>
+					<%= current_user.id %>
+				<% end %>
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
