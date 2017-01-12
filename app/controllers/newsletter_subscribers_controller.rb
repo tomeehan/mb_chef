@@ -28,6 +28,7 @@ class NewsletterSubscribersController < ApplicationController
 
     respond_to do |format|
       if @newsletter_subscriber.save
+        BlogSubscribersMailer.email_confirmation(@newsletter_subscriber).deliver!
         format.html { redirect_to blogs_path, notice: 'Newsletter subscriber was successfully created.' }
         format.json { render :show, status: :created, location: @newsletter_subscriber }
       else

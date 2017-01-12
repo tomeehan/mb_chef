@@ -1,0 +1,71 @@
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<style>
+	.welcome-email-container {
+	background-color: #f2f2f2;
+	padding: 25px 50px;
+	font-family: 'Open sans', sans-serif;
+}
+
+.welcome-email {
+	background-color: white;
+	padding: 25px 50px;
+}
+
+.founder {
+	font-weight: 600;
+}
+
+.minibarra {
+	color: #ff5f5e;
+}
+
+.footer {
+	text-align: center;
+	font-size: 10px;
+}
+
+.copyright {
+	text-decoration: italic;
+}
+
+@media screen and (min-width: 1px) and (max-width: 799px) {	
+	.welcome-email-container {
+		padding: 5px 10px;
+	}
+
+	.welcome-email {
+		padding: 5px 10px;
+}
+}
+</style>
+<div class="welcome-email-container">
+	<div class="welcome-email">
+		<p>
+			Hi <%= @newsletter_subscriber.first_name %>!
+		</p>
+		<p>
+			Thanks for subscribing.
+		</p>
+		<p>
+			Speak soon!
+		</p>
+		<p>
+			Tom
+		</p>
+		<p class="founder">
+			Founder | <span class="minibarra">Minibarra</span>
+		</p>
+
+		<p>
+			(+44) 020 8123 2715
+		</p>
+
+
+
+	</div>
+
+	<div class="footer">
+		<p class="copyright">Copyright © 2017 Minibarra LTD, All rights reserved.</p>
+		<p>You're recieving this email becuase you signed up on our website, <a href="http://www.minibarra.com">http://www.minibarra.com</a></p>
+	</div>
+</div>
