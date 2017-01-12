@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :newsletter_subscribers
   resources :blogs
   resources :makers
   resources :subscribers
