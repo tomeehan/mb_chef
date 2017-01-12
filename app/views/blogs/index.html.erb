@@ -7,17 +7,18 @@
           </p>
         </div>
 
+
       <!-- Blog Post Content Column -->
       </div>
+<div class="container">
       <div class="col-sm-8">
         <!-- Blog Post -->
           <% @blogs.each do |blog| %>
             <!-- Title -->
-            <h2><%= link_to blog.title, blog %></h2>
+            <div class="blog-title-link">
+              <h2><%= link_to blog.title, blog %></h2>
+            </div>
             <!-- Author -->
-            <p class="lead">
-                
-            </p>
             <hr>
             <!-- Date/Time -->
             <p><span class="glyphicon glyphicon-time"></span> Posted on <%= blog.created_at.strftime("%e %B %Y") %> by <%= blog.author %></p>
@@ -28,36 +29,42 @@
             </div>
 
             <!-- Post Content -->
-            <p>
+            <div class="content">
               <%= markdown(blog.lead) %>
-            </p>
+            </div>
 
-            <p>
-              <%= link_to "Read now", blog %>
-            </p>
+            <div class="read-link">
+              <%= link_to "Read now", blog %> | 
+              <% if user_signed_in? && current_user.admin == true %>
+
+                <%= link_to edit_blog_path(blog) do %> 
+                    <i class="glyphicon glyphicon-pencil"></i> Edit Post
+                 <% end %> 
+            <% end %>
+            </div>
 
             <hr>
-            <% if user_signed_in? && current_user.admin == true %>
-              <p>
-                <%= link_to 'Edit', edit_blog_path(blog) %>
-              </p>
-              <p>
-                <%= link_to 'New Post', new_blog_path %>
-              </p>
-            <% end %>
+
           <% end %>
         </div>
 
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-sm-4">
           <!-- Blog Categories Well -->
-          <div class="well" style="margin-top: 25vh;">
+          <div class="well recent-blogs" style="margin-top: 20px;">
             <h4>Recent Posts</h4>
               <% @blogs.each do |blog| %>
                 <p>
                   <%= link_to blog.title, blog %>, by <%= blog.author %> (<%= blog.created_at.strftime("%e %B %Y") %>)
                 </p>
               <% end %>
+            <div class="read-link">
+              <% if user_signed_in? && current_user.admin == true %>
+                 <%= link_to new_blog_path do %> 
+                    <i class="glyphicon glyphicon-pencil"></i> New Post
+                 <% end %> 
+              <% end %>
+            </div>
           </div>
         <!-- /.row -->
         </div>
@@ -65,3 +72,4 @@
     </div>
 <!-- /.container -->
 <p id="notice"><%= notice %></p>
+</div>
