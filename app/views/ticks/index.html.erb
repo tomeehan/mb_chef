@@ -11,11 +11,31 @@
               <%-#<%= text_field_tag 'search[date_from]', @search.date_from   -%>
               <%= text_field_tag 'search[date_to', @search.date_to %>
               <%= submit_tag 'Search', class: 'btn search-button' %>
-              <p>Export: 
-              <%= link_to "Excel", ticks_path(format: "xls") %> | 
-              <%= link_to "CSV", ticks_path(format: "csv") %> | 
-              <%= link_to "PDF", ticks_path(format: "pdf") %>
-              </p>
+            <div class="new-btn">
+                <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" type="button">Export Data</button>
+
+                <div class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                      <div class="modal-header"><h4><i class="glyphicon glyphicon-download-alt"></i> Export Data</h4></div>
+                      <div class="modal-body"><i class="glyphicon glyphicon-info-sign"></i> This will export all your Minibarra data.</div>
+                      <div class="modal-footer ">
+                        <div class="new-btn">
+                          <%= link_to "PDF", ticks_path(format: "pdf"), class: "btn btn-primary btn-block" %>
+                        </div>
+                        <br>
+                        <div class="new-btn">
+                          <%= link_to "Excel", ticks_path(format: "xls"), class: "btn btn-primary btn-block" %>
+                        </div>
+                        <br>
+                        <div class="new-btn">
+                          <%= link_to "CSV", ticks_path(format: "csv"), class: "btn btn-primary btn-block" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <% end %>
           </div>
         <% end %>
