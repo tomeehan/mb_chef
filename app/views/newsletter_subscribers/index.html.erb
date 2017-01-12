@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
+<% if user_signed_in? && current_user.admin == true %>
+  <p id="notice"><%= notice %></p>
 
-<h1>Newsletter Subscribers</h1>
+  <h1>Newsletter Subscribers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th>First name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @newsletter_subscribers.each do |newsletter_subscriber| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= newsletter_subscriber.email %></td>
-        <td><%= newsletter_subscriber.first_name %></td>
-        <td><%= link_to 'Show', newsletter_subscriber %></td>
-        <td><%= link_to 'Edit', edit_newsletter_subscriber_path(newsletter_subscriber) %></td>
-        <td><%= link_to 'Destroy', newsletter_subscriber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Email</th>
+        <th>First name</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @newsletter_subscribers.each do |newsletter_subscriber| %>
+        <tr>
+          <td><%= newsletter_subscriber.email %></td>
+          <td><%= newsletter_subscriber.first_name %></td>
+          <td><%= link_to 'Show', newsletter_subscriber %></td>
+          <td><%= link_to 'Edit', edit_newsletter_subscriber_path(newsletter_subscriber) %></td>
+          <td><%= link_to 'Destroy', newsletter_subscriber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Newsletter Subscriber', new_newsletter_subscriber_path %>
+  <br>
+
+  <%= link_to 'New Newsletter Subscriber', new_newsletter_subscriber_path %>
+<% end %>

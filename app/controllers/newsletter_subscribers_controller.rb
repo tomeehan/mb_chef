@@ -28,7 +28,7 @@ class NewsletterSubscribersController < ApplicationController
 
     respond_to do |format|
       if @newsletter_subscriber.save
-        format.html { redirect_to @newsletter_subscriber, notice: 'Newsletter subscriber was successfully created.' }
+        format.html { redirect_to blogs_path, notice: 'Newsletter subscriber was successfully created.' }
         format.json { render :show, status: :created, location: @newsletter_subscriber }
       else
         format.html { render :new }

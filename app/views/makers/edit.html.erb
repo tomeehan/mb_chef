@@ -1,6 +1,8 @@
-<h1>Editing Maker</h1>
+<% if user_signed_in? && current_user.admin == true %>
+	<h1>Editing Maker</h1>
 
-<%= render 'form', maker: @maker %>
+	<%= render 'form', maker: @maker %>
 
-<%= link_to 'Show', @maker %> |
-<%= link_to 'Back', makers_path %>
+	<%= link_to 'Show', @maker %> |
+	<%= link_to 'Back', makers_path %>
+<% end %>

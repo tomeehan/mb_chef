@@ -1,12 +1,20 @@
-<%= simple_form_for(@newsletter_subscriber) do |f| %>
-  <%= f.error_notification %>
+<div class="container">
+	<div class="col-sm-6 col-sm-offset-3 well signin">
+		<h4 class="email-note">Get Fresh Restaurant Marketing Guides, Management Tips, and More from the Minibarra Chef Blog.</h4>
+		<br>
 
-  <div class="form-inputs">
-    <%= f.input :email %>
-    <%= f.input :first_name %>
-  </div>
+		<%= simple_form_for(@newsletter_subscriber) do |f| %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+			<%= f.input :first_name, required: true, autofocus: true, label: false , :class => "input-lg", placeholder: "First name" %>
+			<%= f.input :email, required: true, label: false, placeholder: "Email (required)" %>
+			<p class="email-note"><span class="glyphicon glyphicon-lock"></span> We hate spam and promise to keep your email address safe.</p> 
+			<%= f.button :submit, "Subscribe", class: 'btn-primary btn-block btn-lg' %>
+
+
+		<% end %>
+
+<br>
+<%= flash_messages layout_flash: false %>
+
+</div>
+</div>
