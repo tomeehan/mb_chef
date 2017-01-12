@@ -73,15 +73,15 @@
 	font-weight: 600;
 	font-size: 18px;
 	padding-bottom: 5px;
-	border-bottom: 3px solid darken(#1F9BFC, 5%);
-	transition: padding-bottom 0.2s ease;
+	border-bottom: 3px solid #1F9BFC;
+	transition: padding-bottom 0.1s ease;
 	text-decoration: none;
 }
 
 .read-link a:hover {
-	color: darken(#1F9BFC, 5%);
+	color: darken(#1F9BFC, 10%);
 	padding-bottom: 2px;
-	border-bottom: 3px solid darken(#1F9BFC, 5%);
+	border-bottom: 3px solid darken(#1F9BFC, 10%);
 }
 .start-here p {
 	font-size: 14px;
