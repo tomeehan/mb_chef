@@ -11,7 +11,11 @@
               <%-#<%= text_field_tag 'search[date_from]', @search.date_from   -%>
               <%= text_field_tag 'search[date_to', @search.date_to %>
               <%= submit_tag 'Search', class: 'btn search-button' %>
-              <p><a href="/ticks.pdf">Export to PDF</a></p>
+              <p>Export: 
+              <%= link_to "Excel", ticks_path(format: "xls") %> | 
+              <%= link_to "CSV", ticks_path(format: "csv") %> | 
+              <%= link_to "PDF", ticks_path(format: "pdf") %>
+              </p>
             <% end %>
           </div>
         <% end %>
