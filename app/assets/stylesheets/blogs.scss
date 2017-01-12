@@ -83,19 +83,23 @@
 	padding-bottom: 2px;
 	border-bottom: 3px solid darken(#1F9BFC, 5%);
 }
+.start-here p {
+	font-size: 14px;
+	line-height: 22px;	
+}
 
-.recent-blogs p {
+.blog-side-links p {
 	font-size: 14px;
 	line-height: 22px;
 	font-weight: 600;
 }
 
-.recent-blogs a {
+.blog-side-links a {
 	color: #1F9BFC;
 	font-weight: 600;
 }
 
-.recent-blogs a:hover {
+.blog-side-links a:hover {
 	color: #1F9BFC;
 	border-bottom: 3px solid #1F9BFC;
 }
@@ -113,6 +117,32 @@
 	color: red;
 }
 
+.email-signup {
+	background-color: #1F9BFC !important;
+	border: none;
+	color: white;
+	-webkit-box-shadow:  0px -1px 15px 0px rgba(64,64,64,0.5) !important;
+	-moz-box-shadow:  0px -1px 15px 0px rgba(64,64,64,0.5) !important;
+	box-shadow:  0px -1px 15px 0px rgba(64,64,64,0.5) !important;	
+}
 
+.email-signup h2 {
+	font-weight: 700;
+	color: white;
+	text-align: center;
+	/*font-size: 2.5em;*/
+}
+
+.email-signup p {
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 300;
+	text-align: center;
+}
+.email-signup a {
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+}
 
 

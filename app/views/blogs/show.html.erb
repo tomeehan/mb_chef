@@ -13,27 +13,6 @@
             <!-- Date/Time -->
             <div class="read-link">
                 <p><span class="glyphicon glyphicon-time"></span> Posted on <%= @blog.created_at.strftime("%e %B %Y") %></p>
-<<<<<<< HEAD
-
-                <hr>
-
-                <!-- Preview Image -->
-				<div class="lead-img">
-					<p><%= markdown(@blog.image_link) %></p>
-				</div>
-                <!-- Post Content -->
-                <p class="lead"><%= markdown(@blog.lead) %></p>
-                
-				<p><%= markdown(@blog.content) %></p>
-                <hr>
-
-               	<% if user_signed_in? && current_user.admin == true %>
-					<p><%= link_to 'Edit', edit_blog_path(@blog) %></p>
-				<% end %>
-				<% if user_signed_in? %>
-					<%= current_user.id %>
-				<% end %>
-=======
                 <% if user_signed_in? && current_user.admin == true %>
                     <%= link_to edit_blog_path(@blog) do %> 
                         <i class="glyphicon glyphicon-pencil"></i> Edit Post
@@ -43,22 +22,21 @@
             <hr>
 
             <!-- Preview Image -->
-			<div class="lead-img">
-				<p><%= markdown(@blog.image_link) %></p>
-			</div>
+            <div class="lead-img">
+                <p><%= markdown(@blog.image_link) %></p>
+            </div>
             <!-- Post Content -->
             <div class="lead">
                 <%= markdown(@blog.lead) %>
->>>>>>> blog
             </div>
             
-			<div class="content">
+            <div class="content">
                 <%= markdown(@blog.content) %>
             </div>
             <hr>
 
 
-			
+            
             <% if user_signed_in? %>
                 <%= current_user.id %>
             <% end %>
@@ -66,14 +44,43 @@
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-sm-4">
             <!-- Blog Categories Well -->
+            <div class="well start-here" style="margin-top: 20px;">
+              <h4>New? Start here</h4>
+              <p>A blog about marketing, managing, and all things food & beverage. Insights, tips, and best practices. </p>
+
+              <div class="blog-side-links">
+                  <p><a href="#">How To Use A Blog To Generate More Business</a></p>
+                  <p><a href="#">Don't Make The Same Mistake Harrods Made. Why Your Staff Deserve Their Tips.</a></p>
+                  <p><a href="#">A Suppliers Guide To Choosing The Right Suppliers</a></p>
+              </div>
+
+              <div class="read-link">
+                <% if user_signed_in? && current_user.admin == true %>
+                <%= link_to new_blog_path do %> 
+                <i class="glyphicon glyphicon-pencil"></i> New Post
+                <% end %> 
+                <% end %>
+              </div>
+            </div>            
+            <div class="well email-signup">
+                <h2>The Ultimate Guide to Starting a Restaurant</h2>
+                <hr>
+                <p>A 7-part email course with everything you need to know. Get started with a few of our popular posts:</p>
+                <div class="new-btn">
+                    <a class="btn-primary btn-block btn-lg" href="/newsletter_subscribers/new">
+                      <i class="glyphicon glyphicon-hand-right"></i>  Get Started
+                    </a>
+                </div>
+            </div>            
             <div class="well recent-blogs" style="margin-top: 25px;">
                 <h4>Recent Posts</h4>
-                <% @blogs.each do |blog| %>
-                    <p>
-                        <%= link_to blog.title, blog %>, by <%= blog.author %> (<%= @blog.created_at.strftime("%e %B %Y") %>)
-                    </p>
-                <% end %>
-
+                <div class="blog-side-links">
+                    <% @blogs.each do |blog| %>
+                        <p>
+                            <%= link_to blog.title, blog %>, by <%= blog.author %> (<%= @blog.created_at.strftime("%e %B %Y") %>)
+                        </p>
+                    <% end %>
+                </div>
                 <div class="read-link">
                     <% if user_signed_in? && current_user.admin == true %>
                         <%= link_to new_blog_path do %> 
