@@ -13,9 +13,14 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .
 //= require select2
+
+$(function() {
+  $("#reports_date_picker").datepicker();
+});
 
 /*!
  * Particleground
