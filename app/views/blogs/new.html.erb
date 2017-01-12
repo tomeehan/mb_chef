@@ -1,13 +1,11 @@
-<% if user_signed_in? && current_user.admin == true %>
-	<div class="container">
-	  <div class="row">
-	    <div class="panel">
-	    	<h1>New Blog</h1>
+<div class="row container style-links">
+	<div class="well signin">
+		<% if user_signed_in? && current_user.admin == true %>
+			<h1>New Blog</h1>
+		
+			<%= render 'form', blog: @blog %>
+			<%= link_to 'Back', blogs_path %>
 
-				<%= render 'form', blog: @blog %>
-
-				<%= link_to 'Back', blogs_path %>
-	    </div>  
-	  </div>  
+		<% end %>
 	</div>
-<% end %>
+</div>

@@ -4,11 +4,19 @@
 
 .blog-title {
 	text-align: center;
-	background-color: #ff5f5e;
 	z-index: -1;
 	padding: 50px;
 	color: white;
 	height: 40vh;
+	-webkit-box-shadow: inset 0px -1px 15px 0px rgba(64,64,64,0.5);
+	-moz-box-shadow: inset 0px -1px 15px 0px rgba(64,64,64,0.5);
+	box-shadow: inset 0px -1px 15px 0px rgba(64,64,64,0.5);
+
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#ff5f5e, darken(#ff5f5e, 25%)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ff5f5e, darken(#ff5f5e, 25%)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ff5f5e, darken(#ff5f5e, 25%)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ff5f5e, darken(#ff5f5e, 25%)); /* Standard syntax */	
 }
 
 .blog-title h1 {
@@ -30,3 +38,82 @@
 .blog .img-lead p img {
 	width: 50% !important;
 }
+
+.lead p {
+	font-size: 18px;
+	line-height: 27px;
+	font-weight: 700;
+}
+
+.content p {
+	font-size: 18px;
+	line-height: 27px;
+}
+
+.content li {
+	font-size: 18px;
+	line-height: 27px;	
+}
+
+.lead-img img {
+	width: 100%;
+}
+
+.blog-title-link h2 a {
+	color: #404040;
+
+}
+
+.blog-title-link h2 a:hover {
+	border-bottom: 3px solid #1F9BFC;
+}
+
+.read-link a {
+	color: #1F9BFC;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 18px;
+	padding-bottom: 5px;
+	border-bottom: 3px solid darken(#1F9BFC, 5%);
+	transition: padding-bottom 0.2s ease;
+	text-decoration: none;
+}
+
+.read-link a:hover {
+	color: darken(#1F9BFC, 5%);
+	padding-bottom: 2px;
+	border-bottom: 3px solid darken(#1F9BFC, 5%);
+}
+
+.recent-blogs p {
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 600;
+}
+
+.recent-blogs a {
+	color: #1F9BFC;
+	font-weight: 600;
+}
+
+.recent-blogs a:hover {
+	color: #1F9BFC;
+	border-bottom: 3px solid #1F9BFC;
+}
+
+.recent-blogs .admin-link {
+	color: red;
+	border-bottom: 3px solid #1F9BFC;
+}
+
+.padding-top {
+	margin-top: 25px;
+}
+
+.style-links a {
+	color: red;
+}
+
+
+
+
