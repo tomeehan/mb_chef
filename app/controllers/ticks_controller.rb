@@ -15,6 +15,8 @@ class TicksController < ApplicationController
 
       respond_to do |format|
         format.html
+        format.csv { send_data @ticks.to_csv }
+        format.xls { send_data @ticks.to_csv(col_sep: "\t")}
         format.pdf do 
           pdf = TicksPdf.new(@tick)
           send_data pdf.render, filename: 'member.pdf', type: 'application/pdf', disposition: "inline"
