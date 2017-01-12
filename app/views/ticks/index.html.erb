@@ -11,6 +11,7 @@
               <%-#<%= text_field_tag 'search[date_from]', @search.date_from   -%>
               <%= text_field_tag 'search[date_to', @search.date_to %>
               <%= submit_tag 'Search', class: 'btn search-button' %>
+              <p><a href="/ticks.pdf">Export to PDF</a></p>
             <% end %>
           </div>
         <% end %>
@@ -50,7 +51,6 @@
 <% if !params[:active] && !params[:stage] %>
 
   <%= render 'inactive'  %>
-
 
   <% else %>
 

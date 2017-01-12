@@ -12,6 +12,14 @@ class TicksController < ApplicationController
     if params[:active].blank?
       @search = TickSearch.new(params[:search])
       @ticks = @search.scope
+
+      respond_to do |format|
+        format.html
+        format.pdf do 
+          pdf = TicksPdf.new(@tick)
+          send_data pdf.render, filename: 'member.pdf', type: 'application/pdf', disposition: "inline"
+        end
+      end
     else 
       # code here
       @ticks = Tick.all.order("created_at DESC")
