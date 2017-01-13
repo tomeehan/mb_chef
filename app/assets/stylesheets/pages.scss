@@ -291,7 +291,7 @@ Pricing table
     position: relative;
     margin-bottom: 15px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 12px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     font-family: 'Open sans', sans-serif;
@@ -342,7 +342,7 @@ Pricing table
 .pricing-head h3 {
     color: #fafafa;
     padding: 12px 0;
-    font-size: 27px;
+    font-size: 22px;
     background: #ff5f5e;
     border-bottom: solid 1px #ff5f5e;
     font-weight: 600;
@@ -388,8 +388,8 @@ Pricing table
 }
 .pricing-content li {
     color: #888;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 600;
     text-align: center;
     font-family: 'Open sans', sans-serif;
     padding: 10px 15px;
@@ -404,6 +404,7 @@ Pricing table
     text-align: center;
     padding: 0 20px 19px;
     font-family: 'Open sans', sans-serif;
+    font-size: 12px;
 }
 
 /*Priceing Active*/
@@ -437,7 +438,21 @@ Pricing table
 .yellow-crusta.btn:active,
 .yellow-crusta.btn.active {
     color: #FFFFFF;
-	    background-color: #139A6C;
+    background-color: #139A6C;
+}
+
+.pricing-footer p {
+	font-size: 12px;
+	font-weight: 600;
+	border-radius: 3px;
+	border: 2px solid darken(rgba(255,255,0,0.3), 30%);
+	background-color: rgba(255,255,0,0.3);
+	margin: 0 15%;
+	margin-top: -8px;
+}
+
+.pricing-footer:hover p {
+	background-color: rgba(255,255,0,0.5);
 }
 
 .pricing .btn-container .btn-secondary {
@@ -451,7 +466,7 @@ Pricing table
 }
 
 .notice p {
-	margin-top: 15px;
+	margin-top: 25px;
 	text-align: center;
 	font-family: 'Open sans', sans-serif;
 }
