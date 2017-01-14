@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 	has_many :tasks
 	has_many :ticks
+	has_many :staff
   	
  #  	after_create :send_welcome_mail
 

@@ -14,7 +14,7 @@ class StaffsController < ApplicationController
 
   # GET /staffs/new
   def new
-    @staff = Staff.new
+    @staff = current_user.staff.build
   end
 
   # GET /staffs/1/edit
@@ -24,10 +24,10 @@ class StaffsController < ApplicationController
   # POST /staffs
   # POST /staffs.json
   def create
-    @staff = Staff.new(staff_params)
+    @staff = current_user.staff(staff_params)
 
     respond_to do |format|
-      if @staff.save
+      if @staff.create!
         format.html { redirect_to staffs_path, notice: 'Staff was successfully created.' }
         format.json { render :show, status: :created, location: @staff }
       else
@@ -69,6 +69,6 @@ class StaffsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def staff_params
-      params.require(:staff).permit(:first_name, :surname, :email, :job_title, :manager, :pin)
+      params.require(:staff).permit(:first_name, :surname, :email, :job_title, :manager, :pin, :user_id)
     end
 end
