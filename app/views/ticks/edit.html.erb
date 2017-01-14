@@ -11,7 +11,7 @@
 				<% end %>
 			<% end %>
 		</div>
-		<h1>Updating <%= @tick.task.name %></h1>
+		<h4>Updating <%= @tick.task.name %></h4>
 			<%= simple_form_for(@tick) do |f| %>
 			    <%= f.label :complete, :class => 'checkbox' do %>
       				<%= f.check_box :complete,as: :boolean, checked_value: true, unchecked_value: false %>	      				
