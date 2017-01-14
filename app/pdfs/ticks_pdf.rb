@@ -1,7 +1,10 @@
 class TicksPdf < Prawn::Document
-	def initialize(ticks)
+	def initialize(ticks, view)
 		super(top_margin: 70)
-		@ticks = Tick.order("id DESC").all
+		
+		@view = view
+		@ticks = @view.current_user.ticks
+
 		tick_id
 	end
 
@@ -26,7 +29,7 @@ class TicksPdf < Prawn::Document
 						"Evening"
 					end
 				end, 
-					tick.updated_at.to_s, tick.complete.to_s, tick.staff.first_name + " " + tick.staff.surname]
+					tick.updated_at.to_s, tick.complete.to_s, tick.staff.first_name + " " + tick.staff.surname, tick.user_id]
 		end
 	end
 end
