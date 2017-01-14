@@ -121,6 +121,10 @@ GEM
     orm_adapter (0.5.0)
     pdf-core (0.6.1)
     pg (0.19.0)
+    pjax-rails (0.1.4)
+      jquery-rails
+    pjax_rails (0.3.4)
+      jquery-rails
     prawn (2.1.0)
       pdf-core (~> 0.6.1)
       ttfunk (~> 1.4.0)
@@ -238,6 +242,8 @@ DEPENDENCIES
   listen (~> 3.0.5)
   materialize-sass
   pg (~> 0.18)
+  pjax-rails
+  pjax_rails
   prawn
   prawn-table
   pry (~> 0.10.4)
