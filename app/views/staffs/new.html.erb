@@ -1,15 +1,18 @@
-<div class="form-container">
-	<div class="col-md-6 col-md-offset-3 well signin">
-		<div class="back-btn">
-			<%= link_to staffs_path do %>
-				<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
-			<% end %>
-		</div>		
-			<br>
-			<h4><i class="fa fa-users"></i> New Member</h4>
+<div class="m-scene" id="main">
+  <div class="m-right-panel m-page scene_element scene_element--fadeinright">
+	<div class="form-container">
+		<div class="col-md-6 col-md-offset-3 well signin">
+			<div class="back-btn">
+				<%= link_to staffs_path do %>
+					<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+				<% end %>
+			</div>		
+				<br>
+				<h4><i class="fa fa-users"></i> New Member</h4>
 
-			<%= render 'form', staff: @staff %>
-			<br>
+				<%= render 'form', staff: @staff %>
+				<br>
+			</div>
 		</div>
 	</div>
 </div>
