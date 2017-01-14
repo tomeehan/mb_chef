@@ -15,20 +15,21 @@
     </div>
   </div>  
   <hr>  
-
+<p>Current user <%= current_user.id %></p>
 
   <div class="row container">
     <div class="col-sm-5">
       <h2>Checks</h2> <%# LOCAL GROUP LABEL %>
 
          <% @tasks.each do |task| %>
-          <% if task.category.name == "Check" %>
+          <% if task.category.name == "Check" && task.user_id == current_user.id %>
             <%= link_to edit_task_path(task) do %>
               <div class="book-index-desc task">
                 <div class="book-index-content">  
                   <div class="left">
                     <h4><%= task.name %></h4>
                     <p><%= task.description %></p>
+                    <p><%= task.user_id %></p>
                   </div> 
                   <div class="right">
                     <div class="regularity">
@@ -66,7 +67,7 @@
     <div class="col-sm-5">
       <h2>Temperatures</h2> <%# LOCAL GROUP LABEL %>
         <% @tasks.each do |task| %>
-          <% if task.category.name == "Temperature" %>
+          <% if task.category.name == "Temperature" && task.user_id == current_user.id %>
             <%= link_to edit_task_path(task) do %>
               <div class="book-index-desc task">
 
@@ -74,6 +75,8 @@
                   <div class="left">
                     <h4><%= task.name %></h4>
                     <p><%= task.description %></p>
+                    <p><%= task.user_id %></p>
+
                   </div> 
 
                   
