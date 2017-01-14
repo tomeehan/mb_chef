@@ -2,7 +2,7 @@
     <div class="col-sm-4">
       <h1>Checks</h1>
          <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
+          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
             <% if tick.stage == "starting" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
@@ -10,7 +10,6 @@
                     <div class="left">
                       <h4><%= tick.task.name %></h4>
                       <p><%= tick.task.description %></p>
-
                     </div>
                     <div class="right">
                       <div class="regularity">
@@ -48,7 +47,7 @@
     <div class="col-sm-4">
       <h1>Checks</h1>
          <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
+          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
             <% if tick.stage == "middle" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
@@ -56,7 +55,6 @@
                     <div class="left">
                       <h4><%= tick.task.name %></h4>
                       <p><%= tick.task.description %></p>
-
                     </div>
                     <div class="right">
                       <div class="regularity">
@@ -95,7 +93,7 @@
     <div class="col-sm-4">
       <h1>Checks</h1>
          <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
+          <% if tick.task.category.name == "Check" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
             <% if tick.stage == "ending" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
@@ -103,7 +101,6 @@
                     <div class="left">
                       <h4><%= tick.task.name %></h4>
                       <p><%= tick.task.description %></p>
-
                     </div>
                     <div class="right">
                       <div class="regularity">
