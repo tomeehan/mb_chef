@@ -189,6 +189,19 @@
 	font-size: 1.5em;
 }
 
+.white {
+	background-color: white;
+}
+
+.padding-side {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.padding-bottom {
+	padding-bottom: 50px;
+}
+
 .sep-gray {
 	background: #f2f2f2;
 	padding-bottom: 50px;
@@ -357,8 +370,9 @@ Pricing table
     border-bottom: solid 1px #D7D7D7;
 }
 
+
 .pricing-head-active h4 {
-	color: #139A6C;
+	color: #119A65;
 	border-bottom: solid 1px #D7D7D7;
 }
 
@@ -384,7 +398,7 @@ Pricing table
 /*Pricing Content*/
 
 .pricing-content {
-
+	padding-top: 10px;
 }
 .pricing-content li {
     color: #888;
@@ -392,8 +406,7 @@ Pricing table
     font-weight: 600;
     text-align: center;
     font-family: 'Open sans', sans-serif;
-    padding: 10px 15px;
-    border-bottom: solid 1px #f5f9e7;
+    padding: 5px 15px;
 }
 
 /*Pricing Footer*/
@@ -445,14 +458,15 @@ Pricing table
 	font-size: 12px;
 	font-weight: 600;
 	border-radius: 3px;
-	border: 2px solid darken(rgba(255,255,0,0.3), 30%);
-	background-color: rgba(255,255,0,0.3);
+	border: 2px solid darken(#FFD23F, 15%);
+	background-color: #FFD23F;
 	margin: 0 15%;
 	margin-top: -8px;
+	color: #404040;
 }
 
 .pricing-footer:hover p {
-	background-color: rgba(255,255,0,0.5);
+	background-color: #FFD23F;
 }
 
 .pricing .btn-container .btn-secondary {
@@ -469,6 +483,25 @@ Pricing table
 	margin-top: 25px;
 	text-align: center;
 	font-family: 'Open sans', sans-serif;
+}
+
+.runner-container .runner-text {
+	text-align: left;
+}
+
+.runner-container .runner-text h3 {
+
+}
+
+.runner-container .runner-text h5 {
+	font-weight: 500;
+	
+	font-size: 1.2em;
+	line-height: 18px;
+}
+
+.runner-container .runner-img img {
+	width: 128px;
 }
 
 /* Enterprise */

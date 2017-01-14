@@ -25,5 +25,7 @@ Rails.application.routes.draw do
   get "/privacy", :to => 'pages#privacy'
   get "/team", :to => 'pages#team'
   get "/support", :to => 'pages#support'
+  get "/features", :to => 'pages#features'
+
   get "/blog", :to => 'blogs#index'
 end

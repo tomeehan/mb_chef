@@ -215,6 +215,7 @@ p.alert, p.notice {
 	border-radius: 3px;
 	outline: 0;
 	padding: 16px 2em;
+	margin-left: 10px;
 /*	vertical-align: middle;*/
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
@@ -226,11 +227,22 @@ p.alert, p.notice {
 	cursor: pointer;
 }
 
-
 .nav-btn:hover {
 	background-color: #0f8a5a;
 	text-decoration: none;
 	color: white;
+}
+
+.log-in-btn {
+	padding: 14px 2em;
+	color: #119A65;
+	background: none;
+	border: 2px solid #119A65;
+	font-weight: 600;
+}
+
+.log-in-btn:hover {
+	border: 2px solid #0f8a5a;
 }
 
 .fixed-nav-padding {
