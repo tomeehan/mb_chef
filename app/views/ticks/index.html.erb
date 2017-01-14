@@ -1,95 +1,97 @@
+<div class="m-scene" id="main">
+  <div class="m-right-panel m-page scene_element scene_element--fadein">
 
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="container">
+          <% if params[:stage] %>
+            <h1>Today</h1>
+          <% else %>
+            <h1>Report</h1>
+          <% end %>
+        </div>  
+      </div>
+      <div class="col-sm-8">
 
-<% if user_signed_in? %>
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="container">
-        <% if params[:stage] %>
-          <h1>Today</h1>
+        <% if !params[:stage] %>
+        <br>
+            <div class="pull-right range-query">
+              <%= form_tag ticks_path(:active => 'false'), method: :get do  %>
+                <%-#<%= text_field_tag 'search[date_from]', @search.date_from   -%>
+                <%= text_field_tag 'search[date_to]', @search.date_to, id: "reports_date_picker" %>
+                <%= submit_tag 'Search', class: 'btn btn-primary btn-sm' %>
+              <% end %>
+            </div>
         <% else %>
-          <h1>Report</h1>
-        <% end %>
-      </div>  
-    </div>
-    <div class="col-sm-8">
+        <div class="schedule-selector">
+          <div class="links btn-group"></div>
+            <% if params[:stage] == "Morning" %>
+             <%= link_to "Morning", ticks_path(:stage => "Morning"), class: "schedule-btn active" %>  
+            <% else %>
+             <%= link_to "Morning", ticks_path(:stage => "Morning"), class: "schedule-btn inactive" %>
+            <% end %>
 
-      <% if !params[:stage] %>
-      <br>
-          <div class="pull-right range-query">
-            <%= form_tag ticks_path(:active => 'false'), method: :get do  %>
-              <%-#<%= text_field_tag 'search[date_from]', @search.date_from   -%>
-              <%= text_field_tag 'search[date_to]', @search.date_to, id: "reports_date_picker" %>
-              <%= submit_tag 'Search', class: 'btn btn-primary btn-sm' %>
+            <% if params[:stage] == "Afternoon" %>
+              <%= link_to "Afternoon", ticks_path(:stage => "Afternoon"), class: "schedule-btn active" %>
+            <% else %>
+              <%= link_to "Afternoon", ticks_path(:stage => "Afternoon"), class: "schedule-btn inactive" %>
+            <% end %>  
+
+            <% if params[:stage] == "Evening" %>
+              <%= link_to "Evening", ticks_path(:stage => "Evening"), class: "schedule-btn active" %>
+            <% else %>
+              <%= link_to "Evening", ticks_path(:stage => "Evening"), class: "schedule-btn inactive" %>
             <% end %>
           </div>
-      <% else %>
-      <div class="schedule-selector">
-        <div class="links btn-group"></div>
-          <% if params[:stage] == "Morning" %>
-           <%= link_to "Morning", ticks_path(:stage => "Morning"), class: "schedule-btn active" %>  
-          <% else %>
-           <%= link_to "Morning", ticks_path(:stage => "Morning"), class: "schedule-btn inactive" %>
-          <% end %>
-
-          <% if params[:stage] == "Afternoon" %>
-            <%= link_to "Afternoon", ticks_path(:stage => "Afternoon"), class: "schedule-btn active" %>
-          <% else %>
-            <%= link_to "Afternoon", ticks_path(:stage => "Afternoon"), class: "schedule-btn inactive" %>
-          <% end %>  
-
-          <% if params[:stage] == "Evening" %>
-            <%= link_to "Evening", ticks_path(:stage => "Evening"), class: "schedule-btn active" %>
-          <% else %>
-            <%= link_to "Evening", ticks_path(:stage => "Evening"), class: "schedule-btn inactive" %>
           <% end %>
         </div>
-        <% end %>
       </div>
-    </div>
 
-  <hr>  
+    <hr>  
 
-<% if !params[:active] && !params[:stage] %>
-  
-  <div class="row container">
-    <div class="new-btn">
-      <button class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm" type="button"><i class="glyphicon glyphicon-download-alt"></i> Export Data</button>
-    </div>   
-
-    <div class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4><i class="glyphicon glyphicon-download-alt"></i> Export Data</h4>
-          </div>
-          <div class="modal-body">
-            <i class="glyphicon glyphicon-info-sign"></i> This will export all your Minibarra data.
-          </div>
-          <div class="modal-footer">
-            <div class="new-btn">
-              <%= link_to "PDF", ticks_path(format: "pdf"), class: "btn btn-primary btn-block" %>
-            </div>
-            <br>
-            <div class="new-btn">
-              <%= link_to "Excel", ticks_path(format: "xls"), class: "btn btn-primary btn-block" %>
-            </div>
-            <br>
-            <div class="new-btn">
-              <%= link_to "CSV", ticks_path(format: "csv"), class: "btn btn-primary btn-block" %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <% if !params[:active] && !params[:stage] %>
     
-  <%= render 'inactive'  %>
+    <div class="row container">
+      <div class="new-btn">
+        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm" type="button"><i class="glyphicon glyphicon-download-alt"></i> Export Data</button>
+      </div>   
+
+      <div class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4><i class="glyphicon glyphicon-download-alt"></i> Export Data</h4>
+            </div>
+            <div class="modal-body">
+              <i class="glyphicon glyphicon-info-sign"></i> This will export all your Minibarra data.
+            </div>
+            <div class="modal-footer">
+              <div class="new-btn">
+                <%= link_to "PDF", ticks_path(format: "pdf"), class: "btn btn-primary btn-block" %>
+              </div>
+              <br>
+              <div class="new-btn">
+                <%= link_to "Excel", ticks_path(format: "xls"), class: "btn btn-primary btn-block" %>
+              </div>
+              <br>
+              <div class="new-btn">
+                <%= link_to "CSV", ticks_path(format: "csv"), class: "btn btn-primary btn-block" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <%= render 'inactive'  %>
 
 
-  <% else %>
+    <% else %>
 
-  <%= render 'active' %> 
+    <%= render 'active' %> 
 
+    <% end %>
   <% end %>
-<% end %>
 
+</div></div>

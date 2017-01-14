@@ -1,115 +1,119 @@
-<% if user_signed_in? %>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="">
-        <h1>Tasks</h1> <%# LOCAL PAGE TITLE %>
-      </div>  
-    </div>
-    <div class="col-md-6">
-      <div class="create-btn-container">
-        <div class="new-btn">
-          <%= link_to '+ Create a new task', new_task_path, :class => 'waves-effect btn-large' %>
-          <%# LOCAL BUTTON %>
-        </div>
-      </div>  
-    </div>
-  </div>  
-  <hr>  
+<div class="m-scene" id="main">
+  <div class="m-right-panel m-page scene_element scene_element--fadein">
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="">
+          <h1>Tasks</h1> <%# LOCAL PAGE TITLE %>
+        </div>  
+      </div>
+      <div class="col-md-6">
+        <div class="create-btn-container">
+          <div class="new-btn">
+            <%= link_to '+ Create a new task', new_task_path, :class => 'waves-effect btn-large' %>
+            <%# LOCAL BUTTON %>
+          </div>
+        </div>  
+      </div>
+    </div>  
+    <hr>  
 
-  <div class="row container">
-    <div class="col-sm-5">
-      <h2>Checks</h2> <%# LOCAL GROUP LABEL %>
+    <div class="row container">
+      <div class="col-sm-5">
+        <h2>Checks</h2> <%# LOCAL GROUP LABEL %>
 
-         <% @tasks.each do |task| %>
-          <% if task.category.name == "Check" && task.user_id == current_user.id %>
-            <%= link_to edit_task_path(task) do %>
-              <div class="book-index-desc task">
-                <div class="book-index-content">  
-                  <div class="left">
-                    <h4><%= task.name %></h4>
-                    <p><%= task.description %></p>
-                  </div> 
-                  <div class="right">
-                    <div class="regularity">
-                      <p><%= task.regularity.name %></p>
+           <% @tasks.each do |task| %>
+            <% if task.category.name == "Check" && task.user_id == current_user.id %>
+              <%= link_to edit_task_path(task) do %>
+                <div class="book-index-desc task">
+                  <div class="book-index-content">  
+                    <div class="left">
+                      <h4><%= task.name %></h4>
+                      <p><%= task.description %></p>
+                    </div> 
+                    <div class="right">
+                      <div class="regularity">
+                        <p><%= task.regularity.name %></p>
+                      </div>
+                      <div class="schedule-icons">
+                        <% if task.starting %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                        <% else %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                        <% end %>
+
+                        <% if task.midday %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                        <% else %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                        <% end %>
+
+                        <% if task.ending %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                        <% else %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                        <% end %>                  
+                      </div>
+                      
                     </div>
-                    <div class="schedule-icons">
-                      <% if task.starting %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
-                      <% else %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
-                      <% end %>
-
-                      <% if task.midday %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
-                      <% else %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
-                      <% end %>
-
-                      <% if task.ending %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
-                      <% else %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
-                      <% end %>                  
-                    </div>
-                    
-                  </div>
-                  <hr>
-                </div>  
-              </div>
+                    <hr>
+                  </div>  
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
-        <% end %>         
-    </div>
+          <% end %>         
+      </div>
 
-    <div class="col-sm-5">
-      <h2>Temperatures</h2> <%# LOCAL GROUP LABEL %>
-        <% @tasks.each do |task| %>
-          <% if task.category.name == "Temperature" && task.user_id == current_user.id %>
-            <%= link_to edit_task_path(task) do %>
-              <div class="book-index-desc task">
+      <div class="col-sm-5">
+        <h2>Temperatures</h2> <%# LOCAL GROUP LABEL %>
+          <% @tasks.each do |task| %>
+            <% if task.category.name == "Temperature" && task.user_id == current_user.id %>
+              <%= link_to edit_task_path(task) do %>
+                <div class="book-index-desc task">
 
-                <div class="book-index-content">  
-                  <div class="left">
-                    <h4><%= task.name %></h4>
-                    <p><%= task.description %></p>
-                  </div> 
+                  <div class="book-index-content">  
+                    <div class="left">
+                      <h4><%= task.name %></h4>
+                      <p><%= task.description %></p>
+                    </div> 
 
+                    
+                    <div class="right">
+                      <div class="regularity">
+                        <p><%= task.regularity.name %></p>
+                      </div>
+                      <div class="schedule-icons">
+                        <% if task.starting %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                        <% else %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                        <% end %>
+
+                        <% if task.midday %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                        <% else %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                        <% end %>
+
+                        <% if task.ending %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
+                        <% else %>
+                          <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
+                        <% end %>                  
+                      </div>
+                      
+                    </div>
+                    <hr>
+                  </div>  
                   
-                  <div class="right">
-                    <div class="regularity">
-                      <p><%= task.regularity.name %></p>
-                    </div>
-                    <div class="schedule-icons">
-                      <% if task.starting %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
-                      <% else %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
-                      <% end %>
-
-                      <% if task.midday %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
-                      <% else %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
-                      <% end %>
-
-                      <% if task.ending %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/checked.png" alt="">
-                      <% else %>
-                        <img src="http://www.minibarra.com/wp-content/uploads/2016/11/cancel.png" alt="">
-                      <% end %>                  
-                    </div>
-                    
-                  </div>
-                  <hr>
-                </div>  
-                
-              </div>        
+                </div>        
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
-        
+          
+      </div>
     </div>
-  </div>
-<% end %>  
+  <% end %>  
 
+  </div>
+</div>
