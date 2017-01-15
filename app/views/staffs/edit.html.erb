@@ -11,6 +11,18 @@
 
 			<%= simple_form_for(@staff) do |f| %>
 			  <%= f.error_notification %>
+			  <% if @staff.former? %>
+			    	<p><%= @staff.first_name %> <%= @staff.surname%> 
+			    		<% if @staff.manager? %>
+			    			(Manager)
+			    		<% end %>
+		    			left on <%= @staff.former_date %>.
+		    		</p>
+
+			    	<p>Job Title: <%= @staff.job_title %></p>
+			    	<p>To reactivate this staff member, leave this box unchecked:</p>
+			    	<%= f.input :former %>
+			    <% else %>
 
 			  
 			    <br>
@@ -23,6 +35,17 @@
 			    <%= f.input :email, label: false, placeholder: "Email" %>
 			    <%= f.input :job_title, label: false, placeholder: "Job Title" %>
 			    <%= f.input :manager %>
+			    <div id="showmenu" class="change-password-wrap"><p>Click here if <%= @staff.first_name %> has left.</p></div>
+                  <div class="menu" style="display: none;">
+                    <div class="change-password former-staff">
+                      <h4>Former staff member:</h4>
+
+                      	<p>(Check the box if this <%= @staff.first_name %> has left)</p>
+                    	<%= f.input :former %>
+			    		<%= f.input :former_date, label: "#{@staff.first_name} left on:" %>
+                    </div>
+                  </div>
+			    <% end %>
 
 			  <div class="new-btn">
 			    <%= f.button :submit, :class => 'btn-primary btn-block btn-lg' %>
@@ -30,3 +53,12 @@
 			<% end %>
 	</div>
 </div>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#showmenu').click(function() {
+                $('.menu').slideToggle("fast");
+        });
+    });
+
+</script>
