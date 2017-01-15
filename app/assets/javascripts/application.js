@@ -17,27 +17,30 @@
 //= require turbolinks
 //= require_tree .
 //= require select2
+//= require turbolinks_transitions
 
 $(function() {
   $("#reports_date_picker").datepicker();
 });
 
-;(function ($) {
-  'use strict';
-  var $body    = $('html, body'), // Define jQuery collection 
-      content  = $('#main').smoothState({
-        onStart : {
-          duration: 250,
-          render: function () {
-            content.toggleAnimationClass('is-exiting');
-            
-            // Scroll user to the top
-            $body.animate({ 'scrollTop': 0 });
 
-          }
-        }
-      }).data('smoothState');
-})(jQuery);
+
+// ;(function ($) {
+//   'use strict';
+//   var $body    = $('html, body'), // Define jQuery collection 
+//       content  = $('#main').smoothState({
+//         onStart : {
+//           duration: 250,
+//           render: function () {
+//             content.toggleAnimationClass('is-exiting');
+            
+//             // Scroll user to the top
+//             $body.animate({ 'scrollTop': 0 });
+
+//           }
+//         }
+//       }).data('smoothState');
+// })(jQuery);
 
 /*!
  * Particleground
@@ -491,3 +494,4 @@ $(function() {
 //         clearTimeout(id);
 //       };
 // }());
+//= require rails_script
