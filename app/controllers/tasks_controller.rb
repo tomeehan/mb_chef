@@ -42,15 +42,15 @@ class TasksController < ApplicationController
           if @task.save!
               
               if @last_task.starting == true  
-                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "starting") # 'staff_id: 1' is a hack — must fix
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "starting", date: Time.current, regularity_id: @task.regularity_id) # 'staff_id: 1' is a hack — must fix
               end 
 
               if @last_task.midday == true 
-                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "middle") # 'staff_id: 1' is a hack — must fix
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "middle", date: Time.current, regularity_id: @task.regularity_id) # 'staff_id: 1' is a hack — must fix
               end
 
               if @last_task.ending == true 
-                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "ending") # 'staff_id: 1' is a hack — must fix
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "ending", date: Time.current, regularity_id: @task.regularity_id) # 'staff_id: 1' is a hack — must fix
               end
 
             format.html { redirect_to new_task_path, notice: 'Task was successfully created.' }
@@ -72,11 +72,11 @@ class TasksController < ApplicationController
               end 
 
               if @last_task.midday == true 
-                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "middle") # 'staff_id: 1' is a hack — must fix
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "middle", date: Time.current, regularity_id: @task.regularity_id) # 'staff_id: 1' is a hack — must fix
               end
 
               if @last_task.ending == true 
-                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "ending") # 'staff_id: 1' is a hack — must fix
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "ending", date: Time.current, regularity_id: @task.regularity_id) # 'staff_id: 1' is a hack — must fix
               end
             format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
             format.json { render :show, status: :created, location: @task }
