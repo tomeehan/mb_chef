@@ -2,7 +2,7 @@
     <div class="col-sm-4">
       <h1>Temperatures</h1>
          <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Temperature" && tick.date.strftime('%Y-%m-%d') == Date.current.strftime('%Y-%m-%d') && tick.date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+          <% if tick.task.category.name == "Temperature" && tick.date.strftime('%Y-%m-%d') == Date.current.strftime('%Y-%m-%d')  && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
             <% if tick.stage == "starting" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
@@ -36,7 +36,7 @@
     <div class="col-sm-4">
       <h1>Temperatures</h1>
          <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Temperature" && tick.date.strftime('%Y-%m-%d') == Date.current.strftime('%Y-%m-%d') && tick.date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+          <% if tick.task.category.name == "Temperature" && tick.date.strftime('%Y-%m-%d') == Date.current.strftime('%Y-%m-%d') && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
             <% if tick.stage == "middle" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
