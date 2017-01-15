@@ -7,7 +7,7 @@
           <th>Check</th>
           <th>Completed?</th>
           <th>Staff</th>
-          <th>Updated At</th>
+          <th>Date</th>
           <th>Edit</th>
         </thead>
         <tbody>
@@ -32,7 +32,7 @@
                   <% end %>
                 </td>
                 <td>
-                  <%= tick.updated_at %>
+                  <%= tick.date %>
 
                 </td>
                 <td>
@@ -47,7 +47,7 @@
         
       </table>
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive"> 
       <table class="table table-hover">
         <thead>
           <th>Temperature</th>
@@ -76,7 +76,7 @@
                   <% end %>
                 </td>
                 <td>
-                  <%= tick.updated_at %>
+                  <%= tick.date %>
                 </td>
                 <td>
                   <%= link_to edit_tick_path(tick) do %>
@@ -124,7 +124,7 @@
                   <% end %>
                 </td>
                 <td>
-                  <%= tick.updated_at %>
+                  <%= tick.date %>
                 </td>
                 <td>
                   <%= link_to edit_tick_path(tick) do %>
@@ -168,7 +168,7 @@
                 <% end %>
               </td>
               <td>
-                <%= tick.updated_at %>
+                <%= tick.date %>
               </td>
               <td>
                 <%= link_to edit_tick_path(tick) do %>
@@ -216,7 +216,7 @@
                   <% end %>
                 </td>
                 <td>
-                  <%= tick.updated_at %>
+                  <%= tick.date %>
                 </td>
                 <td>
                   <%= link_to edit_tick_path(tick) do %>
@@ -259,7 +259,7 @@
                   <% end %>
                 </td>
                 <td>
-                  <%= tick.updated_at %>
+                  <%= tick.date %>
                 </td>
                 <td>
                   <%= link_to edit_tick_path(tick) do %>

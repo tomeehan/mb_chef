@@ -85,18 +85,19 @@ class TicksController < ApplicationController
         @tick.complete = true
     end
 
-    @last_tick = Tick.last
-    @last_tick.update(active: false)
-
 
     @tick.update(tick_params)
 
 
 
     respond_to do |format|
-      if @tick.update(tick_params)
+      if @tick.update!(tick_params)
         format.html { redirect_to ticks_path, notice: 'Tick was successfully updated.' }
         format.json { render :show, status: :ok, location: @tick }
+        
+        if @tick.active == true 
+          current_user.ticks.create!(complete: false, task_id: @tick.task_id,staff_id: 1, stage: "starting", date: Time.current + 1.day, regularity_id: @tick.regularity_id) # 'staff_id: 1' is a hack — must fix
+        end
       else
         format.html { render :edit }
         format.json { render json: @tick.errors, status: :unprocessable_entity }

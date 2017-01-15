@@ -36,6 +36,7 @@
 					<%= select_tag(:staff_id, options_for_select(@staffs), :prompt => "Select a staff" , :id => "e1") %>
 				</div>
 			</div>
+			<%= f.hidden_field :active, { :value => "false"} %>
 		</div>
 		<br>
 		<div class="new-btn">
