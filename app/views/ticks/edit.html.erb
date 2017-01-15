@@ -1,55 +1,72 @@
-<div class="container">
-	<div class="col-md-4 col-md-offset-4 well signin">
-		<div class="back-btn">
-			<% if @tick.active == false %>
-				<%= link_to ticks_path(:active => 'false') do %>
-					<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+<% if @tick.date < Time.now %>
+	<div class="container">
+		<div class="col-md-4 col-md-offset-4 well signin">
+			<div class="back-btn">
+				<% if @tick.active == false %>
+					<%= link_to ticks_path do %>
+						<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+					<% end %>
+				<% else %>
+					<%= link_to ticks_path do %>
+						<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+					<% end %>
 				<% end %>
-			<% else %>
-				<%= link_to ticks_path do %>
-					<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
-				<% end %>
-			<% end %>
-		</div>
-		<h4>Updating <%= @tick.task.name %></h4>
-			<%= simple_form_for(@tick) do |f| %>
-			    <%= f.label :complete, :class => 'checkbox' do %>
-      				<%= f.check_box :complete,as: :boolean, checked_value: true, unchecked_value: false %>	      				
-      					<i class="icon-"></i>
-	   				<% end %>
-				 <div class="">
-				 	<% if @tick.task.category.name == "Check" %>
-						<div style="display: none;">
-					<% else %>
-						<div>
-				 	<% end %>
-					<%= f.input :temperature, label: false do %>
-				<div class="input-group">
-			        <%= f.input_field :temperature, class: 'form-control input-lg', placeholder: 'Temperature' %>
-				        <span class="input-group-addon">°C</span>
-			      </div>
-				    <% end %>
-				 </div>
-				<br>
-			<div class="field">
-				<div class="select-container">
-					<%= select_tag(:staff_id, options_for_select(@staffs), :prompt => "Select a staff" , :id => "e1") %>
-				</div>
 			</div>
-			<%= f.hidden_field :active, { :value => "false"} %>
-		</div>
-		<br>
-		<div class="new-btn">
-		  	<%= f.button :submit, "Update #{@tick.task.category.name}" , name: :active, :class => 'btn-primary btn-block btn-lg' %>
-		</div>
-	<% end %>
+			<h4>Updating <%= @tick.task.name %></h4>
+				<%= simple_form_for(@tick) do |f| %>
+				    <%= f.label :complete, :class => 'checkbox' do %>
+	      				<%= f.check_box :complete,as: :boolean, checked_value: true, unchecked_value: false %>	      				
+	      					<i class="icon-"></i>
+		   				<% end %>
+					 <div class="">
+					 	<% if @tick.task.category.name == "Check" %>
+							<div style="display: none;">
+						<% else %>
+							<div>
+					 	<% end %>
+						<%= f.input :temperature, label: false do %>
+					<div class="input-group">
+				        <%= f.input_field :temperature, class: 'form-control input-lg', placeholder: 'Temperature' %>
+					        <span class="input-group-addon">°C</span>
+				      </div>
+					    <% end %>
+					 </div>
+					<br>
+				<div class="field">
+					<div class="select-container">
+						<%= select_tag(:staff_id, options_for_select(@staffs), :prompt => "Select a staff" , :id => "e1") %>
+					</div>
+				</div>
+				<%= f.hidden_field :active, { :value => "false"} %>
+			</div>
+			<br>
+			<div class="new-btn">
+			  	<%= f.button :submit, "Update #{@tick.task.category.name}" , name: :active, :class => 'btn-primary btn-block btn-lg' %>
+			</div>
+		<% end %>
 
+		</div>
 	</div>
-</div>
-
-<script>$( "#e1" ).select2({
-    theme: "bootstrap"
-});</script>
-  <script>
-    $(document).ready(function() { $("#e1").select2(); });
-  </script>
+<% else %>
+	<div class="col-md-4 col-md-offset-4 well signin">
+			<div class="back-btn">
+				<% if @tick.active == false %>
+					<%= link_to ticks_path do %>
+						<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+					<% end %>
+				<% else %>
+					<%= link_to ticks_path do %>
+						<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+					<% end %>
+				<% end %>
+			</div>
+			<h4>Sorry!</h4>
+			<h6>You can't edit tasks in the future.</h6>
+	</div>
+<% end %>
+	<script>$( "#e1" ).select2({
+	    theme: "bootstrap"
+	});</script>
+	  <script>
+	    $(document).ready(function() { $("#e1").select2(); });
+	  </script>

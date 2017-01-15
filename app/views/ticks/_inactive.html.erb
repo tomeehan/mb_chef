@@ -39,6 +39,8 @@
                   <%= link_to edit_tick_path(tick) do %>
                     <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
                   <% end %>
+
+
                 </td>
               </tr>
             <% end %>
@@ -262,8 +264,12 @@
                   <%= tick.date %>
                 </td>
                 <td>
-                  <%= link_to edit_tick_path(tick) do %>
-                    <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
+                  <% if tick.date < Time.now %>
+                    <%= link_to edit_tick_path(tick) do %>
+                      <p class="task-edit"><span class="glyphicon glyphicon-pencil"></span></p>
+                    <% end %>
+                  <% else %>
+                    <p>-</p>
                   <% end %>
                 </td>
               </tr>
