@@ -68,7 +68,7 @@ class TasksController < ApplicationController
               @last_task = Task.last
 
               if @last_task.starting == true        
-                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "starting") # 'staff_id: 1' is a hack — must fix
+                @task.ticks.create(user: current_user, complete: false, staff_id: 1, stage: "starting", date: Time.current, regularity_id: @task.regularity_id) # 'staff_id: 1' is a hack — must fix
               end 
 
               if @last_task.midday == true 
