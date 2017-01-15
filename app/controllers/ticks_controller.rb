@@ -100,7 +100,7 @@ class TicksController < ApplicationController
         format.json { render :show, status: :ok, location: @tick }
         
         if @tick.edited != 1
-          current_user.ticks.create!(complete: false, task_id: @tick.task_id,staff_id: 1, stage: "starting", date: Time.current + 1.day, regularity_id: @tick.regularity_id) # 'staff_id: 1' is a hack — must fix
+          current_user.ticks.create!(complete: false, task_id: @tick.task_id,staff_id: 1, stage: @tick.stage, date: @tick.date + 1.day, regularity_id: @tick.regularity_id, edited: 0) # 'staff_id: 1' is a hack — must fix
         end
       else
         format.html { render :edit }
