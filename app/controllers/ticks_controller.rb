@@ -88,14 +88,18 @@ class TicksController < ApplicationController
 
     @tick.update(tick_params)
 
+    @last_tick = Tick.last
 
+    if @tick.edited < 1
+      @last_tick.update(edited: @last_tick.edited += 1)
+    end
 
     respond_to do |format|
       if @tick.update!(tick_params)
         format.html { redirect_to ticks_path, notice: 'Tick was successfully updated.' }
         format.json { render :show, status: :ok, location: @tick }
         
-        if @tick.active == true 
+        if @tick.edited != 1
           current_user.ticks.create!(complete: false, task_id: @tick.task_id,staff_id: 1, stage: "starting", date: Time.current + 1.day, regularity_id: @tick.regularity_id) # 'staff_id: 1' is a hack — must fix
         end
       else
@@ -139,7 +143,7 @@ class TicksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tick_params
-      params.require(:tick).permit(:complete, :temperature, :task_id, :regularity_id, :category_id, :staff_id, :active, :date)
+      params.require(:tick).permit(:complete, :temperature, :task_id, :regularity_id, :category_id, :staff_id, :active, :date, :edited)
 
         # if params[:active]
         #   return params.require(:tick).permit(:name, :body).merge(active: true)
