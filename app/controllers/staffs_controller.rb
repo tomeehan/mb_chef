@@ -24,10 +24,10 @@ class StaffsController < ApplicationController
   # POST /staffs
   # POST /staffs.json
   def create
-    @staff = current_user.staff(staff_params)
+    @staff = current_user.staff.build(staff_params)
 
     respond_to do |format|
-      if @staff.create!
+      if @staff.save!
         format.html { redirect_to staffs_path, notice: 'Staff was successfully created.' }
         format.json { render :show, status: :created, location: @staff }
       else
