@@ -35,7 +35,9 @@
 				      <div class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
 				        <div class="modal-dialog modal-sm">
 				          <div class="modal-content">
-				            <div class="modal-header"><h4>Archie Task <i class="fa fa-trash-o"></i></h4></div>
+				            <div class="modal-header">
+				            	<h4>Archie Task <i class="fa fa-trash-o"></i></h4>
+				            </div>
 				            <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want archive this task?</div>
 				            <p>    <%= f.check_box :archived,as: :boolean, checked_value: true, unchecked_value: false, label: "Yes, archive it. I'm done." %> Yes please</p>
 				            <div class="modal-footer ">
