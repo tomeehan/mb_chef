@@ -27,7 +27,8 @@ class StaffsController < ApplicationController
     @staff = current_user.staff.build(staff_params)
 
     respond_to do |format|
-      if @staff.save!
+      if @staff.valid?
+        @staff.save!
         format.html { redirect_to staffs_path, notice: 'Staff was successfully created.' }
         format.json { render :show, status: :created, location: @staff }
       else

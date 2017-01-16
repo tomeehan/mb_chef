@@ -3,4 +3,6 @@ class Task < ApplicationRecord
 	belongs_to :category
 	has_many :ticks
 	belongs_to :regularity
+
+	validates :name, presence: true
 end
