@@ -20,7 +20,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build
     @ticks = current_user.ticks.build
     @categories = Category.all.map{ |c| [c.name, c.id] }
-    @regularities = Regularity.all.map{ |r| [r.name, r.id] } 
+    @regularities = Regularity.all.map{ |r| [r.name, r.id] }
   end
 
   # GET /tasks/1/edit
