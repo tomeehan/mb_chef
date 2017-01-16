@@ -16,7 +16,7 @@
             <div class="pull-right range-query">
               <%= form_tag ticks_path(:active => 'false'), method: :get do  %>
                 <%-#<%= text_field_tag 'search[date_from]', @search.date_from   -%>
-                <%= text_field_tag 'search[date_to]', @search.date_to, id: "reports_date_picker" %>
+                <%= text_field_tag 'search[date_to]', @search.date_to, class: "datepicker" %>
                 <%= submit_tag 'Search', class: 'btn btn-primary btn-sm' %>
               <% end %>
             </div>
@@ -90,3 +90,9 @@
 
     <% end %>
   <% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+</script>

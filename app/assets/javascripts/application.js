@@ -18,6 +18,7 @@
 //= require_tree .
 //= require select2
 //= require turbolinks_transitions
+//= require bootstrap-datepicker
 
 $(function() {
   $("#reports_date_picker").datepicker();
