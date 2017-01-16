@@ -41,22 +41,30 @@
   					<ul class="nav navbar-nav navbar-right">
   						<% if user_signed_in? %>
                 <% if current_user.subscribed == true %>
-    							<li class="<%= 'active-nav' if params[:stage] == "Morning" || params[:stage] == "Afternoon" ||params[:stage] == "Evening" %>"><%= link_to "Today", '/ticks?stage=Morning' %></li>
-    							<li class="<%= 'active-nav' if !params[:active] && !params[:stage] %>"><%= link_to "Reports", ticks_path %></li>
-    							<li class="<%= 'active-nav' if current_page?(tasks_path) %>"><%= link_to "Tasks", tasks_path %></li>
+    							<li class="<%= 'active-nav' if params[:stage] == "Morning" || params[:stage] == "Afternoon" ||params[:stage] == "Evening" %>">
+                    <%= link_to "Today", '/ticks?stage=Morning' %>
+                  </li>
+    							<li class="<%= 'active-nav' if current_page?(ticks_path) && !params[:active] && !params[:stage] %>">
+                    <%= link_to "Reports", ticks_path %>
+                  </li>
+    							<li class="<%= 'active-nav' if current_page?(tasks_path) %>">
+                    <%= link_to "Tasks", tasks_path %>
+                  </li>
     							<li>
     								<%= link_to edit_user_registration_path, class: "btn btn-default" do %>
         								<i class="glyphicon glyphicon-user"></i>
     								<% end %>
     							</li>
                 <% else %>  
-                  <li><a href="/support">Help & Support</a></li>
+                  <li>
+                    <a href="/support">Help & Support</a>
+                  </li>
                 <% end %>
   						<% else %>
-                <li><a href="/features">Features</a></li>
+                <li>
+                  <a href="/features">Features</a>
+                </li>
                 <li><a href="/blog">Blog</a></li>
-  							<li></li>
-  							<li></li>
   							<li>
   								<p class="navbar-btn ">
             				<a class="btn btn-default nav-btn" href="/pricing" role="button" style="color: white;">Pricing & Plans</a>
