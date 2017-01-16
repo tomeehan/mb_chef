@@ -3,9 +3,13 @@
 
 
       <%# LOCAL TEXT BOX %>
-      <div class="select-container">
-        <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category", :id => "e2") %>
-      </div>
+      <% if @categories == nil %>
+        <p>P</p>
+      <% else %>
+        <div class="select-container">
+          <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category", :id => "e2") %>
+        </div>
+      <% end %>
     </div>
     <br>
 
@@ -16,10 +20,14 @@
       <%# LOCAL TEXT BOX %>
 	    <%= f.input :description, label: false, placeholder: "Task description" %>
           <div class="field">
+      <% if @categories == nil %>
+      <p>p</p>
+      <% else %>
       <div class="select-container">
         <%# LOCAL TEXT BOX %>
         <%= select_tag(:regularity_id, options_for_select(@regularities), :prompt => "Regularity" , :id => "e1") %>
       </div>
+      <% end %>
     </div>
 
             <%# LOCAL TOGGLE SWITCHES %>

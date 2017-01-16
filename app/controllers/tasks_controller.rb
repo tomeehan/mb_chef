@@ -39,12 +39,11 @@ class TasksController < ApplicationController
 
     if params[:create_and_add]
         respond_to do |format|
-          if @task.save!
-              
+          if @task.save! 
               if @last_task.starting == true  
                 @task.ticks.create(user: current_user, 
                                     complete: false, 
-                                    # staff_id: 1, 
+                                    staff_id: 10, 
                                     stage: "starting", 
                                     date: Time.current, 
                                     regularity_id: @task.regularity_id,
@@ -54,7 +53,7 @@ class TasksController < ApplicationController
               if @last_task.midday == true 
                 @task.ticks.create(user: current_user, 
                                     complete: false, 
-                                    # staff_id: 1, 
+                                    staff_id: 10,
                                     stage: "middle", 
                                     date: Time.current, 
                                     regularity_id: @task.regularity_id,
@@ -64,7 +63,7 @@ class TasksController < ApplicationController
               if @last_task.ending == true 
                 @task.ticks.create(user: current_user, 
                                     complete: false, 
-                                    # staff_id: 1, 
+                                    staff_id: 10,
                                     stage: "ending", 
                                     date: Time.current, 
                                     regularity_id: @task.regularity_id,
@@ -81,39 +80,39 @@ class TasksController < ApplicationController
         end
     else
         respond_to do |format|
-          if @task.save!
+          
+              if @task.save!
+                @last_task = Task.last
 
-              @last_task = Task.last
+                if @last_task.starting == true        
+                  @task.ticks.create(user: current_user, 
+                                      complete: false, 
+                                      staff_id: 10, 
+                                      stage: "starting", 
+                                      date: Time.current, 
+                                      regularity_id: @task.regularity_id,
+                                      edited: 0) # 'staff_id: 1' is a hack — must fix
+                end 
 
-              if @last_task.starting == true        
-                @task.ticks.create(user: current_user, 
-                                    complete: false, 
-                                    # staff_id: 1, 
-                                    stage: "starting", 
-                                    date: Time.current, 
-                                    regularity_id: @task.regularity_id,
-                                    edited: 0) # 'staff_id: 1' is a hack — must fix
-              end 
+                if @last_task.midday == true 
+                  @task.ticks.create(user: current_user, 
+                                      complete: false, 
+                                      staff_id: 10, 
+                                      stage: "middle", 
+                                      date: Time.current, 
+                                      regularity_id: @task.regularity_id,
+                                      edited: 0) # 'staff_id: 1' is a hack — must fix
+                end
 
-              if @last_task.midday == true 
-                @task.ticks.create(user: current_user, 
-                                    complete: false, 
-                                    # staff_id: 1, 
-                                    stage: "middle", 
-                                    date: Time.current, 
-                                    regularity_id: @task.regularity_id,
-                                    edited: 0) # 'staff_id: 1' is a hack — must fix
-              end
-
-              if @last_task.ending == true 
-                @task.ticks.create(user: current_user, 
-                                    complete: false, 
-                                    # staff_id: 1, 
-                                    stage: "ending", 
-                                    date: Time.current, 
-                                    regularity_id: @task.regularity_id,
-                                    edited: 0) # 'staff_id: 1' is a hack — must fix
-              end
+                if @last_task.ending == true 
+                  @task.ticks.create(user: current_user, 
+                                      complete: false, 
+                                      staff_id: 10, 
+                                      stage: "ending", 
+                                      date: Time.current, 
+                                      regularity_id: @task.regularity_id,
+                                      edited: 0) # 'staff_id: 1' is a hack — must fix
+                end
             format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
             format.json { render :show, status: :created, location: @task }
           

@@ -51,7 +51,8 @@ class TicksController < ApplicationController
   # GET /ticks/1/edit
   def edit
     @tasks = Task.all.map{ |t| [t.name, t.id] }
-    @staffs = Staff.all.map{ |s| [s.first_name + " " + s.surname, s.id]}
+    
+    @staffs = current_user.staff.map { |staff| [staff.first_name + " " + staff.surname, staff.id] }
   end
 
   # POST /ticks
@@ -79,7 +80,7 @@ class TicksController < ApplicationController
   # PATCH/PUT /ticks/1.json
   def update
     @tick.staff_id = params[:staff_id]
-    @staffs = Staff.all.map{ |s| [s.first_name, s.id]}
+    @staffs = current_user.staff.map { |staff| [staff.first_name, staff.id] }
 
     if @tick.temperature != nil 
         @tick.complete = true
@@ -102,7 +103,8 @@ class TicksController < ApplicationController
         if @tick.edited != 1
           current_user.ticks.create!(complete: false, 
                                       task_id: @tick.task_id, 
-                                      stage: @tick.stage, 
+                                      stage: @tick.stage,
+                                      staff_id: 10,
                                       date: @tick.date + 1.day, 
                                       regularity_id: @tick.regularity_id, 
                                       edited: 0) # 'staff_id: 1' is a hack — must fix
