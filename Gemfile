@@ -15,6 +15,8 @@ gem 'prawn-table'
 gem 'jquery-ui-rails'
 gem 'rails_script', '~> 2.0'
 gem 'bootstrap-datepicker-rails'
+gem 'rollbar'
+gem 'oj', '~> 2.12.14'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
