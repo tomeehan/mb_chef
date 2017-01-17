@@ -108,6 +108,8 @@ class TicksController < ApplicationController
                                       date: @tick.date + 1.day, 
                                       regularity_id: @tick.regularity_id, 
                                       edited: 0) # 'staff_id: 1' is a hack — must fix
+        else
+          format.html { render :edit, notice: "@tick.edited is failing" }  
         end
       else
         format.html { render :edit }

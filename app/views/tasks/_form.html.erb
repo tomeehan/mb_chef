@@ -7,7 +7,7 @@
         <p>P</p>
       <% else %>
         <div class="select-container">
-          <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Category", :id => "e2") %>
+          <%= select_tag(:category_id, options_for_select(@categories), :id => "e2") %>
         </div>
       <% end %>
     </div>
@@ -25,7 +25,7 @@
       <% else %>
       <div class="select-container">
         <%# LOCAL TEXT BOX %>
-        <%= select_tag(:regularity_id, options_for_select(@regularities), :prompt => "Regularity" , :id => "e1") %>
+        <%= select_tag(:regularity_id, options_for_select(@regularities), :id => "e1") %>
       </div>
       <% end %>
     </div>
