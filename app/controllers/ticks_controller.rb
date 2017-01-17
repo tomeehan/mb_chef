@@ -100,7 +100,7 @@ class TicksController < ApplicationController
         format.html { redirect_to ticks_path, notice: 'Tick was successfully updated.' }
         format.json { render :show, status: :ok, location: @tick }
         
-        if @tick.edited != 1
+        if @tick.edited != 1 && @tick.regularity_id == 1
           current_user.ticks.create!(complete: false, 
                                       task_id: @tick.task_id, 
                                       stage: @tick.stage,
@@ -109,7 +109,7 @@ class TicksController < ApplicationController
                                       regularity_id: @tick.regularity_id, 
                                       edited: 0) # 'staff_id: 1' is a hack — must fix
         else
-          format.html { render :edit, notice: "@tick.edited is failing" }  
+          format.html { render :edit, notice: "@tick.edited == reg is failing" }  
         end
       else
         format.html { render :edit }
