@@ -52,15 +52,20 @@ html, body {
 #flash_notice {
   @extend .alert;
   @extend .alert-success;
+	position:fixed;
+	bottom:0;
+	right:0;
+	margin-right: 10px;
+	padding: 10px !important;
 }
 #flash_error, #flash_alert {
-  @extend .alert;
-  @extend .alert-danger;
-  padding: 25px;
+	@extend .alert;
+	@extend .alert-danger;
+	padding: 25px;
 }
 #flash_warning {
-  @extend .alert;
-  @extend .alert-warning;
+	@extend .alert;
+	@extend .alert-warning;
 }
 
 a {
