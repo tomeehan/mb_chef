@@ -3,7 +3,7 @@
 		<h4 class="email-note">Get Fresh Restaurant Marketing Guides, Management Tips, and More from the Minibarra Chef Blog.</h4>
 		<br>
 
-		<%= simple_form_for(@newsletter_subscriber) do |f| %>
+		<%= simple_form_for @newsletter_subscriber, validate: true do |f| %>
 
 			<%= f.input :first_name, required: true, autofocus: true, label: false , :class => "input-lg", placeholder: "First name" %>
 			<%= f.input :email, required: true, label: false, placeholder: "Email (required)" %>
