@@ -104,7 +104,7 @@ class TicksController < ApplicationController
           current_user.ticks.create!(complete: false, 
                                       task_id: @tick.task_id, 
                                       stage: @tick.stage,
-                                      staff_id: 10,
+                                      staff_id: 15,
                                       date: @tick.date + 1.day, 
                                       regularity_id: @tick.regularity_id, 
                                       edited: 0) # 'staff_id: 1' is a hack — must fix
@@ -152,7 +152,7 @@ class TicksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tick_params
-      params.require(:tick).permit(:complete, :temperature, :task_id, :regularity_id, :category_id, :staff_id, :active, :date, :edited)
+      params.require(:tick).permit(:complete, :temperature, :task_id, :regularity_id, :category_id, :staff_id, :active, :date, :edited, :note)
 
         # if params[:active]
         #   return params.require(:tick).permit(:name, :body).merge(active: true)

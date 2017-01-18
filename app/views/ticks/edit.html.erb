@@ -37,6 +37,15 @@
 						<%= select_tag(:staff_id, options_for_select(@staffs), :id => "e1") %>
 					</div>
 				</div>
+				<br>
+				<div id="showmenu" class="tick-note-wrap"><p>Tap here to leave a note.</p></div>
+                  <div class="menu" style="display: none;">
+                    <div class="tick-note">
+                      <h6>Note:</h6>
+                    	<%= f.input :note, label: false %>
+                    </div>
+                  </div>
+
 				<%= f.hidden_field :active, { :value => "false"} %>
 			</div>
 			<br>
@@ -73,4 +82,13 @@
 	$(document).ready(function() { 
 		$("#e1").select2(); 
 	});
+</script>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#showmenu').click(function() {
+                $('.menu').slideToggle("fast");
+        });
+    });
+
 </script>

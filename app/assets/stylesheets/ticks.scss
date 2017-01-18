@@ -4,3 +4,20 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css);
 
 /*** basic styles ***/
+
+.tick-note-wrap p {
+	cursor: pointer;
+	text-decoration: underline;
+	font-family: 'Open sans', sans-serif;
+	text-align: center;
+	font-size: 12px;
+}
+
+.change-password {
+	padding: 10px;
+	background-color: #f2f2f2;
+	border-radius: 5px;
+	border: 1px solid #404040;
+	margin-bottom: 15px;
+}
+

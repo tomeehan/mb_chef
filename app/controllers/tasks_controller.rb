@@ -44,7 +44,7 @@ class TasksController < ApplicationController
               if @last_task.starting == true  
                 @task.ticks.create(user: current_user, 
                                     complete: false, 
-                                    staff_id: 10, 
+                                    staff_id: 15, 
                                     stage: "starting", 
                                     date: Date.today, 
                                     regularity_id: @task.regularity_id,
@@ -54,7 +54,7 @@ class TasksController < ApplicationController
               if @last_task.midday == true 
                 @task.ticks.create(user: current_user, 
                                     complete: false, 
-                                    staff_id: 10,
+                                    staff_id: 15,
                                     stage: "middle", 
                                     date: Date.today, 
                                     regularity_id: @task.regularity_id,
@@ -64,7 +64,7 @@ class TasksController < ApplicationController
               if @last_task.ending == true 
                 @task.ticks.create(user: current_user, 
                                     complete: false, 
-                                    staff_id: 10,
+                                    staff_id: 15,
                                     stage: "ending", 
                                     date: Date.today, 
                                     regularity_id: @task.regularity_id,
@@ -88,7 +88,7 @@ class TasksController < ApplicationController
                 if @last_task.starting == true        
                   @task.ticks.create(user: current_user, 
                                       complete: false, 
-                                      staff_id: 10, 
+                                      staff_id: 15, 
                                       stage: "starting", 
                                       date: Date.today, 
                                       regularity_id: @task.regularity_id,
@@ -98,7 +98,7 @@ class TasksController < ApplicationController
                 if @last_task.midday == true 
                   @task.ticks.create(user: current_user, 
                                       complete: false, 
-                                      staff_id: 10, 
+                                      staff_id: 15, 
                                       stage: "middle", 
                                       date: Date.today, 
                                       regularity_id: @task.regularity_id,
@@ -108,7 +108,7 @@ class TasksController < ApplicationController
                 if @last_task.ending == true 
                   @task.ticks.create(user: current_user, 
                                       complete: false, 
-                                      staff_id: 10, 
+                                      staff_id: 15, 
                                       stage: "ending", 
                                       date: Date.today, 
                                       regularity_id: @task.regularity_id,
