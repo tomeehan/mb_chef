@@ -37,115 +37,12 @@ class TasksController < ApplicationController
     @task.category_id = params[:category_id]
     @task.regularity_id = params[:regularity_id]
 
-    binding.pry
-
-    if params[:create_and_add]
-        respond_to do |format|
-          if @task.valid?
-            @task.save!
-              if @last_task.starting == true  
-                @task.ticks.create(user: current_user, 
-                                    complete: false, 
-                                    staff_id: 10, 
-                                    stage: "starting", 
-                                    date: Date.today, 
-                                    regularity_id: @task.regularity_id,
-                                    edited: 0) # 'staff_id: 1' is a hack — must fix
-              end 
-
-              if @last_task.midday == true 
-                @task.ticks.create(user: current_user, 
-                                    complete: false, 
-                                    staff_id: 10,
-                                    stage: "middle", 
-                                    date: Date.today, 
-                                    regularity_id: @task.regularity_id,
-                                    edited: 0) # 'staff_id: 1' is a hack — must fix
-              end
-
-              if @last_task.ending == true 
-                @task.ticks.create(user: current_user, 
-                                    complete: false, 
-                                    staff_id: 10,
-                                    stage: "ending", 
-                                    date: Date.today, 
-                                    regularity_id: @task.regularity_id,
-                                    edited: 0) # 'staff_id: 1' is a hack — must fix
-              end
-
-            format.html { redirect_to new_task_path, notice: 'Task was successfully created.' }
-            format.json { render :show, status: :created, location: @task }
-          
-          else
-            format.html { render :new }
-            format.json { render json: @task.errors, status: :unprocessable_entity }
-          end
-        end
-    else
-        respond_to do |format|
-            if @task.valid?
-              @task.save!
-                @last_task = Task.last
-
-                if @last_task.starting == true        
-                  @task.ticks.create(user: current_user, 
-                                      complete: false, 
-                                      staff_id: 10, 
-                                      stage: "starting", 
-                                      date: Date.today, 
-                                      regularity_id: @task.regularity_id,
-                                      edited: 0) # 'staff_id: 1' is a hack — must fix
-                end 
-
-                if @last_task.midday == true 
-                  @task.ticks.create(user: current_user, 
-                                      complete: false, 
-                                      staff_id: 10, 
-                                      stage: "middle", 
-                                      date: Date.today, 
-                                      regularity_id: @task.regularity_id,
-                                      edited: 0) # 'staff_id: 1' is a hack — must fix
-                end
-
-                if @last_task.ending == true 
-                  @task.ticks.create(user: current_user, 
-                                      complete: false, 
-                                      staff_id: 10, 
-                                      stage: "ending", 
-                                      date: Date.today, 
-                                      regularity_id: @task.regularity_id,
-                                      edited: 0) # 'staff_id: 1' is a hack — must fix
-                end
-            format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
-            format.json { render :show, status: :created, location: @task }
-          
-          else
-
-            @categories = Category.all.map{ |c| [c.name, c.id] }
-            @regularities = Regularity.all.map{ |r| [r.name, r.id] } 
-            flash[:alert] = 'Whoops! Looks like your task isn\'t set for the morning, afternoon, or evening'
-            format.html { render :new }
-            
-
-            format.json { render json: @task.errors, status: :unprocessable_entity }
-          end
-        end
-
-    end
-
-
-  end
-
-  # PATCH/PUT /tasks/1
-  # PATCH/PUT /tasks/1.json
-  def update
-    
     respond_to do |format|
-      if @task.update(task_params)
-        format.html { redirect_to tasks_path, notice: 'Task was successfully updated.' }
-        format.json { render :show, status: :ok, location: @task }
+      if @task.save!
+        format.html { redirect_to tasks_path, notice: 'Staff was successfully created.' }
+        format.json { render :show, status: :created, location: @task }
       else
-        format.html { render :edit }
+        format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
