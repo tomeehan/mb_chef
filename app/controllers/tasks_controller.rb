@@ -45,7 +45,7 @@ class TasksController < ApplicationController
                                     complete: false, 
                                     staff_id: 10, 
                                     stage: "starting", 
-                                    date: Time.current, 
+                                    date: Date.today, 
                                     regularity_id: @task.regularity_id,
                                     edited: 0) # 'staff_id: 1' is a hack — must fix
               end 
@@ -55,7 +55,7 @@ class TasksController < ApplicationController
                                     complete: false, 
                                     staff_id: 10,
                                     stage: "middle", 
-                                    date: Time.current, 
+                                    date: Date.today, 
                                     regularity_id: @task.regularity_id,
                                     edited: 0) # 'staff_id: 1' is a hack — must fix
               end
@@ -65,7 +65,7 @@ class TasksController < ApplicationController
                                     complete: false, 
                                     staff_id: 10,
                                     stage: "ending", 
-                                    date: Time.current, 
+                                    date: Date.today, 
                                     regularity_id: @task.regularity_id,
                                     edited: 0) # 'staff_id: 1' is a hack — must fix
               end
@@ -89,7 +89,7 @@ class TasksController < ApplicationController
                                       complete: false, 
                                       staff_id: 10, 
                                       stage: "starting", 
-                                      date: Time.current, 
+                                      date: Date.today, 
                                       regularity_id: @task.regularity_id,
                                       edited: 0) # 'staff_id: 1' is a hack — must fix
                 end 
@@ -99,7 +99,7 @@ class TasksController < ApplicationController
                                       complete: false, 
                                       staff_id: 10, 
                                       stage: "middle", 
-                                      date: Time.current, 
+                                      date: Date.today, 
                                       regularity_id: @task.regularity_id,
                                       edited: 0) # 'staff_id: 1' is a hack — must fix
                 end
@@ -109,7 +109,7 @@ class TasksController < ApplicationController
                                       complete: false, 
                                       staff_id: 10, 
                                       stage: "ending", 
-                                      date: Time.current, 
+                                      date: Date.today, 
                                       regularity_id: @task.regularity_id,
                                       edited: 0) # 'staff_id: 1' is a hack — must fix
                 end
