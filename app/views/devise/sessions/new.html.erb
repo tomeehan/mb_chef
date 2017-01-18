@@ -4,7 +4,7 @@
 		  <h2>Sign in</h2>
 
 		  <%= simple_form_for(resource, :as => resource_name,
-		                      :url => session_path(resource_name),
+		                      :url => session_path(resource_name), :validate => true, 
 		                      wrapper_mappings: { boolean: :vertical_boolean }) do |f| %>
 		    <%= f.input :email, label: false do %>
 		      <div class="input-group">
