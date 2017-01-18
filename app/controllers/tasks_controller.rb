@@ -39,7 +39,8 @@ class TasksController < ApplicationController
 
     if params[:create_and_add]
         respond_to do |format|
-          if @task.save! 
+          if @task.valid?
+            @task.save!
               if @last_task.starting == true  
                 @task.ticks.create(user: current_user, 
                                     complete: false, 
@@ -80,8 +81,8 @@ class TasksController < ApplicationController
         end
     else
         respond_to do |format|
-          
-              if @task.save!
+            if @task.valid?
+              @task.save!
                 @last_task = Task.last
 
                 if @last_task.starting == true        
@@ -117,7 +118,13 @@ class TasksController < ApplicationController
             format.json { render :show, status: :created, location: @task }
           
           else
+
+            @categories = Category.all.map{ |c| [c.name, c.id] }
+            @regularities = Regularity.all.map{ |r| [r.name, r.id] } 
+            flash[:alert] = 'Whoops! Looks like your task isn\'t set for the morning, afternoon, or evening'
             format.html { render :new }
+            
+
             format.json { render json: @task.errors, status: :unprocessable_entity }
           end
         end

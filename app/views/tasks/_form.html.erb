@@ -1,4 +1,5 @@
 <%= simple_form_for @task do |f| %>
+  <%= f.error_notification %>
     <div class="field">
 
 
@@ -32,23 +33,23 @@
 
             <%# LOCAL TOGGLE SWITCHES %>
             <%= f.label :starting, :class => 'starting-checkbox' do %>
-                <%= f.check_box :starting,as: :boolean, checked_value: true, unchecked_value: false %>
+                <%= f.check_box :starting, as: :boolean, checked_value: true, unchecked_value: false %>
                 <i class="icon-"></i>
             <% end %>
               <%= f.label :midday, :class => 'midday-checkbox' do %>
-                <%= f.check_box :midday,as: :boolean, checked_value: true, unchecked_value: false %>
+                <%= f.check_box :midday, as: :boolean, checked_value: true, unchecked_value: false %>
                 <i class="icon-"></i>
             <% end %>
           <%= f.label :ending, :class => 'ending-checkbox' do %>
-                <%= f.check_box :ending,as: :boolean, checked_value: true, unchecked_value: false %>
+                <%= f.check_box :ending, as: :boolean, checked_value: true, unchecked_value: false %>
                 <i class="icon-"></i>
             <% end %> 
 
 
-  	<div class="new-btn">
+  	<div class="new-btn answer">
       <%# LOCAL BUTTON %>
 
-    	<%= f.button :submit, "Create Task", :class => 'btn-primary btn-block btn-lg' %>
+    	<%= f.button :submit, "Create Task", :class => 'btn-primary btn-block btn-lg ', :id => "postme" %>
   	</div>
 <% end %>
 <script>$( "#e1" ).select2({

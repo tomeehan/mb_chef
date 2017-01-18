@@ -50,8 +50,8 @@ html, body {
 
 
 #flash_notice {
-  @extend .alert;
-  @extend .alert-success;
+ 	@extend .alert;
+ 	@extend .alert-success;
 	position:fixed;
 	bottom:0;
 	right:0;
@@ -62,10 +62,21 @@ html, body {
 	@extend .alert;
 	@extend .alert-danger;
 	padding: 25px;
+	position:fixed;
+	bottom:0;
+	right:0;
+	margin-right: 10px;
+	padding: 10px !important;
 }
 #flash_warning {
 	@extend .alert;
 	@extend .alert-warning;
+	padding: 25px;
+	position:fixed;
+	bottom:0;
+	right:0;
+	margin-right: 10px;
+	padding: 10px !important;
 }
 
 a {
@@ -1199,6 +1210,30 @@ label.checkbox {
 	}
 	.fixed-nav-padding {
 		height: 0px;
+	}
+
+	#flash_notice {
+	position:fixed;
+	bottom:0;
+	right:0;
+	margin-right: 10px;
+	padding: 10px !important;
+	}
+	#flash_error, #flash_alert {
+		padding: 250px;
+		position:fixed;
+		bottom:0;
+		right:0;
+		margin-right: 10px;
+		padding: 50px !important;
+	}
+	#flash_warning {
+		padding: 250px;
+		position:fixed;
+		bottom:0;
+		right:0;
+		margin-right: 10px;
+		padding: 10px !important;
 	}
 }
 
