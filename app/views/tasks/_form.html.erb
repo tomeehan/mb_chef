@@ -5,8 +5,13 @@
 
 
       <%# LOCAL TEXT BOX %>
-      <%= f.input :category_id, :as => :hidden, :input_html => { :value => 1 }
- %>
+      <% if @categories == nil %>
+        <p>P</p>
+      <% else %>
+        <div class="select-container">
+          <%= select_tag(:category_id, options_for_select(@categories), :id => "e2") %>
+        </div>
+      <% end %>
     </div>
     <br>
 
@@ -48,12 +53,3 @@
     	<%= f.button :submit, "Create Task", :class => 'btn-primary btn-block btn-lg ', :id => "postme" %>
   	</div>
 <% end %>
-<script>$( "#e1" ).select2({
-    theme: "bootstrap"
-});</script>
-  <script>
-    $(document).ready(function() { $("#e1").select2(); });
-  </script>
-  <script>
-    $(document).ready(function() { $("#e2").select2(); });
-  </script>
