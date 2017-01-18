@@ -7,5 +7,5 @@ class Staff < ApplicationRecord
 	validates_presence_of :email, message: 'Please enter a email address'
 	validates_presence_of :job_title, message: 'Please enter a job title'
 
-	validates_format_of :email,:with => Devise::email_regexp, message: '...this doesn\'t look like an email addres'
+	validates_format_of :email,:with => Devise::email_regexp, message: '...this doesn\'t look like an email address'
 end

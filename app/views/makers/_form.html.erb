@@ -25,7 +25,7 @@
 		<div class="col-md-6 col-md-offset-3 well signin">
 		  <h2>Become a Maker</h2>
 
-		  <%= simple_form_for(@maker) do |f| %>
+		  <%= simple_form_for @maker, validate: true do |f| %>
 
 	  			<div class="first-name">
 	          		<%= f.input :first_name, required: true, autofocus: true, label: false , :class => "input-lg", placeholder: "First name" %>
