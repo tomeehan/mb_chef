@@ -16,8 +16,8 @@ class SubscribersController < ApplicationController
 
 		current_user.subscribed = true 
 		current_user.stripe_id = customer.id
-		current_user.save
+		current_user.save!
 
-		redirect_to ticks_path
+		redirect_to staffs_path
 	end
 end

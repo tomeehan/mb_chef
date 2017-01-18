@@ -37,6 +37,8 @@ class TasksController < ApplicationController
     @task.category_id = params[:category_id]
     @task.regularity_id = params[:regularity_id]
 
+    binding.pry
+
     if params[:create_and_add]
         respond_to do |format|
           if @task.valid?
