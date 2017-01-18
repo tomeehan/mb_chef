@@ -79,6 +79,16 @@ html, body {
 	padding: 10px !important;
 }
 
+.has-error .help-block {
+	color: lighten(#F86624, 15%);
+}
+
+.has-error .form-control {
+	border: 1px lighten(#F86624, 15%) solid;
+	background: lighten(#F86624, 43%);
+
+}
+
 a {
 	background: transparent;
 	text-decoration: none;
