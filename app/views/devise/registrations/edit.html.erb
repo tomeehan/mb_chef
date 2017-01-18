@@ -20,20 +20,21 @@
 
 
 
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), validate: true,html: { method: :put }) do |f| %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :validate => true,html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
         
           <br>
           <h4>Personal details</h4>
           <div class="first-name">
-            <%= f.input :first_name, required: true, label: false , placeholder: "First name (required)" %>
+            <%= f.input :first_name, required: true, label: false , placeholder: "First name" %>
           </div>
 
           <div class="last-name">
-            <%= f.input :last_name, required: true, label: false, placeholder: "Last name (required)" %>
+            <%= f.input :last_name, required: true, label: false, placeholder: "Last name" %>
           </div>
-          <%= f.input :email, required: true, label: false, placeholder: "Your email (required)" %>
+          <% f.input :organisation, required: true, label: false, placeholder: "Company Name" %>
+          <%= f.input :email, required: true, label: false, placeholder: "Your email" %>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
