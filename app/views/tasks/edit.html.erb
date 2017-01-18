@@ -6,7 +6,7 @@
 				<% end %>
 			</div>
 				<h1>Edit Task</h1>
-				<%= simple_form_for @task do |f| %>
+				<%= simple_form_for @task, validate: true do |f| %>
 					
 					<%# LOCAL LABEL %>
 				    <p>Category: <%= @task.category.name %></p>
