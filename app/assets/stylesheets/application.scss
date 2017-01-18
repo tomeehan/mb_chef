@@ -260,6 +260,18 @@ p.alert, p.notice {
 	color: white;
 }
 
+.nav-btn:active {
+	background-color: #0f8a5a !important;
+	text-decoration: none;
+	color: white;
+}
+
+.nav-btn:focus {
+	background-color: #0f8a5a !important;
+	text-decoration: none;
+	color: white !important;
+}
+
 .log-in-btn {
 	padding: 14px 2em;
 	color: #119A65;
