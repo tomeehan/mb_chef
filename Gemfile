@@ -17,12 +17,12 @@ gem 'rails_script', '~> 2.0'
 gem 'bootstrap-datepicker-rails'
 gem 'rollbar'
 gem 'oj', '~> 2.12.14'
-gem 'client_side_validations', 
-    github: 'DavyJonesLocker/client_side_validations', 
-    branch: 'rails5'
-gem 'client_side_validations-simple_form', 
-    github: 'DavyJonesLocker/client_side_validations-simple_form', 
-    branch: 'rails5'
+# gem 'client_side_validations', 
+#     github: 'DavyJonesLocker/client_side_validations', 
+#     branch: 'rails5'
+# gem 'client_side_validations-simple_form', 
+#     github: 'DavyJonesLocker/client_side_validations-simple_form', 
+#     branch: 'rails5'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

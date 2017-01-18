@@ -1,23 +1,4 @@
 GIT
-  remote: git://github.com/DavyJonesLocker/client_side_validations-simple_form.git
-  revision: d3466f50f681d2fbd2ec68ee29b8668fec6f51d0
-  branch: rails5
-  specs:
-    client_side_validations-simple_form (3.3.1)
-      client_side_validations (~> 5.0.0)
-      simple_form (~> 3.3)
-
-GIT
-  remote: git://github.com/DavyJonesLocker/client_side_validations.git
-  revision: fe23ff15e115e7fe2e1ee07c129608e6468c7b24
-  branch: rails5
-  specs:
-    client_side_validations (5.0.0)
-      jquery-rails (~> 4.0, >= 4.0.1)
-      js_regex (~> 1.0, >= 1.0.19)
-      rails (>= 5.0.0, < 5.1.0)
-
-GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: b291bce2404152eabc9c38c0f9d38edfbfcee78f
   specs:
@@ -115,8 +96,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    js_regex (1.2.1)
-      regexp_parser (>= 0.3.6, <= 0.4.2)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.4.1)
@@ -194,7 +173,6 @@ GEM
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     redcarpet (3.4.0)
-    regexp_parser (0.4.2)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rest-client (2.0.0)
@@ -261,8 +239,6 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3, >= 3.3.7)
   browser
   byebug
-  client_side_validations!
-  client_side_validations-simple_form!
   coffee-rails (~> 4.2)
   devise (~> 4.2)
   font-awesome-sass
