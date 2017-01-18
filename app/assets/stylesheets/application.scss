@@ -1073,6 +1073,14 @@ label.checkbox {
 	background-color: darken(#119A65, 5%);
 }
 
+.btn-block:active {
+	background-color: darken(#119A65, 10%) !important;
+}
+
+.btn-block:focus {
+	background-color: darken(#119A65, 10%) !important;
+}
+
 .form_control {
 	height: 30px;
 }
