@@ -35,7 +35,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build(task_params)
 
     @task.category_id = params[:category_id]
-    @task.regularity_id = params[:regularity_id]
+    @task.regularity_id = 1 #params[:regularity_id]
 
     if params[:create_and_add]
         respond_to do |format|
