@@ -10,12 +10,12 @@
 
 
 <div class="row white">
-  <div class="col-sm-4 group-title-wrap">
+  <div class="col-sm-4 group-title-wrap" id="group-title-one">
     <h4 class="group-title">
       Take control of<br> your kitchen
     </h4>
   </div>
-  <div class="col-sm-6 gray">
+  <div class="col-sm-6 gray" id="feature-col-one">
     <div class="feature-group feature-group-one">
       <div class="row">
         <h4 class="group-title-responsive">Take control of<br> your kitchen</h4>
@@ -61,12 +61,12 @@
   </div>
 </div>
 <div class="row white">
-  <div class="col-sm-4 group-title-wrap">
+  <div class="col-sm-4 group-title-wrap" id="group-title-two">
     <h4 class="group-title">
       No nonsense<br> straightforward<br> due-dilligence
     </h4>
   </div>
-  <div class="col-sm-6 gray">
+  <div class="col-sm-6 gray" id="feature-col-two">
     <div class="feature-group feature-group-two">
       <div class="row">
         <h4 class="group-title-responsive">No nonsense<br> straightforward<br> due-dilligence</h4>
@@ -122,12 +122,12 @@
   </div>
 </div>
 <div class="row white">
-  <div class="col-sm-4 group-title-wrap">
+  <div class="col-sm-4 group-title-wrap" id="group-title-three">
     <h4 class="group-title">
       Upcoming<br> features
     </h4>
   </div>
-  <div class="col-sm-6 gray">
+  <div class="col-sm-6 gray" id="feature-col-three">
     <div class="feature-group feature-group-three">
       <div class="row">
         <h4 class="group-title-responsive">Upcoming features</h4>
@@ -192,3 +192,31 @@
     </div>
   </div>
 </div>
+
+<script> 
+$(window).resize(function(){
+   console.log('resize called');
+   var width = $(window).width();
+   if(width >= 1 && width <= 768){
+       $('#feature-col-one').removeClass('col-sm-6').addClass('col-sm-7');
+       $('#feature-col-two').removeClass('col-sm-6').addClass('col-sm-7');
+       $('#feature-col-three').removeClass('col-sm-6').addClass('col-sm-7');
+
+
+
+       $('#group-title-one').removeClass('col-sm-4').addClass('col-sm-3');
+       $('#group-title-two').removeClass('col-sm-4').addClass('col-sm-3');
+       $('#group-title-three').removeClass('col-sm-4').addClass('col-sm-3');
+   }
+   else{
+       $('#feature-col-one').removeClass('col-sm-7').addClass('col-sm-6');
+       $('#feature-col-two').removeClass('col-sm-7').addClass('col-sm-6');
+       $('#feature-col-three').removeClass('col-sm-7').addClass('col-sm-6');
+
+       $('#group-title-one').removeClass('col-sm-3').addClass('col-sm-4');
+       $('#group-title-two').removeClass('col-sm-3').addClass('col-sm-4');
+       $('#group-title-three').removeClass('col-sm-3').addClass('col-sm-4');
+   }
+})
+.resize();//trigger the resize event on page load.
+</script>
