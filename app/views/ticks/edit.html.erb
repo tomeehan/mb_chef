@@ -15,7 +15,7 @@
 			<h4>Updating <%= @tick.task.name %></h4>
 				<%= simple_form_for(@tick) do |f| %>
 				    <%= f.label :complete, :class => 'checkbox' do %>
-	      				<%= f.check_box :complete,as: :boolean, checked_value: true, unchecked_value: false %>	      				
+	      				<%= f.check_box :complete,as: :boolean, checked_value: true, unchecked_value: false, checked: true %>	      				
 	      					<i class="icon-"></i>
 		   				<% end %>
 					 <div class="">
@@ -50,7 +50,7 @@
 			</div>
 			<br>
 			<div class="new-btn">
-			  	<%= f.button :submit, "Update #{@tick.task.category.name}" , name: :active, :class => 'btn-primary btn-block btn-lg' %>
+			  	<%= f.button :submit, "Confirm #{@tick.task.category.name}" , name: :active, :class => 'btn-primary btn-block btn-lg' %>
 			</div>
 		<% end %>
 
