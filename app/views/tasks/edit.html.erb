@@ -15,20 +15,19 @@
 				    <%# LOCAL TEXT BOX LABEL %>
 				    <%= f.input :description %>
 				    <%# LOCAL TOGGLE SWITCH %>
-	   			    <%= f.label :starting, :class => 'starting-checkbox' do %>
-      					<%= f.check_box :starting,as: :boolean, checked_value: true, unchecked_value: false %>
-      					<i class="icon-"></i>
-   					<% end %>
-   					<%# LOCAL TOGGLE SWITCH %>
-	   			    <%= f.label :midday, :class => 'midday-checkbox' do %>
-      					<%= f.check_box :midday,as: :boolean, checked_value: true, unchecked_value: false %>
-      					<i class="icon-"></i>
-   					<% end %>
-   					<%# LOCAL TOGGLE SWITCH %>
-					<%= f.label :ending, :class => 'ending-checkbox' do %>
-      					<%= f.check_box :ending,as: :boolean, checked_value: true, unchecked_value: false %>
-      					<i class="icon-"></i>
-   					<% end %>   	
+	   			    
+					<p><%= @task.name%> is set for:</p>	
+					<ul>
+						<% if @task.starting == true %>
+							<li>Morning</li>
+						<% end %>
+						<% if @task.midday == true %>
+							<li>Afternoon</li>
+						<% end %>
+						<% if @task.ending == true %>
+							<li>Evening</li>
+						<% end %>												
+					</ul>
 
    					<p class="archive-task" data-toggle="modal" data-target=".bs-example-modal-sm">Archive this task</p>
 

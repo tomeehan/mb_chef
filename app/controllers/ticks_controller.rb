@@ -59,11 +59,7 @@ class TicksController < ApplicationController
   # POST /ticks.json
   def create
     @tick = current_user.ticks.build(tick_params)
-
-
     @tick.task_id = params[:task_id]
-
-    
 
     respond_to do |format|
       if @tick.save
@@ -86,7 +82,6 @@ class TicksController < ApplicationController
         @tick.complete = true
     end
 
-
     @tick.update(tick_params)
 
     @last_tick = Tick.last
@@ -97,7 +92,18 @@ class TicksController < ApplicationController
 
     respond_to do |format|
       if @tick.update!(tick_params)
-        format.html { redirect_to ticks_path, notice: 'Tick was successfully updated.' }
+        if @tick.stage == 'starting'
+          format.html { redirect_to controller: 'ticks', action: 'index', stage: 'Morning', notice: 'Tick was successfully updated.' }
+        end
+
+        if @tick.stage == 'middle'
+          format.html { redirect_to controller: 'ticks', action: 'index', stage: 'Afternoon', notice: 'Tick was successfully updated.' }
+        end
+
+        if @tick.stage == 'ending'
+          format.html { redirect_to controller: 'ticks', action: 'index', stage: 'Evening', notice: 'Tick was successfully updated.' }
+        end
+
         format.json { render :show, status: :ok, location: @tick }
         
         if @tick.edited != 1 && @tick.regularity_id == 1
