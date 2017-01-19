@@ -83,6 +83,21 @@
     <h6>Newsletter </h6>
     <p><%= link_to "Newsletter Subscribers List", newsletter_subscribers_path %></p>
 
+    <hr>
+
+    <h6>Users:</h6>
+
+    <% @users.each do |user| %>
+      <ul>
+          <li><%= user.first_name %> <%= user.last_name %></li>
+          <li><%= user.id %></li>
+          <li><strong>Ticks:</strong> <%= user.ticks.count %></li>
+          <li><strong>Tasks:</strong> <%= user.tasks.count %></li>
+          <li><strong>Last seen:</strong> <%= user.last_seen %></li>
+      </ul>
+      <hr>
+    <% end %>    
+
   </div>
   <% end %>
 

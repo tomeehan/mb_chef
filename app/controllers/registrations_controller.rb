@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
 
+
 	def create
 		super
 		@user.errors.full_messages
@@ -7,6 +8,10 @@ class RegistrationsController < Devise::RegistrationsController
 			UserMailer.signup_confirmation(@user).deliver!
 			UserMailer.trello_notification(@user).deliver!
 		end
+	end
+
+	def edit 
+		@users = User.all
 	end
 
 	protected
