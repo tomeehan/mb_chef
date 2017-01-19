@@ -11,6 +11,13 @@ window.Element ||= {}
 class Element.Transitions
 
   constructor: ->
+
+        # Turbolinks < 5
+    $(document).one 'page:fetch.transition', @out
+    $(document).one 'page:change.transition', @in
+    $(document).one 'page:before-unload.transition', @remove
+    $(document).one 'page:restore.transition', @remove
+    
     # Turbolinks < 5
     $(document).one 'turbolinks:request-start.transition', @out
     $(document).one 'turbolinks:load.transition', @in
