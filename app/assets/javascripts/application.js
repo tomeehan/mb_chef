@@ -19,6 +19,7 @@
 //= require select2
 //= require turbolinks_transitions
 //= require bootstrap-datepicker
+//= require rails_script
 
 $(function() {
   $("#reports_date_picker").datepicker();

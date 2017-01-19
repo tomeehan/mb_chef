@@ -1,23 +1,42 @@
+
+window.App ||= {}
 class App.Base
 
   constructor: ->
-    if (window.jQuery) then RailsScript.setClearEventHandlers() # clearing application event handlers only possible with jQuery
+    App.transitions = new Element.Transitions
     return this
 
 
-  ###
-  Run the new action for the create action.  Generally the create action will 'render :new' if there was a problem.
-  This prevents doubling the code for each action.
-  ###
-  create: ->
-    if typeof $this.new == 'function'
-      return $this.new()
+window.Element ||= {}
+class Element.Transitions
+
+  constructor: ->
+    # Turbolinks < 5
+    $(document).one 'turbolinks:request-start.transition', @out
+    $(document).one 'turbolinks:load.transition', @in
+    $(document).one 'turbolinks:before-cache.transition', @remove
+
+    return this
 
 
-  ###
-  Run the edit action for the update action.  Generally the update action will 'render :edit' if there was a problem.
-  This prevents doubling the code for each action.
-  ###
-  update: ->
-    if typeof $this.edit == 'function'
-      return $this.edit()
+  out: =>
+    $('#main-container .page-content').addClass('animated fadeOut')
+    App.transitionLoader = setTimeout( ->
+      $('#ajax-loader').fadeIn('fast')
+    , 100
+    )
+    return
+
+
+  in: =>
+    $('#main-container .page-content').addClass('animated fadeIn')
+    setTimeout( @remove, 200 )
+    window.clearTimeout(App.transitionLoader) if App.transitionLoader?
+    return
+
+
+  remove: =>
+    $('#main-container .page-content').removeClass('animated fadeOut fadeIn')
+    $('#ajax-loader').hide()
+    window.clearTimeout(App.transitionLoader) if App.transitionLoader?
+    return
