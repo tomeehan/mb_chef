@@ -193,6 +193,10 @@
 	background-color: white;
 }
 
+.gray {
+	background-color: #f2f2f2;
+}
+
 .padding-side {
 	padding-left: 10%;
 	padding-right: 10%;
@@ -624,6 +628,7 @@ Pricing table
   margin: 0 auto;
   padding: 2em 0 2em 0;
 }
+
 .accordionTitle,
 .accordion__Heading {
 	background-color: #119A65; 
@@ -804,6 +809,134 @@ Pricing table
 	color: darken(#ff5f5e, 10%);
 	background-color: white;
 	text-decoration: none;
+}
+
+.group-title-wrap {
+	text-align: right;
+	width: 50%;
+	float: right;
+	margin-top: 20px;
+
+	h4 {
+		color: #8091A5;
+		font-weight: 300;
+		line-height: 22px;
+	}
+}
+
+.group-title-responsive {
+	display: none;
+}
+
+.feature-group {
+	height: 100%;
+	padding: 10px;
+	padding-bottom: 50px;
+}
+
+.feature {
+	width: 50%;
+	padding: 15px;
+	display: block;
+	float: left;
+}
+
+.feature h4 {
+	font-size: 1.2em;
+}
+
+.feature i {
+	padding: 5px;
+	border-radius: 5px;
+	color: white;
+	margin-right: 7.5px;
+}
+
+/* Feature Group One */
+
+.feature-group-one .feature:nth-child(1) i {
+	background-color: hsl(157, 80%, 34%);
+}
+
+.feature-group-one .feature:nth-child(2) i {
+	background-color: hsl(162, 80%, 34%);
+}
+
+.feature-group-one .feature:nth-child(3) i {
+	background-color: hsl(167, 80%, 34%);
+}
+
+.feature-group-one .feature:nth-child(4) i {
+	background-color: hsl(172, 80%, 34%);
+}
+
+/* Feature Group Two */
+
+.feature-group-two .feature:nth-child(1) i {
+	background-color: hsl(177, 80%, 34%);
+}
+
+.feature-group-two .feature:nth-child(2) i {
+	background-color: hsl(182, 80%, 34%);
+}
+
+.feature-group-two .feature:nth-child(3) i {
+	background-color: hsl(187, 80%, 34%);
+}
+
+.feature-group-two .feature:nth-child(4) i {
+	background-color: hsl(192, 80%, 34%);
+}
+
+.feature-group-two .feature:nth-child(5) i {
+	background-color: hsl(192, 80%, 34%);
+}
+
+.feature-group-two .feature:nth-child(6) i {
+	background-color: hsl(200, 80%, 34%);
+}
+
+/* Feature Group Three */
+
+.feature-group-three .feature:nth-child(1) i {
+	background-color: hsl(255, 80%, 34%);
+}
+
+.feature-group-three .feature:nth-child(2) i {
+	background-color: hsl(285, 80%, 34%);
+}
+
+.feature-group-three .feature:nth-child(3) i {
+	background-color: hsl(300, 80%, 34%);
+}
+
+.feature-group-three .feature:nth-child(4) i {
+	background-color: hsl(315, 80%, 34%);
+}
+
+.img-container {
+	text-align: center;
+	margin-top: 50px;
+	overflow: hidden;
+}
+
+@media screen and (min-width: 1px) and (max-width: 799px) {	
+	
+	.feature {
+		width: 50%;
+		display: block;
+		float: left;
+		padding: 5px;
+	}
+	
+	.group-title-responsive {
+		display: block;
+		text-align: center;
+	}
+
+	.group-title-wrap {
+		display: none;
+	}
 }
 
 
