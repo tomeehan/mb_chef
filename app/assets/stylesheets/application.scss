@@ -1105,6 +1105,7 @@ label.checkbox {
 	background: -webkit-linear-gradient(-45deg,    #172f4b 44%,#b34e58 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(135deg,    #172f4b 44%,#b34e58 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#172f4b', endColorstr='#b34e58',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	height: 100%;
 }
 
 /* Select2 */
