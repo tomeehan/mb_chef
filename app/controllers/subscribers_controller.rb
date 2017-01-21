@@ -18,6 +18,9 @@ class SubscribersController < ApplicationController
 		current_user.stripe_id = customer.id
 		current_user.save!
 
-		redirect_to staffs_path
+		redirect_to tour_path
+	end
+
+	def tour
 	end
 end

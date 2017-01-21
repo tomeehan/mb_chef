@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   get "/features", :to => 'pages#features'
 
   get "/blog", :to => 'blogs#index'
+  get "/tour", :to => 'subscribers#tour'
 end

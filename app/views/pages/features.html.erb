@@ -192,6 +192,55 @@
     </div>
   </div>
 </div>
+<div class="row white">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="jumbotron">
+      <h4>Need to convince the boss?</h4>
+      <br>
+            <div class="worthCalculator">
+                <p>
+                  As a chef, I value my time at  <span class="dollarInput">£<input name="dollar" type="text" value="12">/hr</span>. My kitchen has <span class="chefInput"><input name="chef" type="text" value="3"> chefs</span> and we each spend <input type="text" name="time" value="15"> minutes a day on due dilligence.
+                </p>
+                <p>
+                  This means I'll have an extra <strong class="totalTime">153 hours</strong> or <strong class="totalDollar">£1,836</strong> per year.
+                </p>
+                <p>
+                  Every month, Minibarra pays for itself after <strong class="payBack">less than an day</strong>!</p>
+                </p>
+          </div>
+    </div>
+  </div>
+</div>
+
+<script>
+        // Worth CAlc
+  $('.worthCalculator input').on('keyup change',function() {
+    var dollar = $('input[name="dollar"]').val();
+    var time = $('input[name="time"]').val();
+    var chef = $('input[name="chef"]').val();
+    var totalDollar = dollar * (time/60) * 6 * 51; // $savedtime, five days a week for 50 weeks a year
+    var totalTime = Math.round((time * 6 * 51) / 60); // half an hour, five days a week for 50 weeks a year
+
+    var chefDollar = chef * dollar
+
+    var payBack = Math.round((19 / chefDollar) * 60);
+    var payBack = 19 / ((chefDollar / 60) * time);
+    var payBackText = "";
+
+    if(payBack <= 1) {
+      payBackText = "less than an day";
+    }
+    else if (payBack > 1 && payBack < 2) {
+      payBackText = "just over a day";
+    } else {
+      payBackText = "just over " + Math.floor(payBack) + " days";
+    }
+
+    $('strong.totalTime').text(totalTime + " hours");
+    $('strong.totalDollar').text("£" + totalTime * dollar * chef);
+    $('strong.payBack').text(payBackText);
+  });
+  </script>
 
 <script> 
 $(window).resize(function(){
@@ -220,3 +269,5 @@ $(window).resize(function(){
 })
 .resize();//trigger the resize event on page load.
 </script>
+
+

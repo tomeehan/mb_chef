@@ -1,1 +1,42 @@
 <h1>Enterprise</h1>
+<div class="worthIt">
+        <div class="innerWrapper">
+          <div class="worthCalculator">
+            <div class="left">
+              <h3>Worth it? <br><br>Need to convince <br>your Boss?</h3>
+            </div>
+            <div class="right">
+              <p>As a chef, I value my time at  <span class="dollarInput">£<input name="dollar" type="text" value="12">/hr</span> and Minibarra Chef will save me <input type="text" name="time" value="30"> mins/day.</p>
+              <p>This means I'll have an extra <strong class="totalTime">153 hours</strong> or <strong class="totalDollar">£1,836</strong> per year.  Minibarra pays for itself after <strong class="payBack">less than an day</strong>!</p>
+            </div>
+          </div>
+          <div class="sampleChapter"></div>
+        </div>
+      </div>
+
+
+      <script>
+        // Worth CAlc
+  $('.worthCalculator input').on('keyup change',function() {
+    var dollar = $('input[name="dollar"]').val();
+    var time = $('input[name="time"]').val();
+    var totalDollar = dollar * (time/60) * 6 * 51; // $savedtime, five days a week for 50 weeks a year
+    var totalTime = Math.round((time * 6 * 51) / 60); // half an hour, five days a week for 50 weeks a year
+    var payBack = Math.round((36 / dollar) * 60);
+    var payBack = 228 / ((dollar / 60) * time);
+    var payBackText = "";
+
+    if(payBack <= 1) {
+      payBackText = "less than an day";
+    }
+    else if (payBack > 1 && payBack < 2) {
+      payBackText = "just over a day";
+    } else {
+      payBackText = "just over " + Math.floor(payBack) + " days";
+    }
+
+    $('strong.totalTime').text(totalTime + " hours");
+    $('strong.totalDollar').text("£" + totalTime * dollar);
+    $('strong.payBack').text(payBackText);
+  });
+  </script>
