@@ -199,10 +199,13 @@
       <br>
             <div class="worthCalculator">
                 <p>
-                  As a chef, I value my time at  <span class="dollarInput">£<input name="dollar" type="text" value="12">/hr</span>. My kitchen has <span class="chefInput"><input name="chef" type="text" value="3"> chefs</span> and we each spend <input type="text" name="time" value="15"> minutes a day on due dilligence.
+                  As a chef, I value my time at  <span class="dollarInput">£<input name="dollar" type="text" value="12">/hr</span>. My kitchen has <span class="chefInput"><input name="chef" type="text" value="3"> chefs</span> and we each spend <input type="text" name="time" value="16"> minutes a day on due dilligence.
                 </p>
                 <p>
-                  This means I'll have an extra <strong class="totalTime">153 hours</strong> or <strong class="totalDollar">£1,836</strong> per year.
+                  Minibarra will each chef <strong class="totalTime">77 hours</strong>.
+                </p>
+                <p>
+                  This will save all the chefs <strong class="totalTimeChef">231 hours</strong> (that's <strong class="totalDollar">£2772</strong> per year).
                 </p>
                 <p>
                   Every month, Minibarra pays for itself after <strong class="payBack">less than an day</strong>!</p>
@@ -223,7 +226,7 @@
 
     var chefDollar = chef * dollar
 
-    var payBack = Math.round((19 / chefDollar) * 60);
+    var payBack = Math.round((9 / chefDollar) * 60);
     var payBack = 19 / ((chefDollar / 60) * time);
     var payBackText = "";
 
@@ -239,6 +242,7 @@
     $('strong.totalTime').text(totalTime + " hours");
     $('strong.totalDollar').text("£" + totalTime * dollar * chef);
     $('strong.payBack').text(payBackText);
+    $('strong.totalTimeChef').text(totalTime * chef + " hours");
   });
   </script>
 
