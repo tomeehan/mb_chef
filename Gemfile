@@ -15,7 +15,7 @@ gem 'prawn-table'
 gem 'jquery-ui-rails'
 gem 'rails_script', '~> 2.0'
 gem 'bootstrap-datepicker-rails'
-gem 'rollbar'
+# gem 'rollbar'
 gem 'oj', '~> 2.12.14'
 gem 'client_side_validations', 
     github: 'DavyJonesLocker/client_side_validations', 
