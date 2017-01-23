@@ -2,12 +2,12 @@
 	<div class="col-md-6 col-md-offset-3 well signin">
 		<div class="back-btn">
 			<%= link_to staffs_path do %>
-				<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+				<span class="glyphicon glyphicon-chevron-left"></span> <p><%= t 'staffs.edit.back' %></p>
 			<% end %>
 		</div>
 		
 			<br>
-			<h4><i class="fa fa-users"></i> Editing Staff</h4>
+			<h4><i class="fa fa-users"></i> <%= t 'staffs.edit.title' %></h4>
 
 			<%= simple_form_for @staff, validate: true do |f| %>
 			  <%= f.error_notification %>

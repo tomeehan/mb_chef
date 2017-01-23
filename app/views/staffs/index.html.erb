@@ -3,14 +3,15 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="container">
-        <h1 data-step="1" data-intro="This is your staff page.">Staff</h1>
-        <a class="btn btn-large btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">Show me how</a>
+        <h1 data-step="1" data-intro="This is your staff page."><%= t "staffs.index.title" %></h1>
       </div>  
     </div>
     <div class="col-sm-6">
       <div class="create-btn-container">
         <div class="new-btn">
-          <%= link_to '+ Create a new staff member', new_staff_path, :class => 'waves-effect btn-large' %>
+          <%= link_to new_staff_path, :class => 'waves-effect btn-large' do %>
+          + <%= t "staffs.index.btn" %>
+          <% end %>
         </div>
       </div>  
     </div>
@@ -19,14 +20,14 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <div class="well signin">
-        <h4>Current Staff</h4>
+        <h4><%= t "staffs.index.table.table_title" %></h4>
        <div class="table-responsive"> 
         <table class="table table-hover">
           <thead>
-            <th>Name</th>
-            <th>Manager</th>
-            <th>Job Title</th>
-            <th>Edit</th>
+            <th><%= t "staffs.index.table.name" %></th>
+            <th><%= t "staffs.index.table.manager" %></th>
+            <th><%= t "staffs.index.table.job_title" %></th>
+            <th><%= t "staffs.index.table.edit" %></th>
           </thead>
           <tbody>
             <% @staffs.each do |staff| %>
@@ -61,15 +62,15 @@
       <hr>
       <div id="showmenu" class="change-password-wrap"><p>Click here to see former staff members.</p></div>
         <div class="menu" style="display: none;">
-          <h4>Former Staff</h4>
+          <h4><%= t "staffs.index.table.former_staff_title" %></h4>
           <div class="table-responsive change-password"> 
             <table class="table table-hover">
               <thead>
-                <th>Name</th>
-                <th>Manager</th>
-                <th>Leaving Date</th>
-                <th>Job Title</th>
-                <th>Edit</th>
+                <th><%= t "staffs.index.table.name" %></th>
+                <th><%= t "staffs.index.table.manager" %></th>
+                <th><%= t "staffs.index.table.leaving_date" %></th>
+                <th><%= t "staffs.index.table.job_title" %></th>
+                <th><%= t "staffs.index.table.edit" %></th>
               </thead>
               <tbody>
                 <% @staffs.each do |staff| %>

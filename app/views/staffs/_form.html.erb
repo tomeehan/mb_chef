@@ -3,13 +3,13 @@
     
       <br>
       <div class="first-name">
-         <%= f.input :first_name, required: true, autofocus: true, label: false , placeholder: "First name (required)" %>
+         <%= f.input :first_name, required: true, autofocus: true, label: false , placeholder: true %>
       </div>
       <div class="last-name">
-         <%= f.input :surname, required: true, label: false, placeholder: "Last name (required)" %>
+         <%= f.input :surname, required: true, label: false, placeholder: true %>
       </div>
-      <%= f.input :email, label: false, placeholder: "Email" %>
-      <%= f.input :job_title, label: false, placeholder: "Job Title" %>
+      <%= f.input :email, label: false, placeholder: true %>
+      <%= f.input :job_title, label: false, placeholder: true %>
       <%= f.input :manager %>
 
     <div class="new-btn">

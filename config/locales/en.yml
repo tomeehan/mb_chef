@@ -20,4 +20,61 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  simple_form:
+    placeholders:
+      staff:
+        first_name: "LOCAL First name"
+        surname: "LOCAL Last name"
+        email: "LOCAL Email"
+        job_title: "LOCAL Job Title"
+        edit:
+          first_name: "LOCAL First name"
+          surname: "LOCAL Last name"
+          email: "LOCAL Email"
+          job_title: "LOCAL Job Title"
+    labels:
+      staff:
+        manager: "LOCAL Manager"
+        submit: "LOCAL Create"
+  staffs: 
+    index:
+      title: "LOCAL Staff"
+      btn: "LOCAL Create a new staff member"
+      table:
+        table_title: "LOCAL Current Staff"
+        name: "LOCAL Name"
+        manager: "LOCAL Manager"
+        job_title: "LOCAL Job Title"
+        edit: "LOCAL Edit"
+        former:
+          former_staff_link: "LOCAL Click here to see former staff members"
+          former_staff_title: "LOCAL Former Staff"
+          leaving_date: "LOCAL Leaving Date"
+    new: # Form placeholders and labels in simple_form - line 25 
+      title: "LOCAL New Staff"
+      back: "LOCAL Back"
+    edit: # Form placeholders and labels in simple_form - line 25 
+      title: "LOCAL Edit"
+      back: "LOCAL Back"
+      reactive_staff_link: "LOCAL To reactivate this staff member, leave this box unchecked" # Can only be viewed when staff member == former
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
