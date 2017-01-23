@@ -33,7 +33,11 @@ var _rollbarConfig = {
     <%= javascript_include_tag 'jquery', 'application' %>
     <%= javascript_include_tag 'jquery', 'intro' %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pacifico" rel="stylesheet">
-    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    <% if Rails.env.development? %>
+      <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+      </script>
+    <% end %>  
+
     <% javascript_include_tag :defaults, "rails.validations" %>
     <%= include_rails_script %>
   </head>
