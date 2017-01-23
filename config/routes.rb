@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # match 'ticks/completed' => 'ticks#completed', :via => [:get],:as => 'completed_ticks'
 
-  root 'pages#home'
+  root 'pages#features'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get "/home", :to => 'pages#home'
