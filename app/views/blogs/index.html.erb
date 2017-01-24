@@ -18,7 +18,7 @@
     <!-- Author -->
     <hr>
     <!-- Date/Time -->
-    <p><span class="glyphicon glyphicon-time"></span> Posted on <%= blog.created_at.strftime("%e %B %Y") %> by <%= blog.author %></p>
+    <p><span class="glyphicon glyphicon-time"></span> Posted on <%= blog.created_at.strftime("%e %B %Y") %> by <%= blog.author %> | <%= blog.reading_time %> min read</p>
     <hr>
     <div class="lead-img">
       <p><%= markdown(blog.image_link) %></p>
@@ -78,7 +78,7 @@
       <div class="blog-side-links">
         <% @blogs.each do |blog| %>
           <p>
-            <%= link_to blog.title, blog %>, by <%= blog.author %> (<%= blog.created_at.strftime("%B %Y") %>)
+            <%= link_to blog.title, blog %>, by <%= blog.author %> (<%= blog.created_at.strftime("%B %Y") %> | <%= blog.reading_time %> min read)
           </p>
         <% end %>
       </div>

@@ -12,7 +12,7 @@
             <hr>
             <!-- Date/Time -->
             <div class="read-link">
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= @blog.created_at.strftime("%e %B %Y") %></p>
+                <p><span class="glyphicon glyphicon-time"></span> <%= @blog.created_at.strftime("%e %B %Y") %> | <%= @blog.reading_time %> min read</p>
                 <% if user_signed_in? && current_user.admin == true %>
                     <%= link_to edit_blog_path(@blog) do %> 
                         <i class="glyphicon glyphicon-pencil"></i> Edit Post
@@ -78,7 +78,7 @@
                 <div class="blog-side-links">
                     <% @blogs.each do |blog| %>
                         <p>
-                            <%= link_to blog.title, blog %>, by <%= blog.author %> (<%= @blog.created_at.strftime("%e %B %Y") %>)
+                            <%= link_to blog.title, blog %>, by <%= blog.author %> (<%= @blog.created_at.strftime("%e %B %Y") %> | <%= blog.reading_time %> min read)
                         </p>
                     <% end %>
                 </div>
