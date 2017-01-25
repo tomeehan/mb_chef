@@ -16,7 +16,11 @@
                 <% if user_signed_in? && current_user.admin == true %>
                     <%= link_to edit_blog_path(@blog) do %> 
                         <i class="glyphicon glyphicon-pencil"></i> Edit Post
-                     <% end %>                     
+                     <% end %>    
+                       |        
+                     <%= link_to @blog, method: :delete, data: { confirm: 'Are you sure?' } do %>         
+                        <i class="glyphicon glyphicon-trash"></i> Delete
+                     <% end %>
                 <% end %>
             </div>    
             <hr>

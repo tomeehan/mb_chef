@@ -31,9 +31,11 @@
       <%= link_to "Read now", blog %>
       <% if user_signed_in? && current_user.admin == true %>
        | 
-      <%= link_to edit_blog_path(blog) do %> 
-      <i class="glyphicon glyphicon-pencil"></i> Edit Post
-      <% end %> 
+        <%= link_to edit_blog_path(blog) do %> 
+          <i class="glyphicon glyphicon-pencil"></i> Edit Post
+        <% end %> 
+
+        <%= link_to 'Destroy', blog_path(blog), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     </div>
     <br>
