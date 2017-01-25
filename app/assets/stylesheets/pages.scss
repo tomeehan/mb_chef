@@ -72,6 +72,10 @@
 	width: 90%;
 }
 
+.tablet-hero-img {
+	display:none;
+}
+
 .image-container img {
 	height: 70%;
 }
@@ -969,14 +973,34 @@ Pricing table
 		display: none;
 	}
 
-	.hero-img-container img {
-		display: none;
-	}
-
 	.minibarra-benefits {
     	padding: 0;
 	}
 }
+
+@media screen and (min-width: 730px) and (max-width: 768px) {	
+	.hero-img-container img {
+		display: none;
+	}
+
+	.tablet-hero-img {
+		display:block;
+		text-align: center;
+	}
+
+	.tablet-hero-img img {
+		width: 90%;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
+
+@media screen and (min-width: 1px) and (max-width: 729px) {	
+	.hero-img-container img {
+		display: none;
+	}
+}
+
 
 /* Worth is Calculator */
 
