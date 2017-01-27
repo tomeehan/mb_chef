@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
         end
 
 
-
 private
 
 def after_sign_out_path_for(resource_or_scope)

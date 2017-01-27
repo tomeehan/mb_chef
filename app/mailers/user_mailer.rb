@@ -17,3 +17,4 @@ class UserMailer < ApplicationMailer
   	mail to: "tomeehan+prtxhumb8cgrwf01tsgz@boards.trello.com", subject: @user.organisation, bcc: "tom.meehan+NEWSIGNUP@minibarra.com"
   end
 end
+
