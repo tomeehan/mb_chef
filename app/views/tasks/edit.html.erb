@@ -1,44 +1,71 @@
 	<div class="container">	
 		<div class="col-md-4 col-md-offset-4 well signin">
+			<!-- Back Btn -->
 			<div class="back-btn">
 				<%= link_to tasks_path do %>
-					<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+					<span class="glyphicon glyphicon-chevron-left"></span> <p><%= t 'tasks.edit.back' %></p>
 				<% end %>
 			</div>
-				<h1>Edit Task</h1>
-				<%= simple_form_for @task, validate: true do |f| %>
-					
-					<%# LOCAL LABEL %>
-				    <p>Category: <%= @task.category.name %></p>
-				    <%# LOCAL TEXT BOX LABEL %>
-				    <%= f.input :name %>
-				    <%# LOCAL TEXT BOX LABEL %>
-				    <%= f.input :description %>
-				    <%# LOCAL TOGGLE SWITCH %>
-	   			    
-					<p><%= @task.name%> is set for:</p>	
-					<ul>
-						<% if @task.starting == true %>
-							<li>Morning</li>
-						<% end %>
-						<% if @task.midday == true %>
-							<li>Afternoon</li>
-						<% end %>
-						<% if @task.ending == true %>
-							<li>Evening</li>
-						<% end %>												
-					</ul>
 
-   					<p class="archive-task" data-toggle="modal" data-target=".bs-example-modal-sm">Archive this task</p>
+			<!-- Page Title -->
+			<h1><%= t 'tasks.edit.title' %></h1>
+			<%= simple_form_for @task, validate: true do |f| %>
+				
+				<!-- Category Name -->
+			    <p>
+			    	<%= t 'tasks.edit.category' %>: 
+				    	<% if @task.category.name == "Temperature" %>
+
+				    		<%# Temperature %>
+				    		<%= t 'tasks.edit.temperature' %>
+				    	<% else %>
+				    		
+							<%# Check %>
+				    		<%= t 'tasks.edit.check' %>
+				    	<% end %>
+			    </p>
+				
+				<!-- Task Name -->
+				<%= f.input :name, label: I18n.t('tasks.edit.label.name') %>
+
+				<!-- Task Description -->
+				<%= f.input :description, label: I18n.t('tasks.edit.label.description') %>
+	   			
+	   			<!-- Task Regularity -->
+	   			<%# "@task.name is set for:" %>
+				<p><%= @task.name%> <%= t 'tasks.edit.is_set_for' %>:</p>	
+				<ul>
+					<% if @task.starting == true %>
+						
+						<%# Morning %>
+						<li><%= t 'tasks.edit.morning' %></li>
+					<% end %>
+					<% if @task.midday == true %>
+
+						<%# Afternoon %>
+						<li><%= t 'tasks.edit.afternoon' %></li>
+					<% end %>
+					<% if @task.ending == true %>
+						
+						<%# Evening %>
+						<li><%= t 'tasks.edit.evening' %></li>
+					<% end %>												
+				</ul>
+
+   					<p class="archive-task" data-toggle="modal" data-target=".bs-example-modal-sm"><%= t 'tasks.edit.archive.link' %></p>
 
 				      <div class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
 				        <div class="modal-dialog modal-sm">
 				          <div class="modal-content">
 				            <div class="modal-header">
-				            	<h4>Archie Task <i class="fa fa-trash-o"></i></h4>
+				            	<h4><%= t 'tasks.edit.archive.title' %> <i class="fa fa-trash-o"></i></h4>
 				            </div>
-				            <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want archive this task?</div>
-				            <p>    <%= f.check_box :archived,as: :boolean, checked_value: true, unchecked_value: false, label: "Yes, archive it. I'm done." %> Yes please</p>
+				            <div class="modal-body">
+				            	<i class="fa fa-question-circle"></i> <%= t 'tasks.edit.archive.question' %>
+				            </div>
+				            <p>
+				            	<%= f.check_box :archived,as: :boolean, checked_value: true, unchecked_value: false, label: "Yes, archive it. I'm done." %> <%= t 'tasks.edit.archive.checkbox' %>
+				            </p>
 				            <div class="modal-footer ">
 				              <div class="new-btn">
 				              <%= f.button :submit, "Delete Task", :class => 'btn-primary btn-block btn-lg' %>
@@ -47,11 +74,13 @@
 				          </div>
 				        </div>
 				      </div>				
-
-				  <div class="new-btn">
-				  	<%# LOCAL BUTTON %>
-				    <%= f.button :submit, :class => 'btn-primary btn-block btn-lg' %>
-				  </div>
+					
+					<!-- Submit Btn -->
+				  	<div class="new-btn">
+				    	<%= f.button :submit, I18n.t('tasks.edit.btn.submit') , :class => 'btn-primary btn-block btn-lg' do %>
+							
+				    	<% end %>
+				  	</div>
 				<% end %>
 
 

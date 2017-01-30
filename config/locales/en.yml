@@ -22,6 +22,12 @@
 en:
   simple_form:
     placeholders:
+      task:
+        name: "LOCAL Task Name"
+        description: "LOCAL Task Description"
+        edit:
+          name: "LOCAL Task Name"
+          description: "LOCAL Task Description"
       staff:
         first_name: "LOCAL First name"
         surname: "LOCAL Last name"
@@ -36,6 +42,9 @@ en:
       staff:
         manager: "LOCAL Manager"
         submit: "LOCAL Create"
+      tasks:
+        edit:
+          submit: "Local Create" # TODO: not working
   staffs: 
     index:
       title: "LOCAL Staff"
@@ -57,6 +66,53 @@ en:
       title: "LOCAL Edit"
       back: "LOCAL Back"
       reactive_staff_link: "LOCAL To reactivate this staff member, leave this box unchecked" # Can only be viewed when staff member == former
+  tasks:
+    index:
+      title: "LOCAL Tasks"
+      btn: "LOCAL Create a new task"
+      checks: "LOCAL Checks"
+      temperatures: "LOCAL Temperatures"
+      regularity: # TODO put inside switch or conditionals
+        daily: "LOCAL Daily"
+        weekly: "LOCAL Weekly"
+        monthly: "LOCAL Monthly"
+    new: # TODO Validations
+      title: "LOCAL New Task"
+      back: "LOCAL Back"
+    edit:
+      title: "LOCAL Edit Task"
+      back: "LOCAL Back"
+      is_set_for: "LOCAL is set for"
+      morning: "LOCAL Morning"
+      afternoon: "LOCAL Afternoon"
+      evening: "LOCAL Evening"
+      category: "LOCAL Category"
+      temperature: "LOCAL Temperature"
+      check: "LOCAL Check"
+      archive:
+        link: "LOCAL Archive this task"
+        title: "LOCAL Archive Task"
+        question: "LOCAL Are you sure you want to archive this task?"
+        checkbox: "LOCAL Yes please"
+      label:
+        name: "LOCAL Name"
+        description: "LOCAL Description"
+      btn: 
+        submit: "LOCAL Update"
+
+
+
+
+
+
+
+
+
+
+
+# "LOCAL "
+
+
 
 
 

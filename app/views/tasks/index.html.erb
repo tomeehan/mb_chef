@@ -4,14 +4,16 @@
     <div class="row">
       <div class="col-md-6">
         <div class="">
-          <h1>Tasks</h1> <%# LOCAL PAGE TITLE %>
+          <h1><%= t "tasks.index.title" %></h1> <%# LOCAL PAGE TITLE %>
         </div>  
       </div>
       <div class="col-md-6">
         <div class="create-btn-container">
           <div class="new-btn">
-            <%= link_to '+ Create a new task', new_task_path, :class => 'waves-effect btn-large' %>
+            <%= link_to new_task_path, :class => 'waves-effect btn-large' do %>
+                + <%= t "tasks.index.btn" %>
             <%# LOCAL BUTTON %>
+            <% end %>
           </div>
         </div>  
       </div>
@@ -20,7 +22,7 @@
 
     <div class="row container">
       <div class="col-sm-5">
-        <h2>Checks</h2> <%# LOCAL GROUP LABEL %>
+        <h2><%= t "tasks.index.checks" %></h2> <%# LOCAL GROUP LABEL %>
 
            <% @tasks.each do |task| %>
             <% if task.category.name == "Check" && task.user_id == current_user.id %>
@@ -65,7 +67,7 @@
       </div>
 
       <div class="col-sm-5">
-        <h2>Temperatures</h2> <%# LOCAL GROUP LABEL %>
+        <h2><%= t "tasks.index.temperatures" %></h2> <%# LOCAL GROUP LABEL %>
           <% @tasks.each do |task| %>
             <% if task.category.name == "Temperature" && task.user_id == current_user.id %>
               <%= link_to edit_task_path(task) do %>

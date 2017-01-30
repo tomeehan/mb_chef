@@ -60,9 +60,9 @@
         </table>
       </div>
       <hr>
-      <div id="showmenu" class="change-password-wrap"><p>Click here to see former staff members.</p></div>
+      <div id="showmenu" class="change-password-wrap"><p><%= t "staffs.index.table.former.former_staff_link" %></p></div>
         <div class="menu" style="display: none;">
-          <h4><%= t "staffs.index.table.former_staff_title" %></h4>
+          <h4><%= t "staffs.index.table.former.former_staff_title" %></h4>
           <div class="table-responsive change-password"> 
             <table class="table table-hover">
               <thead>
@@ -75,7 +75,7 @@
               <tbody>
                 <% @staffs.each do |staff| %>
                   <% if staff.user_id == current_user.id && staff.former? %>
-                    <tr>
+                    <tr> 
                       <td>
                         <%= staff.first_name%> <%= staff.surname %>
                       </td>

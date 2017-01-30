@@ -1,10 +1,12 @@
 
 <%= simple_form_for @task, validate: true do |f| %>
   <%= f.error_notification %>
+  
+    <!-- Category dropdown -->
     <div class="field">
-
-
-      <%# LOCAL TEXT BOX %>
+      <%# 
+      TO DO 
+      Unwraps category if nil. When user submits an invalid form, a new form is rendered where categories returns nil. %>
       <% if @categories == nil %>
         <p>P</p>
       <% else %>
@@ -13,50 +15,56 @@
         </div>
       <% end %>
     </div>
-    <br>
 
+  <br>
+  
+  <!-- Task Name -->
+  <%= f.input :name, label: false, placeholder: true %>
 
+  <!-- Task Description -->
+  <%= f.input :description, label: false, placeholder: true %>
 
-      <%# LOCAL TEXT BOX %>
-	    <%= f.input :name, label: false, placeholder: "Task Name" %>
-      <%# LOCAL TEXT BOX %>
-	    <%= f.input :description, label: false, placeholder: "Task description" %>
-          <div class="field">
-      <% if @categories == nil %>
+  <!-- Regularity dropdown -->
+  <div class="field">
+        <%# 
+        TO DO 
+        Unwraps category if nil. When user submits an invalid form, a new form is rendered where categories returns nil. %>   
+    <% if @categories == nil %>
       <p>p</p>
-      <% else %>
+    <% else %>
       <div class="select-container">
-        <%# LOCAL TEXT BOX %>
         <%= select_tag(:regularity_id, options_for_select(@regularities), :id => "e1") %>
       </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 
-            <%# LOCAL TOGGLE SWITCHES %>
-            <%= f.label :starting, :class => 'starting-checkbox' do %>
-                <%= f.check_box :starting, as: :boolean, checked_value: true, unchecked_value: false %>
-                <i class="icon-"></i>
-            <% end %>
-              <%= f.label :midday, :class => 'midday-checkbox' do %>
-                <%= f.check_box :midday, as: :boolean, checked_value: true, unchecked_value: false %>
-                <i class="icon-"></i>
-            <% end %>
-          <%= f.label :ending, :class => 'ending-checkbox' do %>
-                <%= f.check_box :ending, as: :boolean, checked_value: true, unchecked_value: false %>
-                <i class="icon-"></i>
-            <% end %> 
+  <!-- Morning Checkbox -->
+  <%= f.label :starting, :class => 'starting-checkbox' do %>
+    <%= f.check_box :starting, as: :boolean, checked_value: true, unchecked_value: false %>
+    <i class="icon-"></i>
+  <% end %>
 
+  <!-- Afternoon Checkbox -->
+  <%= f.label :midday, :class => 'midday-checkbox' do %>
+    <%= f.check_box :midday, as: :boolean, checked_value: true, unchecked_value: false %>
+    <i class="icon-"></i>
+  <% end %>
+  
+  <!-- Evening Checkbox -->
+  <%= f.label :ending, :class => 'ending-checkbox' do %>
+    <%= f.check_box :ending, as: :boolean, checked_value: true, unchecked_value: false %>
+    <i class="icon-"></i>
+  <% end %> 
 
-  	<div class="new-btn answer">
-      <%# LOCAL BUTTON %>
-
-    	<%= f.button :submit, "Create Task", :class => 'btn-primary btn-block btn-lg ', :id => "postme" %>
-  	</div>
+  <!-- Submit Button -->
+  <div class="new-btn answer">
+    <%= f.button :submit, "Create Task", :class => 'btn-primary btn-block btn-lg ', :id => "postme" %>
+  </div>
 <% end %>
 
- <script>
-    $(document).ready(function() { $("#e1").select2(); });
-  </script>
-  <script>
-    $(document).ready(function() { $("#e2").select2(); });
-  </script>
+<script>
+$(document).ready(function() { $("#e1").select2(); });
+</script>
+<script>
+$(document).ready(function() { $("#e2").select2(); });
+</script>
