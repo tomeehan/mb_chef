@@ -23,82 +23,82 @@ en:
   simple_form:
     placeholders:
       task:
-        name: "Task Name"
-        description: "Task Description"
+        name: "LOCAL Task Name"
+        description: "LOCAL Task Description"
         edit:
-          name: "Task Name"
-          description: "Task Description"
+          name: "LOCAL Task Name"
+          description: "LOCAL Task Description"
       staff:
-        first_name: "First name"
-        surname: "Last name"
-        email: "Email"
-        job_title: "Job Title"
+        first_name: "LOCAL First name"
+        surname: "LOCAL Last name"
+        email: "LOCAL Email"
+        job_title: "LOCAL Job Title"
         edit:
-          first_name: "First name"
-          surname: "Last name"
-          email: "Email"
-          job_title: "Job Title"
+          first_name: "LOCAL First name"
+          surname: "LOCAL Last name"
+          email: "LOCAL Email"
+          job_title: "LOCAL Job Title"
     labels:
       staff:
-        manager: "Manager"
-        submit: "Create"
+        manager: "LOCAL Manager"
+        submit: "LOCAL Create"
       tasks:
         edit:
-          submit: "Create" # TODO: not working
+          submit: "Local Create" # TODO: not working
   staffs: 
     index:
-      title: "Staff"
-      btn: "Create a new staff member"
+      title: "LOCAL Staff"
+      btn: "LOCAL Create a new staff member"
       table:
-        table_title: "Current Staff"
-        name: "Name"
-        manager: "Manager"
-        job_title: "Job Title"
-        edit: "Edit"
+        table_title: "LOCAL Current Staff"
+        name: "LOCAL Name"
+        manager: "LOCAL Manager"
+        job_title: "LOCAL Job Title"
+        edit: "LOCAL Edit"
         former:
-          former_staff_link: "Click here to see former staff members"
-          former_staff_title: "Former Staff"
-          leaving_date: "Leaving Date"
+          former_staff_link: "LOCAL Click here to see former staff members"
+          former_staff_title: "LOCAL Former Staff"
+          leaving_date: "LOCAL Leaving Date"
     new: # Form placeholders and labels in simple_form - line 25 
-      title: "New Staff"
-      back: "Back"
+      title: "LOCAL New Staff"
+      back: "LOCAL Back"
     edit: # Form placeholders and labels in simple_form - line 25 
-      title: "Edit"
-      back: "Back"
-      reactive_staff_link: "To reactivate this staff member, leave this box unchecked" # Can only be viewed when staff member == former
+      title: "LOCAL Edit"
+      back: "LOCAL Back"
+      reactive_staff_link: "LOCAL To reactivate this staff member, leave this box unchecked" # Can only be viewed when staff member == former
   tasks:
     index:
-      title: "Tasks"
-      btn: "Create a new task"
-      checks: "Checks"
-      temperatures: "Temperatures"
+      title: "LOCAL Tasks"
+      btn: "LOCAL Create a new task"
+      checks: "LOCAL Checks"
+      temperatures: "LOCAL Temperatures"
       regularity: # TODO put inside switch or conditionals
-        daily: "Daily"
-        weekly: "Weekly"
-        monthly: "Monthly"
+        daily: "LOCAL Daily"
+        weekly: "LOCAL Weekly"
+        monthly: "LOCAL Monthly"
     new: # TODO Validations
-      title: "New Task"
-      back: "Back"
+      title: "LOCAL New Task"
+      back: "LOCAL Back"
     edit:
-      title: "Edit Task"
-      back: "Back"
-      is_set_for: "is set for"
-      morning: "Morning"
-      afternoon: "Afternoon"
-      evening: "Evening"
-      category: "Category"
-      temperature: "Temperature"
-      check: "Check"
+      title: "LOCAL Edit Task"
+      back: "LOCAL Back"
+      is_set_for: "LOCAL is set for"
+      morning: "LOCAL Morning"
+      afternoon: "LOCAL Afternoon"
+      evening: "LOCAL Evening"
+      category: "LOCAL Category"
+      temperature: "LOCAL Temperature"
+      check: "LOCAL Check"
       archive:
-        link: "Archive this task"
-        title: "Archive Task"
-        question: "Are you sure you want to archive this task?"
-        checkbox: "Yes please"
+        link: "LOCAL Archive this task"
+        title: "LOCAL Archive Task"
+        question: "LOCAL Are you sure you want to archive this task?"
+        checkbox: "LOCAL Yes please"
       label:
-        name: "Name"
-        description: "Description"
+        name: "LOCAL Name"
+        description: "LOCAL Description"
       btn: 
-        submit: "Update"
+        submit: "LOCAL Update"
 
 
 
@@ -110,7 +110,7 @@ en:
 
 
 
-# ""
+# "LOCAL "
 
 
 
