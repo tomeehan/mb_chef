@@ -45,7 +45,9 @@ html, body {
     padding-top: 0px;
 */}
 
-
+.overflow {
+	overflow: hidden;
+}
 
 #flash_notice {
  	@extend .alert;

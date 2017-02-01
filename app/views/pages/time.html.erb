@@ -1,0 +1,157 @@
+<div class="row">
+<div class="hero-container" id="your-element">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="cta ">
+                <h2>On average, Minibarra saves the average kitchen 9 days. Here's a few things you could in 9 days:</h2>
+                <br><br>
+                <h1><span id="element"></span><span style="color: rgba(255, 0, 0, 0.0);">.</span></h1>
+                <br><br><br><br>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="jumbotron">
+                  <h4>See for yourself:</h4>
+                  <br>
+                        <div class="worthCalculator">
+                            <p>
+                              As a chef, I value my time at  <span class="dollarInput">£<input name="dollar" type="text" value="12">/hr</span>. My kitchen has <span class="chefInput"><input name="chef" type="text" value="3"> chefs</span> and we each spend <input type="text" name="time" value="16"> minutes a day on due dilligence.
+                            </p>
+                            <p>
+                              Minibarra will save each chef <strong class="totalTime">77 hours</strong>. Combined, this will save all the chefs <strong class="totalTimeChef">231 hours</strong> (that's <strong class="totalDollar">£2772</strong> per year).
+                            </p>
+                            <p>
+                              Every month, Minibarra pays for itself in <strong class="payBack">less than an day</strong>!</p>
+                            </p>
+                            <div class="btn-container" style="text-align: center;">
+                                <a class="btn btn-primary btn-large" href="/pricing" role="button">Tell me more</a>
+                            </div>
+                      </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="row sep-gray">
+    <div class="minibarra-usp">
+        <h1>Take control of your kitchen.</h1>
+        <h4>Easily manage your kitchens temperature and check records.</h4>
+        
+        <div class="minibarra-benefits">
+            <div class="col-sm-4">
+                <%= image_tag('/images/faster.png') %>
+                <h4>Focus on the food.</h4>
+                <p>Take records from any phone, tablet, or PC. </p>
+            </div>
+            <div class="col-sm-4">
+                <%= image_tag('/images/cloud-computing.png') %>
+                <h4>Never loose your paperwork.</h4>
+                <p>Minibarra stores your records in the cloud. It's backed-up, secure, and reliable.</p>
+            </div>
+            <div class="col-sm-4">
+                <%= image_tag('/images/earth.png') %>
+                <h4>Access your records from anywhere.</h4>
+                <p>Keep track of your kitchen from home, holiday, or your day off.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row sep-white">
+    <div class="col-md-12 invite">
+        <h1>Let's get started.</h1>
+        <div class="col-md-6 col-md-offset-3">
+            <h4>Minibarra is the simplest way to manage your kitchens tasks and checks. You can use it on any smartphone, tablet, or PC.</h4>
+        </div>
+
+        <div class="btn-container col-md-12">
+            <a class="btn btn-primary btn-large" href="/pricing" role="button">Pricing & Plans</a>
+            <br>
+            <p class="btn-pricing"><a href="/features">Features</a></p>
+        </div>
+<!-- WISTIA VIDEO -->
+<!--         <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="img-container"><script src="//fast.wistia.com/embed/medias/ppoghuwqy3.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><span class="wistia_embed wistia_async_ppoghuwqy3 popover=true popoverAnimateThumbnail=true videoFoam=true" style="display:inline-block;height:100%;width:100%">&nbsp;</span></div></div></div>
+            </div>
+        </div> -->
+    </div>
+    
+</div>
+
+<script src="javascripts/typed.js"></script>
+<script>
+  $(function(){
+      $("#element").typed({
+        strings: ["Dice 25,920 onions.", "Watch Game of Thrones Season 6, 21 times.", "Focus on what matters.","Focus on the food."],
+         typeSpeed: 30,
+            backDelay: 500,
+            loop: true,
+            contentType: 'html', // or text
+            // defaults to false for infinite loop
+            resetCallback: function() { newTyped(); }
+      });
+  });
+</script>
+<script>
+        // Worth CAlc
+  $('.worthCalculator input').on('keyup change',function() {
+    var dollar = $('input[name="dollar"]').val();
+    var time = $('input[name="time"]').val();
+    var chef = $('input[name="chef"]').val();
+    var totalDollar = dollar * (time/60) * 6 * 51; // $savedtime, five days a week for 50 weeks a year
+    var totalTime = Math.round((time * 6 * 51) / 60); // half an hour, five days a week for 50 weeks a year
+
+    var chefDollar = chef * dollar
+
+    var payBack = Math.round((9 / chefDollar) * 60);
+    var payBack = 19 / ((chefDollar / 60) * time);
+    var payBackText = "";
+
+    if(payBack <= 1) {
+      payBackText = "less than an day";
+    }
+    else if (payBack > 1 && payBack < 2) {
+      payBackText = "just over a day";
+    } else {
+      payBackText = "just over " + Math.floor(payBack) + " days";
+    }
+
+    $('strong.totalTime').text(totalTime + " hours");
+    $('strong.totalDollar').text("£" + totalTime * dollar * chef);
+    $('strong.payBack').text(payBackText);
+    $('strong.totalTimeChef').text(totalTime * chef + " hours");
+  });
+</script>
+<script> 
+$(window).resize(function(){
+   console.log('resize called');
+   var width = $(window).width();
+   if(width >= 1 && width <= 768){
+       $('#feature-col-one').removeClass('col-sm-6').addClass('col-sm-7');
+       $('#feature-col-two').removeClass('col-sm-6').addClass('col-sm-7');
+       $('#feature-col-three').removeClass('col-sm-6').addClass('col-sm-7');
+
+
+
+       $('#group-title-one').removeClass('col-sm-4').addClass('col-sm-3');
+       $('#group-title-two').removeClass('col-sm-4').addClass('col-sm-3');
+       $('#group-title-three').removeClass('col-sm-4').addClass('col-sm-3');
+   }
+   else{
+       $('#feature-col-one').removeClass('col-sm-7').addClass('col-sm-6');
+       $('#feature-col-two').removeClass('col-sm-7').addClass('col-sm-6');
+       $('#feature-col-three').removeClass('col-sm-7').addClass('col-sm-6');
+
+       $('#group-title-one').removeClass('col-sm-3').addClass('col-sm-4');
+       $('#group-title-two').removeClass('col-sm-3').addClass('col-sm-4');
+       $('#group-title-three').removeClass('col-sm-3').addClass('col-sm-4');
+   }
+})
+.resize();//trigger the resize event on page load.
+</script>
+
+

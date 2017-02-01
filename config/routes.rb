@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get "/support", :to => 'pages#support'
   get "/features", :to => 'pages#features'
   get "/chef", :to => 'pages#home'
+  get "/time", :to => 'pages#time'
 
   get "/blog", :to => 'blogs#index'
   get "/tour", :to => 'subscribers#tour'

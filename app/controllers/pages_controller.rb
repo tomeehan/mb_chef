@@ -25,4 +25,7 @@ class PagesController < ApplicationController
 	def features
 	end
 
+	def time
+	end
+
 end
