@@ -96,6 +96,8 @@ class TicksController < ApplicationController
       @last_tick.update(edited: @last_tick.edited += 1)
     end
 
+    @last_tick.active = true
+
     respond_to do |format|
       if @tick.update!(tick_params)
         if @tick.stage == 'starting'

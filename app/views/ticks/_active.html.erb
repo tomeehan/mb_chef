@@ -2,7 +2,7 @@
     <div class="col-sm-4">
       <h1>Checks</h1>
          <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.date.strftime('%Y-%m-%d') == Date.current.strftime('%Y-%m-%d') && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+          <% if tick.task.category.name == "Check" && tick.date.strftime('%Y-%m-%d') == Date.current.strftime('%Y-%m-%d') && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id && tick.active == true %>
             <% if tick.stage == "starting" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
@@ -46,11 +46,24 @@
         <h4>Past Due</h4>
         <% @ticks.each do |tick| %>
           <% if tick.date != Date.today %> 
-            <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+            <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id && tick.active == true %>
               <% if tick.stage == "starting" %>
-                  <p><%= tick.task.name %> | <%= tick.date %> | <%= tick.task.category.name %> | <%= tick.stage%> | <%= tick.user_id %>                   
-                  </p>
-                  <hr>
+                  <%= link_to edit_tick_path(tick) do %>
+                    <div class="tick-past-due-index-desc task">
+                      <div class="tick-past-due-index-content">
+                        <div class="left">
+                          <h4><%= tick.task.name %></h4>
+                          <p>
+                            <% if tick.date == Date.today - 1 %>
+                              (Due <strong>yesterday</strong>) 
+                            <% else %>
+                              (Due on <strong><%= tick.date.strftime("%b #{tick.date.day.ordinalize} %Y") %></strong>)
+                            <% end %>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
               <% end %>    
             <% end %>
           <% end %>
@@ -65,7 +78,7 @@
     <div class="col-sm-4">
       <h1>Checks</h1>
          <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.date.strftime('%Y-%m-%d') == Date.current.strftime('%Y-%m-%d') && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+          <% if tick.task.category.name == "Check" && tick.date.strftime('%Y-%m-%d') == Date.current.strftime('%Y-%m-%d') && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id && tick.active == true %>
             <% if tick.stage == "middle" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
@@ -110,11 +123,24 @@
         <h4>Past Due</h4>
         <% @ticks.each do |tick| %>
           <% if tick.date != Date.today %> 
-            <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+            <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id && tick.active == true %>
               <% if tick.stage == "middle" %>
-                  <p><%= tick.task.name %> | <%= tick.date %> | <%= tick.task.category.name %> | <%= tick.stage%> | <%= tick.user_id %>                   
-                  </p>
-                  <hr>
+                  <%= link_to edit_tick_path(tick) do %>
+                    <div class="tick-past-due-index-desc task">
+                      <div class="tick-past-due-index-content">
+                        <div class="left">
+                          <h4><%= tick.task.name %></h4>
+                          <p>
+                            <% if tick.date == Date.today - 1 %>
+                              (Due <strong>yesterday</strong>) 
+                            <% else %>
+                              (Due on <strong><%= tick.date.strftime("%b #{tick.date.day.ordinalize} %Y") %></strong>)
+                            <% end %>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
               <% end %>    
             <% end %>
           <% end %>
@@ -130,7 +156,7 @@
     <div class="col-sm-4">
       <h1>Checks</h1>
          <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Check" && tick.date.strftime('%Y-%m-%d') == Date.current.strftime('%Y-%m-%d') && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+          <% if tick.task.category.name == "Check" && tick.date.strftime('%Y-%m-%d') == Date.current.strftime('%Y-%m-%d') && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id && tick.active == true %>
             <% if tick.stage == "ending" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
@@ -174,11 +200,24 @@
         <h4>Past Due</h4>
         <% @ticks.each do |tick| %>
           <% if tick.date != Date.today %> 
-            <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+            <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id && tick.active == true %>
               <% if tick.stage == "middle" %>
-                  <p><%= tick.task.name %> | <%= tick.date %> | <%= tick.task.category.name %> | <%= tick.stage%> | <%= tick.user_id %>                   
-                  </p>
-                  <hr>
+                  <%= link_to edit_tick_path(tick) do %>
+                    <div class="tick-past-due-index-desc task">
+                      <div class="tick-past-due-index-content">
+                        <div class="left">
+                          <h4><%= tick.task.name %></h4>
+                          <p>
+                            <% if tick.date == Date.today - 1 %>
+                              (Due <strong>yesterday</strong>) 
+                            <% else %>
+                              (Due on <strong><%= tick.date.strftime("%b #{tick.date.day.ordinalize} %Y") %></strong>)
+                            <% end %>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>  
               <% end %>    
             <% end %>
           <% end %>

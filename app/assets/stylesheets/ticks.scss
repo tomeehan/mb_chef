@@ -13,14 +13,91 @@
 	font-size: 12px;
 }
 
-.change-password {
-	padding: 10px;
-	background-color: #f2f2f2;
-	border-radius: 5px;
-	border: 1px solid #404040;
-	margin-bottom: 15px;
-}
-
 .note {
 	color: orange;
 }
+
+.tick-past-due-index-desc {
+	box-sizing: border-box;
+	background-color: #ffece6 !important;
+	border-radius: 2px;
+	box-shadow: 1px 3px 10px 2px rgba(0, 0, 0, 0.1);;
+	padding: 1px 1.25em;
+
+	margin-top: 25px;
+	height: 70px;	
+}
+
+.tick-past-due-index-content .left {
+	width: 60%;
+	float: left;
+}
+
+.tick-past-due-index-content .left p {
+	font-family: 'Open sans', sans-serif;
+}
+
+.task {
+	background-color: #FBFBFB;
+
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;	
+}
+
+.task:hover {
+	background-color: #fff;
+	box-shadow: 1px 3px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tick-past-due-index-content .right {
+	width: 40%;
+	float: right;
+}
+
+.tick-past-due-index-content .right .img-container  {
+	width: 100%;
+	float: right;
+}
+
+.tick-past-due-index-content .right .img-container img {
+	float: right;
+}
+
+.tick-past-due-index-content .right .staff-pin {
+	width: 100%;
+	float: right;
+	color: #ff5f5e;
+}
+
+.tick-past-due-index-content .right .schedule-icons {
+	float: right;
+}
+
+.tick-past-due-index-content .right .regularity {
+	text-align: right;
+	width: 100%;
+}
+
+.tick-past-due-index-content .right .regularity p {
+	color: #F86624;
+	font-weight: 600;
+}
+
+.tick-past-due-index-content .right .regularity .tick-daily {
+	color: rgba(255,255,255,0.1);
+	font-weight: 600;
+}
+
+.tick-past-due-index-content h4 {
+	font-weight: 600;
+}
+
+.tick-past-due-index-left {
+	width: 75%;
+	height: 100%;
+	float: left;
+}
+
