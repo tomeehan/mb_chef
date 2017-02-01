@@ -16,7 +16,7 @@
             <div class="pull-right range-query">
               <%= form_tag ticks_path(:active => 'false'), method: :get do  %>
                 <%-#<%= text_field_tag 'search[date_from]', @search.date_from   -%>
-                <%= text_field_tag 'search[date_to]', @search.date_to, placeholder: "Select a date", class: "datepicker", "data-provide" => 'datepicker' %>
+                <%= text_field_tag 'search[date_to]', @search.date_to, placeholder: "Select a date", class: "datepicker"%>
                 <%= submit_tag 'Search', class: 'btn btn-primary btn-sm' %>
               <% end %>
             </div>
@@ -89,14 +89,13 @@
   
     <% end %>
   <% end %>
-
+<!-- 
 <script type="text/javascript">
   $(document).ready(function(){
     $('.datepicker').datepicker({
-      format: 'dd/mm/yyyy',
-      todayHighlight: true,
-      todayBtn: true,
-      calendarWeeks: true
+    'format': 'mm/dd/yyyy',
+    'todayHighlight': true,
+    'useCurrent': true,
     });
   });
-</script>
+</script> -->

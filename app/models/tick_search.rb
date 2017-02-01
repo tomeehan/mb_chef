@@ -8,13 +8,14 @@ class TickSearch
 	end
 
 	def scope 
-		Tick.where('updated_at > ?', @date_to)
+		Tick.where(date: @date_to)
 	end
 
 	private
 
 	def parsed_date(date_string, default)
-		Date.parse(date_string)
+		# Date.parse(date_string)
+		Date.strptime("%m/%d/%Y")
 	rescue ArgumentError, TypeError
 		default
 	end
