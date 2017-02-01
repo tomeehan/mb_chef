@@ -42,6 +42,19 @@
             <% end %>    
           <% end %>
         <% end %>
+        <br>
+        <h4>Past Due</h4>
+        <% @ticks.each do |tick| %>
+          <% if tick.date != Date.today %> 
+            <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+              <% if tick.stage == "starting" %>
+                  <p><%= tick.task.name %> | <%= tick.date %> | <%= tick.task.category.name %> | <%= tick.stage%> | <%= tick.user_id %>                   
+                  </p>
+                  <hr>
+              <% end %>    
+            <% end %>
+          <% end %>
+        <% end %>
     </div>
 
 <%= render 'temperature'  %>
@@ -91,6 +104,19 @@
                 <% end %>
 
             <% end %>    
+          <% end %>
+        <% end %>
+        <br>
+        <h4>Past Due</h4>
+        <% @ticks.each do |tick| %>
+          <% if tick.date != Date.today %> 
+            <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+              <% if tick.stage == "middle" %>
+                  <p><%= tick.task.name %> | <%= tick.date %> | <%= tick.task.category.name %> | <%= tick.stage%> | <%= tick.user_id %>                   
+                  </p>
+                  <hr>
+              <% end %>    
+            <% end %>
           <% end %>
         <% end %>
     </div>
@@ -143,6 +169,18 @@
                 <% end %>
 
             <% end %>    
+          <% end %>
+        <% end %>
+        <h4>Past Due</h4>
+        <% @ticks.each do |tick| %>
+          <% if tick.date != Date.today %> 
+            <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id %>
+              <% if tick.stage == "middle" %>
+                  <p><%= tick.task.name %> | <%= tick.date %> | <%= tick.task.category.name %> | <%= tick.stage%> | <%= tick.user_id %>                   
+                  </p>
+                  <hr>
+              <% end %>    
+            <% end %>
           <% end %>
         <% end %>
     </div>

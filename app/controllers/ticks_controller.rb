@@ -12,6 +12,13 @@ class TicksController < ApplicationController
     if params[:active].blank?
       @search = TickSearch.new(params[:search])
       @ticks = @search.scope
+      @tasks = Task.all
+
+      # @all_tasks_count
+      @all_tick_count = current_user.ticks.count
+      @active_tick_count = current_user.ticks.where(active: true).count
+      @today_tick_count = current_user.ticks.where("DATE(created_at) = ?", Date.today).count
+
 
       respond_to do |format|
         format.html
@@ -32,7 +39,6 @@ class TicksController < ApplicationController
       @ticks = @search.scope
     else
       @ticks = Tick.all.order("created_at DESC")
-      
     end
   end
 
