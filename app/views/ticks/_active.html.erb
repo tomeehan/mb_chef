@@ -45,7 +45,7 @@
         <br>
         <h4>Past Due</h4>
         <% @ticks.each do |tick| %>
-          <% if tick.date != Date.today %> 
+          <% if tick.date != Date.today && tick.date < Date.today %>
             <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id && tick.active == true %>
               <% if tick.stage == "starting" %>
                   <%= link_to edit_tick_path(tick) do %>
@@ -122,7 +122,7 @@
         <br>
         <h4>Past Due</h4>
         <% @ticks.each do |tick| %>
-          <% if tick.date != Date.today %> 
+          <% if tick.date != Date.today && tick.date < Date.today %>
             <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id && tick.active == true %>
               <% if tick.stage == "middle" %>
                   <%= link_to edit_tick_path(tick) do %>
@@ -199,7 +199,7 @@
         <% end %>
         <h4>Past Due</h4>
         <% @ticks.each do |tick| %>
-          <% if tick.date != Date.today %> 
+          <% if tick.date != Date.today && tick.date < Date.today %> 
             <% if tick.task.category.name == "Check" && tick.task.regularity.name == "Daily" && tick.user_id == current_user.id && tick.active == true %>
               <% if tick.stage == "middle" %>
                   <%= link_to edit_tick_path(tick) do %>
