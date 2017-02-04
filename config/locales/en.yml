@@ -44,11 +44,11 @@ en:
         submit: "LOCAL Create"
       tasks:
         edit:
-          submit: "Local Create" # TODO: not working
+          submit: "LOCAL Create" # TODO: not working
   staffs: 
     index:
-      title: "Employeiados"
-      btn: "Nuevo Employeiados"
+      title: "LOCAL Employeiados"
+      btn: "LOCAL Nuevo Employeiados"
       table:
         table_title: "LOCAL Current Staff"
         name: "LOCAL Name"
@@ -99,18 +99,38 @@ en:
         description: "LOCAL Description"
       btn: 
         submit: "LOCAL Update"
+  pages:
+    home:
+      pane1:
+        hero: "LOCAL Chefs paperwork made simple."
+        subtitle: "LOCAL Minibarra is a revolutionary new tool for managing your kitchens temperature and task records."
+        primary-btn: "LOCAL Pricing & Plans"
+        secondary-btn: "LOCAL Features"
+      pane2:
+        title: "LOCAL Take control of your kitchen."
+        subtitle: "LOCAL Easily manage your kitchens temperature and check records."
+        left:
+          header: "LOCAL Focus on the food."
+          body: "LOCAL Take records from any phone, tablet, or PC."
+        middle:
+          header: "LOCAL Never loose your paperwork."
+          body: "LOCAL Minibarra stores your records in the cloud. It's backed-up, secure, and reliable."
+        right:
+          header: "LOCAL Access your records from anywhere."
+          body: "LOCAL Keep track of your kitchen from home, holiday, or your day off."
+      pane3:
+        title: "LOCAL Let's get started."
+        subtitle: "LOCAL Minibarra is the simplest way to manage your kitchens tasks and checks. You can use it on any smartphone, tablet, or PC."
+        primary-btn: "LOCAL Pricing & Plans"
+        link: "LOCAL Features"
+      pane4:
+        title: "LOCAL Built by chefs and geeks."
+        subtitle: "LOCAL Hello world, Hello Minibara"
+        body: "LOCAL Minibarra was founded by 2 former chefs, and a former commis waiter. We live and breath hospitality."
+        secondary-btn: "LOCAL Meet the team"
 
 
 
-
-
-
-
-
-
-
-
-# "LOCAL "
 
 
 

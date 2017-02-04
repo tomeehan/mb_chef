@@ -3,13 +3,13 @@
     <div class="row">
         <div class="col-md-12">
             <div class="cta">
-                <h1>Chefs paperwork made simple.</h1>
-                <h2>Minibarra is a revolutionary new tool for managing your kitchens temperature and task records.</h2>
+                <h1><%= t "pages.home.pane1.hero" %></h1>
+                <h2><%= t "pages.home.pane1.subtitle" %></h2>
                 <div class="btn-container">
                     
                     <!-- <a class="btn btn-secondary btn-large" href="/pricing" role="button">Pricing</a> -->
-                    <a class="btn btn-primary btn-large" href="/pricing" role="button">Pricing & Plans</a>
-                    <a class="btn btn-secondary btn-large" href="/features" role="button"><!-- <i class="fa fa-play-circle"></i> --> Features</a>
+                    <a class="btn btn-primary btn-large" href="/pricing" role="button"><%= t "pages.home.pane1.primary-btn" %></a>
+                    <a class="btn btn-secondary btn-large" href="/features" role="button"><!-- <i class="fa fa-play-circle"></i> --> <%= t "pages.home.pane1.secondary-btn" %></a>
 
                 </div>
             </div>
@@ -31,24 +31,24 @@
 </div>
 <div class="row sep-gray">
     <div class="minibarra-usp">
-        <h1>Take control of your kitchen.</h1>
-        <h4>Easily manage your kitchens temperature and check records.</h4>
+        <h1><%= t "pages.home.pane2.title" %></h1>
+        <h4><%= t "pages.home.pane2.subtitle" %></h4>
         
         <div class="minibarra-benefits">
             <div class="col-sm-4">
                 <%= image_tag('/images/faster.png') %>
-                <h4>Focus on the food.</h4>
-                <p>Take records from any phone, tablet, or PC. </p>
+                <h4><%= t "pages.home.pane2.left.header" %></h4>
+                <p><%= t "pages.home.pane2.left.body" %></p>
             </div>
             <div class="col-sm-4">
                 <%= image_tag('/images/cloud-computing.png') %>
-                <h4>Never loose your paperwork.</h4>
-                <p>Minibarra stores your records in the cloud. It's backed-up, secure, and reliable.</p>
+                <h4><%= t "pages.home.pane2.middle.header" %></h4>
+                <p><%= t "pages.home.pane2.middle.body" %></p>
             </div>
             <div class="col-sm-4">
                 <%= image_tag('/images/earth.png') %>
-                <h4>Access your records from anywhere.</h4>
-                <p>Keep track of your kitchen from home, holiday, or your day off.</p>
+                <h4><%= t "pages.home.pane2.right.header" %></h4>
+                <p><%= t "pages.home.pane2.right.body" %></p>
             </div>
         </div>
     </div>
@@ -56,15 +56,15 @@
 
 <div class="row sep-white">
     <div class="col-md-12 invite">
-        <h1>Let's get started.</h1>
+        <h1><%= t "pages.home.pane3.title" %></h1>
         <div class="col-md-6 col-md-offset-3">
-            <h4>Minibarra is the simplest way to manage your kitchens tasks and checks. You can use it on any smartphone, tablet, or PC.</h4>
+            <h4><%= t "pages.home.pane3.subtitle" %></h4>
         </div>
 
         <div class="btn-container col-md-12">
-            <a class="btn btn-primary btn-large" href="/pricing" role="button">Pricing & Plans</a>
+            <a class="btn btn-primary btn-large" href="/pricing" role="button"><%= t "pages.home.pane3.primary-btn" %></a>
             <br>
-            <p class="btn-pricing"><a href="/features">Features</a></p>
+            <p class="btn-pricing"><a href="/features"><%= t "pages.home.pane3.link" %></a></p>
         </div>
 <!-- WISTIA VIDEO -->
 <!--         <div class="row">
@@ -78,12 +78,12 @@
 
 <div class="row sep-dark">
     <div class="minibarra-team">
-        <h1>Built by chefs and geeks.</h1>
-        <p>// Hello world, Hello Minibarra</p>
-        <h4>Minibarra was founded by 2 former chefs, and a former commis waiter. We live and breath hospitality.</h4>
+        <h1><%= t "pages.home.pane4.title" %></h1>
+        <p>// <%= t "pages.home.pane4.subtitle" %></p>
+        <h4><%= t "pages.home.pane4.body" %></h4>
         
         <div class="btn-container">
-            <a class="btn btn-secondary btn-large" href="/team" role="button">Meet the team</a>
+            <a class="btn btn-secondary btn-large" href="/team" role="button"><%= t "pages.home.pane2.secondary-btn" %></a>
         </div>
     </div>
 </div>
