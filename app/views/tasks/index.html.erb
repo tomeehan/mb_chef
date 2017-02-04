@@ -25,7 +25,8 @@
         <h2><%= t "tasks.index.checks" %></h2> <%# LOCAL GROUP LABEL %>
 
            <% @tasks.each do |task| %>
-            <% if task.category.name == "Check" && task.user_id == current_user.id %>
+            <% if task.category.name == "Check" 
+                  && task.user_id == current_user.id %>
               <%= link_to edit_task_path(task) do %>
                 <div class="book-index-desc task">
                   <div class="book-index-content">  
@@ -69,7 +70,8 @@
       <div class="col-sm-5">
         <h2><%= t "tasks.index.temperatures" %></h2> <%# LOCAL GROUP LABEL %>
           <% @tasks.each do |task| %>
-            <% if task.category.name == "Temperature" && task.user_id == current_user.id %>
+            <% if task.category.name == "Temperature" 
+                  && task.user_id == current_user.id %>
               <%= link_to edit_task_path(task) do %>
                 <div class="book-index-desc task">
 
