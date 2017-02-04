@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Minibarra Chef</title>
     <%= csrf_meta_tags %>
+
+    <title>
+      <%= if content_for?(:title) then yield(:title) + ' | ' end %>
+      Minibarra
+    </title>
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">

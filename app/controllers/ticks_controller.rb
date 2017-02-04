@@ -28,6 +28,7 @@ class TicksController < ApplicationController
           pdf = TicksPdf.new(@tick, view_context)
           send_data pdf.render, filename: 'member.pdf', type: 'application/pdf', disposition: "inline"
         end
+        # TODO: Chronological order
       end
     else 
       # code here
@@ -37,6 +38,7 @@ class TicksController < ApplicationController
     if params[:stage].blank?
       @search = TickSearch.new(params[:search])
       @ticks = @search.scope
+      # TODO: Chronological order
     else
       @ticks = Tick.all.order("created_at DESC")
     end

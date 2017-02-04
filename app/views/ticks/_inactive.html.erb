@@ -13,7 +13,9 @@
         </thead>
         <tbody>
           <% @ticks.each do |tick| %>
-            <% if tick.task.category.name == "Check" && tick.stage == "starting" && tick.user_id == current_user.id %>
+            <% if tick.task.category.name == "Check" 
+                  && tick.stage == "starting" 
+                  && tick.user_id == current_user.id %>
               <tr>
                 <td><%= tick.task.name %></td>
                 <td>
@@ -69,7 +71,9 @@
         </thead>
         <tbody>
           <% @ticks.each do |tick| %>
-            <% if tick.task.category.name == "Temperature" && tick.stage == "starting"  && tick.user_id == current_user.id %>
+            <% if tick.task.category.name == "Temperature" 
+                  && tick.stage == "starting" 
+                  && tick.user_id == current_user.id %>
               <tr>
                 <td><%= tick.task.name %></td>
                 <td>
@@ -125,7 +129,9 @@
         </thead>
         <tbody>
           <% @ticks.each do |tick| %>
-            <% if tick.task.category.name == "Check" && tick.stage == "middle" && tick.user_id == current_user.id %>
+            <% if tick.task.category.name == "Check" 
+                  && tick.stage == "middle" 
+                  && tick.user_id == current_user.id %>
               <tr>
                 <td><%= tick.task.name %></td>
                 <td>
@@ -177,7 +183,9 @@
       </thead>
       <tbody>
         <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Temperature" && tick.stage == "middle" && tick.user_id == current_user.id %>
+          <% if tick.task.category.name == "Temperature" 
+                && tick.stage == "middle" 
+                && tick.user_id == current_user.id %>
             <tr>
               <td><%= tick.task.name %></td>
               <td>
@@ -233,7 +241,9 @@
         </thead>
         <tbody>
           <% @ticks.each do |tick| %>
-            <% if tick.task.category.name == "Check" && tick.stage == "ending" && tick.user_id == current_user.id %>
+            <% if tick.task.category.name == "Check" 
+                  && tick.stage == "ending" 
+                  && tick.user_id == current_user.id %>
               <tr>
                 <td><%= tick.task.name %></td>
                 <td>
@@ -284,7 +294,9 @@
         </thead>
         <tbody>
           <% @ticks.each do |tick| %>
-            <% if tick.task.category.name == "Temperature" && tick.stage == "ending" && tick.user_id == current_user.id %>
+            <% if tick.task.category.name == "Temperature" 
+                  && tick.stage == "ending" 
+                  && tick.user_id == current_user.id %>
               <tr>
                 <td><%= tick.task.name %></td>
                 <td>

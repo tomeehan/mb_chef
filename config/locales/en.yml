@@ -47,8 +47,8 @@ en:
           submit: "Local Create" # TODO: not working
   staffs: 
     index:
-      title: "LOCAL Staff"
-      btn: "LOCAL Create a new staff member"
+      title: "Employeiados"
+      btn: "Nuevo Employeiados"
       table:
         table_title: "LOCAL Current Staff"
         name: "LOCAL Name"

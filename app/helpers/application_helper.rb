@@ -19,4 +19,9 @@ module ApplicationHelper
 
     markdown.render(text).html_safe
   end
+
+  def title(text)
+    content_for :title, text
+  end
+
 end
