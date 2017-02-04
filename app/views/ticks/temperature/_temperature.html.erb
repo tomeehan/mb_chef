@@ -2,7 +2,9 @@
     <div class="col-sm-4">
       <h1>Temperatures</h1>
          <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Temperature" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
+          <% if tick.task.category.name == "Temperature" 
+                && tick.created_at.to_date == Date.current 
+                && tick.task.regularity.name == "Daily" %>
             <% if tick.stage == "starting" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">
@@ -37,7 +39,9 @@
     <div class="col-sm-4">
       <h1>Temperatures</h1>
          <% @ticks.each do |tick| %>
-          <% if tick.task.category.name == "Temperature" && tick.created_at.to_date == Date.current && tick.task.regularity.name == "Daily" %>
+          <% if tick.task.category.name == "Temperature" 
+                && tick.created_at.to_date == Date.current 
+                && tick.task.regularity.name == "Daily" %>
             <% if tick.stage == "middle" %>
               <%= link_to edit_tick_path(tick) do %>
                 <div class="book-index-desc task">

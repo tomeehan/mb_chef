@@ -1,19 +1,18 @@
 <div class="col-md-6 col-md-offset-3">
-	<div class="new-book-form">		
-		<p id="notice"><%= notice %></p>
-		<h1><%= @tick.task.name %></h1>
-
-		<p>
-		  <strong>Complete:</strong>
-		  <%= @tick.complete %>
-		</p>
-		<% if @tick.task.category.name == "Temperature" %>
-			<p>
-			  <strong>Temperature:</strong>
-			  <%= @tick.temperature %>
-			</p>
-		<% end %>
-		<%= link_to 'Edit', edit_tick_path(@tick) %> |
-		<%= link_to 'Back', ticks_path %>
-	</div>
+  <div class="new-book-form">     
+    <p id="notice"><%= notice %></p>
+    <h1><%= @tick.task.name %></h1>
+      <p>
+        <strong>Complete:</strong>
+        <%= @tick.complete %>
+      </p>
+      <% if @tick.task.category.name == "Temperature" %>
+          <p>
+            <strong>Temperature:</strong>
+            <%= @tick.temperature %>
+          </p>
+      <% end %>
+      <%= link_to 'Edit', edit_tick_path(@tick) %> |
+      <%= link_to 'Back', ticks_path %>
+    </div>
 </div>
