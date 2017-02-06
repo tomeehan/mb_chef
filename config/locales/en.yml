@@ -100,6 +100,22 @@ en:
       btn: 
         submit: "LOCAL Update"
   pages:
+    header:
+      nav:
+        menu: "Menu" # The menu button on mobile.
+        today: "Today"
+        reports: "Reports"
+        tasks: "Tasks"
+        support: "Help & Support"
+        features: "Features"
+        blog: "Blog"
+        pricing: "Pricing & Plans"
+        login: "Log In"
+    footer:
+      pricing: "Pricing & Plans"
+      team: "Meet the team"
+      support: "Help & Support"
+      join: "Join Experience Design"
     home:
       pane1:
         hero: "LOCAL Chefs paperwork made simple."
@@ -128,6 +144,116 @@ en:
         subtitle: "LOCAL Hello world, Hello Minibara"
         body: "LOCAL Minibarra was founded by 2 former chefs, and a former commis waiter. We live and breath hospitality."
         secondary-btn: "LOCAL Meet the team"
+    features:
+      title: "Features your kitchen will love"
+      subtitle: "Discover the features that will make your life easier and your kitchen happier"
+      featureset1:
+        title: 
+          _top: "Take control of"
+          _bottom: "your kitchen"
+        feature1:
+          title: "Staff members" 
+          desc: "Create a staff member in Minibarra for everyone in your kitchen."
+        feature2:
+          title: "Track date and time" 
+          desc: "See what tasks have been done, what time they were updated."
+        feature3:
+          title: "Add notes to tasks" 
+          desc: "Easily leaves notes or actions taken on tasks when they're ticked off."
+        feature4:
+          title: "Export to Excel" 
+          desc: "Export all your data to Excel."
+      featureset2:
+        title: 
+          _top: "No nonsense"
+          _middle: "straightforward"
+          _bottom: "due-dilligence"
+        feature1:
+          title: "Temperature logs" 
+          desc: "Log your fridge/freezer temperatures every monring, afternoon, or evening."
+        feature2:
+          title: "Clean checklists" 
+          desc: "Record your kitchens daily, weekly, or monthly checks and tasks for each shift."
+        feature3:
+          title: "Task descriptions" 
+          desc: "Leave simple and clear instructions for new employees and agency staff."
+        feature4:
+          title: "Search records" 
+          desc: "Search through all your records instantly by date. No more flicking through paperwork."
+      hero:
+        title: "Minibarra Chef works on all your devices"
+      featureset3:
+        title: 
+          _top: "Upcoming"
+          _bottom: "features"
+        feature1:
+          title: "Multiple languages" 
+          desc: "Minibarra will be available in multiple languages, starting with Spanish & French."
+          start_date: "Starting Feburary 2017"
+        feature2:
+          title: "Food temperature logs" 
+          desc: "We're buildng extended support for temperature logging to make it easier to log hot food temperatures."
+          start_date: "Starting Feburary 2017"
+        feature3:
+          title: "Export to PDF" 
+          desc: "Export your logs to PDF with one-click."
+          start_date: "Starting Feburary 2017"
+        feature4:
+          title: "Powerful iOS app" 
+          desc: "We're in the process of testing our dedicated native iOS app. Android to follow soon after."
+          start_date: "Starting March 2017"
+      cta:
+        title: "Let's get started."
+        btn: "Pricing & Plans"
+      worth_calculator:
+        title: "Need to convince the boss?"
+        # TO DO
+    pricing: 
+      title: "Get started with Minibarra"
+      subtitle: "Find a plan that is right for you"
+      table: # Pricing Table
+        plan1:
+          name: "Enterprise"
+          desc: "For Big Kahuna's"
+          price: "Get a Quote"
+          billing: "Annual Billing Only"
+          feature1: "Multi-site"
+          feature2: "On-site support"
+          btn: "Call Us"
+        plan2:
+          name: "Pro"
+          desc: "For growing businesses"
+          currency: "£"
+          price: "39"
+          month: "mo"
+          billing: "Save 20% with annual billing"
+          feature1: "Unlimted staff"
+          feature2: "Unlimted tasks"
+          btn: "Get started"
+        plan3:
+          name: "Business"
+          desc: "For Business"
+          currency: "£"
+          price: "19"
+          month: "mo"
+          billing: "Save 20% with annual billing"
+          feature1: "20 staff"
+          feature2: "50 tasks"
+          btn: "Get started"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

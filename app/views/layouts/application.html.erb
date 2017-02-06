@@ -86,7 +86,7 @@ var _rollbarConfig = {
           <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i> Menu 
+              <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i> <%= t "pages.header.nav.menu" %> 
                 </button>
                 <%= link_to root_path do %>
                    <p class="navbar-brand"><span style="font-family: 'Pacifico', sans-serif; font-size: 150%;">minibarra</span> | Chef</p>
@@ -99,13 +99,13 @@ var _rollbarConfig = {
               <% if user_signed_in? %>
                 <% if current_user.subscribed == true %>
                   <li class="<%= 'active-nav' if params[:stage] == "Morning" || params[:stage] == "Afternoon" ||params[:stage] == "Evening" %>">
-                    <%= link_to "Today", '/ticks?stage=Morning' %>
+                    <%= link_to t("pages.header.nav.today"), '/ticks?stage=Morning' %>
                   </li>
                   <li class="<%= 'active-nav' if current_page?(ticks_path) && !params[:active] && !params[:stage] %>">
-                    <%= link_to "Reports", ticks_path %>
+                    <%= link_to t("pages.header.nav.reports"), ticks_path %>
                   </li>
                   <li class="<%= 'active-nav' if current_page?(tasks_path) %>">
-                    <%= link_to "Tasks", tasks_path %>
+                    <%= link_to t("pages.header.nav.tasks"), tasks_path %>
                   </li>
                   <li>
                     <a href="/users/edit" class="btn btn-default btn-account" data-position="left">
@@ -114,22 +114,22 @@ var _rollbarConfig = {
                   </li>
                 <% else %>  
                   <li>
-                    <a href="/support">Help & Support</a>
+                    <a href="/support"><%= t "pages.header.nav.support" %></a>
                   </li>
                 <% end %>
               <% else %>
                 <li>
-                  <a href="/features">Features</a>
+                  <a href="/features"><%= t "pages.header.nav.features" %></a>
                 </li>
-                <li><a href="/blog">Blog</a></li>
+                <li><a href="/blog"><%= t "pages.header.nav.blog" %></a></li>
                 <li>
                   <p class="navbar-btn ">
-                    <a class="btn btn-default nav-btn" href="/pricing" role="button" style="color: white;">Pricing & Plans</a>
+                    <a class="btn btn-default nav-btn" href="/pricing" role="button" style="color: white;"><%= t "pages.header.nav.pricing" %></a>
                   </p>
                 </li>
                 <li>
                   <p class="navbar-btn ">
-                    <%= link_to "Log in", new_user_session_path, class: "btn btn-default nav-btn log-in-btn" %>
+                    <%= link_to t("pages.header.nav.login"), new_user_session_path, class: "btn btn-default nav-btn log-in-btn" %>
                   </p>
                 </li>                
               <% end %>
