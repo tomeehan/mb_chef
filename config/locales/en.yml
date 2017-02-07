@@ -23,82 +23,82 @@ en:
   simple_form:
     placeholders:
       task:
-        name: "LOCAL Task Name"
-        description: "LOCAL Task Description"
+        name: "Task Name"
+        description: "Task Description"
         edit:
-          name: "LOCAL Task Name"
-          description: "LOCAL Task Description"
+          name: "Task Name"
+          description: "Task Description"
       staff:
-        first_name: "LOCAL First name"
-        surname: "LOCAL Last name"
-        email: "LOCAL Email"
-        job_title: "LOCAL Job Title"
+        first_name: "First name"
+        surname: "Last name"
+        email: "Email"
+        job_title: "Job Title"
         edit:
-          first_name: "LOCAL First name"
-          surname: "LOCAL Last name"
-          email: "LOCAL Email"
-          job_title: "LOCAL Job Title"
+          first_name: "First name"
+          surname: "Last name"
+          email: "Email"
+          job_title: "Job Title"
     labels:
       staff:
-        manager: "LOCAL Manager"
-        submit: "LOCAL Create"
+        manager: "Manager"
+        submit: "Create"
       tasks:
         edit:
-          submit: "LOCAL Create" # TODO: not working
+          submit: "Create" # TODO: not working
   staffs: 
     index:
-      title: "LOCAL Employeiados"
-      btn: "LOCAL Nuevo Employeiados"
+      title: "Employeiados"
+      btn: "Nuevo Employeiados"
       table:
-        table_title: "LOCAL Current Staff"
-        name: "LOCAL Name"
-        manager: "LOCAL Manager"
-        job_title: "LOCAL Job Title"
-        edit: "LOCAL Edit"
+        table_title: "Current Staff"
+        name: "Name"
+        manager: "Manager"
+        job_title: "Job Title"
+        edit: "Edit"
         former:
-          former_staff_link: "LOCAL Click here to see former staff members"
-          former_staff_title: "LOCAL Former Staff"
-          leaving_date: "LOCAL Leaving Date"
+          former_staff_link: "Click here to see former staff members"
+          former_staff_title: "Former Staff"
+          leaving_date: "Leaving Date"
     new: # Form placeholders and labels in simple_form - line 25 
-      title: "LOCAL New Staff"
-      back: "LOCAL Back"
+      title: "New Staff"
+      back: "Back"
     edit: # Form placeholders and labels in simple_form - line 25 
-      title: "LOCAL Edit"
-      back: "LOCAL Back"
-      reactive_staff_link: "LOCAL To reactivate this staff member, leave this box unchecked" # Can only be viewed when staff member == former
+      title: "Edit"
+      back: "Back"
+      reactive_staff_link: "To reactivate this staff member, leave this box unchecked" # Can only be viewed when staff member == former
   tasks:
     index:
-      title: "LOCAL Tasks"
-      btn: "LOCAL Create a new task"
-      checks: "LOCAL Checks"
-      temperatures: "LOCAL Temperatures"
+      title: "Tasks"
+      btn: "Create a new task"
+      checks: "Checks"
+      temperatures: "Temperatures"
       regularity: # TODO put inside switch or conditionals
-        daily: "LOCAL Daily"
-        weekly: "LOCAL Weekly"
-        monthly: "LOCAL Monthly"
+        daily: "Daily"
+        weekly: "Weekly"
+        monthly: "Monthly"
     new: # TODO Validations
-      title: "LOCAL New Task"
-      back: "LOCAL Back"
+      title: "New Task"
+      back: "Back"
     edit:
-      title: "LOCAL Edit Task"
-      back: "LOCAL Back"
-      is_set_for: "LOCAL is set for"
-      morning: "LOCAL Morning"
-      afternoon: "LOCAL Afternoon"
-      evening: "LOCAL Evening"
-      category: "LOCAL Category"
-      temperature: "LOCAL Temperature"
-      check: "LOCAL Check"
+      title: "Edit Task"
+      back: "Back"
+      is_set_for: "is set for"
+      morning: "Morning"
+      afternoon: "Afternoon"
+      evening: "Evening"
+      category: "Category"
+      temperature: "Temperature"
+      check: "Check"
       archive:
-        link: "LOCAL Archive this task"
-        title: "LOCAL Archive Task"
-        question: "LOCAL Are you sure you want to archive this task?"
-        checkbox: "LOCAL Yes please"
+        link: "Archive this task"
+        title: "Archive Task"
+        question: "Are you sure you want to archive this task?"
+        checkbox: "Yes please"
       label:
-        name: "LOCAL Name"
-        description: "LOCAL Description"
+        name: "Name"
+        description: "Description"
       btn: 
-        submit: "LOCAL Update"
+        submit: "Update"
   pages:
     header:
       nav:
@@ -118,32 +118,32 @@ en:
       join: "Join Experience Design"
     home:
       pane1:
-        hero: "LOCAL Chefs paperwork made simple."
-        subtitle: "LOCAL Minibarra is a revolutionary new tool for managing your kitchens temperature and task records."
-        primary-btn: "LOCAL Pricing & Plans"
-        secondary-btn: "LOCAL Features"
+        hero: "Chefs paperwork made simple."
+        subtitle: "Minibarra is a revolutionary new tool for managing your kitchens temperature and task records."
+        primary-btn: "Pricing & Plans"
+        secondary-btn: "Features"
       pane2:
-        title: "LOCAL Take control of your kitchen."
-        subtitle: "LOCAL Easily manage your kitchens temperature and check records."
+        title: "Take control of your kitchen."
+        subtitle: "Easily manage your kitchens temperature and check records."
         left:
-          header: "LOCAL Focus on the food."
-          body: "LOCAL Take records from any phone, tablet, or PC."
+          header: "Focus on the food."
+          body: "Take records from any phone, tablet, or PC."
         middle:
-          header: "LOCAL Never loose your paperwork."
-          body: "LOCAL Minibarra stores your records in the cloud. It's backed-up, secure, and reliable."
+          header: "Never loose your paperwork."
+          body: "Minibarra stores your records in the cloud. It's backed-up, secure, and reliable."
         right:
-          header: "LOCAL Access your records from anywhere."
-          body: "LOCAL Keep track of your kitchen from home, holiday, or your day off."
+          header: "Access your records from anywhere."
+          body: "Keep track of your kitchen from home, holiday, or your day off."
       pane3:
-        title: "LOCAL Let's get started."
-        subtitle: "LOCAL Minibarra is the simplest way to manage your kitchens tasks and checks. You can use it on any smartphone, tablet, or PC."
-        primary-btn: "LOCAL Pricing & Plans"
-        link: "LOCAL Features"
+        title: "Let's get started."
+        subtitle: "Minibarra is the simplest way to manage your kitchens tasks and checks. You can use it on any smartphone, tablet, or PC."
+        primary-btn: "Pricing & Plans"
+        link: "Features"
       pane4:
-        title: "LOCAL Built by chefs and geeks."
-        subtitle: "LOCAL Hello world, Hello Minibara"
-        body: "LOCAL Minibarra was founded by 2 former chefs, and a former commis waiter. We live and breath hospitality."
-        secondary-btn: "LOCAL Meet the team"
+        title: "Built by chefs and geeks."
+        subtitle: "Hello world, Hello Minibara"
+        body: "Minibarra was founded by 2 former chefs, and a former commis waiter. We live and breath hospitality."
+        secondary-btn: "Meet the team"
     features:
       title: "Features your kitchen will love"
       subtitle: "Discover the features that will make your life easier and your kitchen happier"
@@ -240,6 +240,36 @@ en:
           feature1: "20 staff"
           feature2: "50 tasks"
           btn: "Get started"
+          most_popular: "Most Popular!"
+        plan4:
+          name: "Starter"
+          desc: "For budding entrepreneurs"
+          currency: "£"
+          price: "9"
+          month: "mo"
+          billing: "Save 20% with annual billing"
+          feature1: "20 staff"
+          feature2: "50 tasks"
+          btn: "Get started"
+      money_back: "Every plan comes with a 60 day money back guarantee."
+      support_included: "24/7 support included."
+      no_setup_fee: "No setup fees"
+      theres_more:
+        psst_theres_more: "Psst... there's more"
+        benefit1:
+          title: "We'll get you up and running."
+          body: "Send us your paperwork, and we'll set up Minibarra for you. Better yet, if your business is based in London, we'll come pick it up."
+        benefit2:
+          title: "No surprises."
+          body: "We promise all our customers grandfather pricing. The price you choose today, is the price you will be charged forever."
+        benefit3:
+          title: "Fair Billing Policy."
+          body: "With Minibarra, you only get billed for what you use. For example, if you choose a plan with unlimited tasks but only have 5, you'll be billed for 5. Fair's fair."
+      cta:
+        heard_enough: "Heard enough?"
+          btn: "Let's get started"
+
+
 
 
 
