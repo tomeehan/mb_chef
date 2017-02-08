@@ -100,6 +100,8 @@ en:
       btn: 
         submit: "Update"
   pages:
+    pricing: 
+      title: "Get started with Minibarra"
     header:
       nav:
         menu: "Menu" # The menu button on mobile.
@@ -207,7 +209,6 @@ en:
         btn: "Pricing & Plans"
       worth_calculator:
         title: "Need to convince the boss?"
-        # TO DO
     pricing: 
       title: "Get started with Minibarra"
       subtitle: "Find a plan that is right for you"
@@ -267,7 +268,9 @@ en:
           body: "With Minibarra, you only get billed for what you use. For example, if you choose a plan with unlimited tasks but only have 5, you'll be billed for 5. Fair's fair."
       cta:
         heard_enough: "Heard enough?"
-          btn: "Let's get started"
+        btn: "Let's get started"
+
+
 
 
 
