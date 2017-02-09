@@ -21,6 +21,7 @@
 //= require bootstrap-datepicker
 //= require rails_script
 //= require rails.validations
+//= require rails.validations.simple_form
 
 $(function() {
   $("#reports_date_picker").datepicker();
