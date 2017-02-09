@@ -100,6 +100,22 @@ en:
       btn: 
         submit: "Update"
   pages:
+    team: 
+      title: "Meet the geeks."
+      subtitle: "This is the team that make Minibarra, and support our customers."
+      text: "Everyone on the Minibarra team has extensive experience in hospitality. We were founded by two former chefs, and a commis waiter. Everybody on our team interacts with customers on a regular basis."
+      meehan:
+        job_title: "Founder & Tech"
+        bio: "Lorem"
+      simkins:
+        job_title: "Product Developlent"
+        bio: "Lorem"
+      zak: 
+        job_title: "User Experience Design"
+        bio: "Lorem"
+      olivia:
+        job_title: "Translator"
+        bio: "Lorem"
     pricing: 
       title: "Get started with Minibarra"
     header:
