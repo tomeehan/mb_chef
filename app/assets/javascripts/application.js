@@ -20,6 +20,7 @@
 //= require turbolinks_transitions
 //= require bootstrap-datepicker
 //= require rails_script
+//= require rails.validations
 
 $(function() {
   $("#reports_date_picker").datepicker();
