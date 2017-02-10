@@ -120,6 +120,7 @@ class TicksController < ApplicationController
           current_user.ticks.create!(complete: false, 
                                       task_id: @tick.task_id, 
                                       stage: @tick.stage,
+                                      active: true,
                                       staff_id: 15,
                                       date: @tick.date + 1.day, 
                                       regularity_id: @tick.regularity_id, 

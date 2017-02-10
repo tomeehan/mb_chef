@@ -2,10 +2,22 @@
 	<div class="container">
 		<div class="col-md-4 col-md-offset-4 well signin">
 			<div class="back-btn">
-				<% if @tick.active == false %>
-					<%= link_to ticks_path do %>
-						<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>
+				<% if @tick.active == true %>
+					<% if @tick.stage == "starting" %>
+						<%= link_to ticks_path(:stage => "Morning") do %>
+							<span class="glyphicon glyphicon-chevron-left"></span> <p>Back (Morning)</p>
+						<% end %>
 					<% end %>
+					<% if @tick.stage == "middle" %>
+						<%= link_to ticks_path(:stage => "Afternoon") do %>
+							<span class="glyphicon glyphicon-chevron-left"></span> <p>Back (Afternoon)</p>
+						<% end %>
+					<% end %>
+					<% if @tick.stage == "ending" %>
+						<%= link_to ticks_path(:stage => "Evening") do %>
+							<span class="glyphicon glyphicon-chevron-left"></span> <p>Back (Evening)</p>
+						<% end %>
+					<% end %>											
 				<% else %>
 					<%= link_to ticks_path do %>
 						<span class="glyphicon glyphicon-chevron-left"></span> <p>Back</p>

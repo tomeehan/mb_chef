@@ -189,7 +189,7 @@
                   tick.task.regularity.name == "Daily" && 
                   tick.user_id == current_user.id && 
                   tick.active == true %>
-              <% if tick.stage == "middle" %>
+              <% if tick.stage == "ending" %>
                   <%= link_to edit_tick_path(tick) do %>
                     <div class="tick-past-due-index-desc task">
                       <div class="tick-past-due-index-content">
