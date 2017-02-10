@@ -47,8 +47,8 @@ en:
           submit: "Create" # TODO: not working
   staffs: 
     index:
-      title: "Employeiados"
-      btn: "Nuevo Employeiados"
+      title: "Staff"
+      btn: "Create New Staff Member"
       table:
         table_title: "Current Staff"
         name: "Name"
