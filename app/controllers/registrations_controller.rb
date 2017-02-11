@@ -12,6 +12,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 	def edit 
 		@users = User.all
+		@title = "Account Settings | Minibarra Chef"
 	end
 
 	protected
