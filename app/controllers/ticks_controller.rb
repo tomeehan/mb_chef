@@ -39,8 +39,10 @@ class TicksController < ApplicationController
       @search = TickSearch.new(params[:search])
       @ticks = @search.scope
       # TODO: Chronological order
+      @title = "Reports"
     else
       @ticks = Tick.all.order("created_at DESC")
+      @title = "Today"
     end
   end
 
@@ -61,6 +63,7 @@ class TicksController < ApplicationController
     @tasks = Task.all.map{ |t| [t.name, t.id] }
     
     @staffs = current_user.staff.map { |staff| [staff.first_name + " " + staff.surname, staff.id] }
+    @title = @tick.task.name
   end
 
   # POST /ticks

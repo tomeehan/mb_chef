@@ -5,6 +5,7 @@ class StaffsController < ApplicationController
   # GET /staffs.json
   def index
     @staffs = Staff.all
+    @title = "Staff"
   end
 
   # GET /staffs/1
@@ -15,10 +16,12 @@ class StaffsController < ApplicationController
   # GET /staffs/new
   def new
     @staff = current_user.staff.build
+    @title = "Create New Staff"
   end
 
   # GET /staffs/1/edit
   def edit
+    @title = "Update Staff"
   end
 
   # POST /staffs
