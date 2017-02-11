@@ -36,4 +36,8 @@ class PagesController < ApplicationController
 		@title = "Time | Minibarra Chef"
 	end
 
+	def support 
+		@title = "Support | Minibarra Chef"
+	end
+
 end
