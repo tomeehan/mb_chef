@@ -15,6 +15,7 @@ class MakersController < ApplicationController
   # GET /makers/new
   def new
     @maker = Maker.new
+    @title = "Experience Design Program | Minibarra Chef"
   end
 
   # GET /makers/1/edit
