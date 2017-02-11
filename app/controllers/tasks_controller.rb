@@ -8,6 +8,7 @@ class TasksController < ApplicationController
       redirect_to new_subscriber_path
     end
     @tasks = Task.all
+    @title = "Tasks"
   end
 
   # GET /tasks/1
@@ -21,12 +22,14 @@ class TasksController < ApplicationController
     @ticks = current_user.ticks.build
     @categories = Category.all.map{ |c| [c.name, c.id] }
     @regularities = Regularity.all.map{ |r| [r.name, r.id] }
+    @title = "Create New Task"
   end
 
   # GET /tasks/1/edit
   def edit
     @categories = Category.all.map{ |c| [c.name, c.id] }
     @regularities = Regularity.all.map{ |r| [r.name, r.id] } 
+    @title = @task.name
   end
 
   # POST /tasks
