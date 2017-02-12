@@ -1,0 +1,133 @@
+label.starting-checkbox {
+  width: 30%;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 25px;
+  /*overflow: hidden;*/ }
+  label.starting-checkbox input[type=checkbox] {
+    float: left;
+    position: relative;
+    margin-left: -9999px; }
+  label.starting-checkbox i:before {
+    width: 25px;
+    font-family: FontAwesome, 'Open sans';
+    content: "\f057    Morning";
+    color: white;
+    background-color: #404040;
+    font-style: normal;
+    font-size: 25px;
+    font-size: 8px;
+    padding: 15px;
+    border-radius: 10px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear; }
+  label.starting-checkbox input[type=checkbox]:checked + i:before {
+    content: "\f0f4    Morning";
+    background-color: #3891A6;
+    border-radius: 10px; }
+
+label.midday-checkbox {
+  width: 30%;
+  cursor: pointer;
+  text-align: center;
+  /*overflow: hidden;*/
+  margin-top: 25px; }
+  label.midday-checkbox input[type=checkbox] {
+    float: left;
+    position: relative;
+    margin-left: -9999px; }
+  label.midday-checkbox i:before {
+    width: 25px;
+    font-family: FontAwesome, 'Open sans';
+    content: "\f057    Afternoon";
+    color: white;
+    background-color: #404040;
+    font-style: normal;
+    font-size: 8px;
+    padding: 15px;
+    border-radius: 10px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear; }
+  label.midday-checkbox input[type=checkbox]:checked + i:before {
+    content: "\f185  Afternoon";
+    background-color: #3891A6;
+    border-radius: 10px; }
+
+label.ending-checkbox {
+  width: 30%;
+  cursor: pointer;
+  text-align: center;
+  /*overflow: hidden;*/
+  margin-top: 25px;
+  margin-bottom: 25px; }
+  label.ending-checkbox input[type=checkbox] {
+    float: left;
+    position: relative;
+    margin-left: -9999px; }
+  label.ending-checkbox i:before {
+    width: 25px;
+    font-family: FontAwesome, 'Open sans';
+    content: "\f057    Evening";
+    color: white;
+    background-color: #404040;
+    font-style: normal;
+    font-size: 8px;
+    padding: 15px;
+    border-radius: 10px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear; }
+  label.ending-checkbox input[type=checkbox]:checked + i:before {
+    content: "\f186    Evening";
+    background-color: #3891A6;
+    border-radius: 10px; }
+
+.back-btn span {
+  color: #ff5f5e; }
+
+.back-btn p {
+  color: #ff5f5e;
+  display: inline;
+  line-height: 2em;
+  font-size: 16px; }
+
+.back-btn a:hover {
+  text-decoration: none; }
+
+@media (min-device-width: 320px) and (max-device-width: 667px) {
+  label.starting-checkbox {
+    width: 100%; }
+
+  label.midday-checkbox {
+    width: 100%; }
+
+  label.ending-checkbox {
+    width: 100%; } }
+.signin form {
+  margin-bottom: 0; }
+
+.form-container textarea {
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }

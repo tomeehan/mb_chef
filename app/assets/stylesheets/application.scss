@@ -506,7 +506,6 @@ p.alert, p.notice {
 	text-align: center;
 }
 
-
 .edit-goal-index-button a {
 	color: white;
 	display:inline-block;
@@ -516,14 +515,13 @@ p.alert, p.notice {
     font-weight: 300;
     font-size: 1.2em;
 
-
-      -o-transition:.5s;
-	  -ms-transition:.5s;
-	  -moz-transition:.5s;
-	  -webkit-transition:.5s;
-
-	  transition:.5s;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
 }
+
 .edit-goal-index-button a:hover {
 	background-color: #e55554;
 	text-decoration: none;
