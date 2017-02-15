@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>We're sorry. (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+  <script src="https://use.fontawesome.com/ac90cfca27.js"></script>
   <style>
   body {
     background-color: #EFEFEF;
-    color: #2E2F30;
+    color: #404040;
     text-align: center;
-    font-family: arial, sans-serif;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     margin: 0;
   }
 
@@ -19,11 +21,6 @@
   }
 
   div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
     background-color: white;
@@ -33,7 +30,7 @@
 
   h1 {
     font-size: 100%;
-    color: #730E15;
+    color: #ff5f5e;
     line-height: 1.5em;
   }
 
@@ -41,16 +38,101 @@
     margin: 0 0 1em;
     padding: 1em;
     background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .btn-block {
+    background-color: #119A65;
+    border: none;
+    font-family: 'Open sans', sans-serif;
+    transition: 0.25s;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 20px;
+  }
+
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+
+  .btn-lg, .btn-group-lg > .btn {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+  }
+
+  .btn-primary {
+    color: #fff;
+    background-color: #119A65;
+  } 
+
+  .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 25px 50px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .btn-large {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    border-radius: 3px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    outline: 0;
+    padding: 0 3rem;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: #fff;
+    background-color: #119A65;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+    height: 54px;
+    line-height: 54px;
+  }
+
+  .btn:hover {
+    background-color: #0f8a5a;
+    text-decoration: none;
+    color: white;
+  }
+
+  .questions {
+    width: 75%;
+    margin: 50px 12.5%;
+  }
+
+  .questions h2 {
+    font-weight: 600;
+  }
+
   </style>
 </head>
 
@@ -58,10 +140,23 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+      <img src="https://image.flaticon.com/icons/svg/136/136355.svg" alt="" width="200" height="200">
+      <br>
+      <h1>We're sorry.</h1>
+      <p>Something has gone wrong, and it's probably our fault.</p>
+      <p><a href="/" class="btn btn-primary btn-lg"><i class="fa fa-home" aria-hidden="true"></i>
+Take me home</a></p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    
+  </div>
+  <div class="questions">
+    <h2>Did you follow a link here?</h2>
+    <p>If you reached this page from another page on minibarra.com, please <a href="/support" style="color: #119A65; font-weight: 600;">let us know about our mistake</a>.</p>
+    <br>
+    <h2>Did you come here from another site?</h2>
+    <p>Sometimes other websites use out of date or mispelled links. If you reach this page from another website, please <a href="/support" style="color: #119A65; font-weight: 600;">let us know where you came from</a>, we'll contact them and ask them to change it.</p>
+    <br>
+
   </div>
 </body>
 </html>
