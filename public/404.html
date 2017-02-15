@@ -3,7 +3,7 @@
 <head>
   <title>We're sorry. (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Pacifico" rel="stylesheet">
   <script src="https://use.fontawesome.com/ac90cfca27.js"></script>
   <style>
   body {
@@ -17,7 +17,7 @@
   div.dialog {
     width: 95%;
     max-width: 33em;
-    margin: 4em auto 0;
+    margin: 1em auto 0;
   }
 
   div.dialog > div {
@@ -29,7 +29,7 @@
   }
 
   h1 {
-    font-size: 100%;
+    font-size: 200%;
     color: #ff5f5e;
     line-height: 1.5em;
   }
@@ -133,11 +133,23 @@
     font-weight: 600;
   }
 
+  footer {
+    margin: 50px;
+  }
+
+  footer .logo a {
+    color: #ff5f5e;
+    text-decoration: none;
+    font-family: 'Pacifico', Helvetica, Arial, sans-serif;
+    text-transform: lowercase;
+  }
+
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
+  <p style="color: gray;"><strong><i class="fa fa-cogs" aria-hidden="true"></i></strong> 404</p>
   <div class="dialog">
     <div>
       <img src="https://image.flaticon.com/icons/svg/136/136355.svg" alt="" width="200" height="200">
@@ -147,7 +159,6 @@
       <p><a href="/" class="btn btn-primary btn-lg"><i class="fa fa-home" aria-hidden="true"></i>
 Take me home</a></p>
     </div>
-    
   </div>
   <div class="questions">
     <h2>Did you follow a link here?</h2>
@@ -158,5 +169,8 @@ Take me home</a></p>
     <br>
 
   </div>
+  <footer>
+    <p class="logo"><a href="/">Minibarra</a></p>
+  </footer>
 </body>
 </html>
