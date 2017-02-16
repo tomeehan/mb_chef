@@ -1,10 +1,15 @@
+Renders Pricing Table, and page titles -->
 <%= render 'pricing_table.html.erb' %>
+
+<!-- START 'There's more' AND USP ONE -->
 <div class="row sep-white padding-side padding-bottom">
 	<div class="minibarra-usp runner-container">
+    <!-- There's more hint -->
 		<h4>Psst... there's more <br><br><i class="glyphicon glyphicon-circle-arrow-down"></i></h4>
-		<div class="col-sm-6 runner-img">
+		
+    <!-- USP ONE -->
+    <div class="col-sm-6 runner-img">
 			<%= image_tag('/images/speed.png') %>
-			
 		</div>
 		<div class="col-sm-6">
 			<div class="runner-text">
@@ -14,6 +19,9 @@
 		</div>
 	</div>
 </div>
+<!-- END USP ONE -->
+
+<!-- START USP ONE -->
 <div class="row white padding-side padding-bottom">
 		<div class="minibarra-usp runner-container">	
 		<div class="col-sm-6 runner-img">
@@ -27,6 +35,9 @@
 		</div>		
 	</div>
 </div>
+<!-- END USP TWO -->
+
+<!-- START USP THREE -->
 <div class="row white padding-side padding-bottom">
 		<div class="minibarra-usp runner-container">
 		<div class="col-sm-6 runner-img">
@@ -40,35 +51,43 @@
 		</div>
 	</div>
 </div>
+<!-- END USP THREE -->
+
+<!-- START CTA -->
 <div class="row white padding-side padding-bottom invite">
 	<div class="minibarra-usp runner-container">
 		<div class="col-sm-12">
 			<h2>Heard enough?</h2>
 			<br>
-            <a class="btn btn-primary btn-large" href="/pricing#pricing" role="button">Let's get started</a>
-            <br>
+      <!-- BTN -->
+      <a class="btn btn-primary btn-large" href="/pricing#pricing" role="button">Let's get started</a>
+      <br>
 		</div>
 	</div>
 </div>
+<!-- END CTA -->
+
+<!-- START WORTH CALCULATOR -->
 <div class="row white">
   <div class="col-sm-6 col-sm-offset-3">
     <div class="jumbotron">
       <h4>Need to convince the boss?</h4>
       <br>
-            <div class="worthCalculator">
-                <p>
-                  As a chef, I value my time at  <span class="dollarInput">£<input name="dollar" type="text" value="12">/hr</span>. My kitchen has <span class="chefInput"><input name="chef" type="text" value="3"> chefs</span> and we each spend <input type="text" name="time" value="16"> minutes a day on due dilligence.
-                </p>
-                <p>
-                  Minibarra will save each chef <strong class="totalTime">77 hours</strong>. Combined, this will save all the chefs <strong class="totalTimeChef">231 hours</strong> (that's <strong class="totalDollar">£2772</strong> per year).
-                </p>
-                <p>
-                  Every month, Minibarra pays for itself after <strong class="payBack">less than an day</strong>!</p>
-                </p>
-          </div>
+      <div class="worthCalculator">
+        <p>
+          As a chef, I value my time at  <span class="dollarInput">£<input name="dollar" type="text" value="12">/hr</span>. My kitchen has <span class="chefInput"><input name="chef" type="text" value="3"> chefs</span> and we each spend <input type="text" name="time" value="16"> minutes a day on due dilligence.
+        </p>
+        <p>
+          Minibarra will save each chef <strong class="totalTime">77 hours</strong>. Combined, this will save all the chefs <strong class="totalTimeChef">231 hours</strong> (that's <strong class="totalDollar">£2772</strong> per year).
+        </p>
+        <p>
+          Every month, Minibarra pays for itself after <strong class="payBack">less than an day</strong>!</p>
+        </p>
+    </div>
     </div>
   </div>
 </div>
+<!-- END WORTH CALCULATOR -->
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links
@@ -148,4 +167,4 @@ $(document).ready(function(){
 drift.SNIPPET_VERSION = '0.3.1';
 drift.load('h5gbvvmne62i');
 </script>
-<!-- End of Async Drift Code -->
+<!-- End of Async Drift Code
