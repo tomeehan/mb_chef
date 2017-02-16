@@ -955,6 +955,12 @@ Pricing table
 	margin-top: -50px;
 }
 
+/* Team Bio's */
+
+.bio {
+  height: 50px;
+}
+
 @media screen and (min-width: 1px) and (max-width: 767px) {	
 	
 	.feature {
@@ -976,6 +982,10 @@ Pricing table
 	.minibarra-benefits {
     	padding: 0;
 	}
+
+  .bio {
+    height: 50px;
+  }
 }
 
 @media screen and (min-width: 730px) and (max-width: 768px) {	
@@ -997,6 +1007,13 @@ Pricing table
 	.team-container { 
 			padding: 0;
 	}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) { 
+  .bio {
+    height: 100px !important;
+  }    
 }
 
 @media screen and (min-width: 1px) and (max-width: 729px) {	
@@ -1018,13 +1035,6 @@ Pricing table
 
 .jumbotron .worthCalculator .btn-container a {
 	text-align: center !important;
-}
-
-
-/* Team Bio's */
-
-.bio {
-  height: 100px;
 }
 
 /*
