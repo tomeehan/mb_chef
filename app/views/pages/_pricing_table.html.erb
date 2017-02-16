@@ -7,123 +7,127 @@
 		</div>
 	</div>
 <div class="container content">
-	<div class="row">
-		<!-- Pricing -->
-		
-		<div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><%= t "pages.pricing.table.plan1.name" %> <span>
-					<%= t "pages.pricing.table.plan1.desc" %> </span>
-					</h3>
-					<h4><i><%= t "pages.pricing.table.plan1.price" %></i>
-					<span>
-					<%= t "pages.pricing.table.plan1.billing" %> </span>
-					</h4>
-				</div>
-				<ul class="pricing-content list-unstyled">
-					<li>
-						<%= t "pages.pricing.table.plan1.feature1" %>
-					</li>
-					<li>
-						<%= t "pages.pricing.table.plan1.feature2" %>
-					</li>
-				</ul>
-				<div class="pricing-footer">
-					<div class="btn-container">
-						<a class="btn btn-secondary btn-large faa-parent animated-hover" href="tel:02081232715" role="button">
-							<i class="fa fa-phone faa-wrench faa-slow"></i> <%= t "pages.pricing.table.plan1.btn" %>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-		<div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><%= t "pages.pricing.table.plan2.name" %> <span>
-					<%= t "pages.pricing.table.plan2.desc" %> </span>
-					</h3>
-					<h4><i><%= t "pages.pricing.table.plan2.currency" %></i><%= t "pages.pricing.table.plan2.price" %><i><%= t "pages.pricing.table.plan2.month" %></i>
-					<span>
-					<%= t "pages.pricing.table.plan2.billing" %></span>
-					</h4>
-				</div>
-				<ul class="pricing-content list-unstyled">
-					<li>
-						<%= t "pages.pricing.table.plan2.feature1" %>
-					</li>
-					<li>
-						<%= t "pages.pricing.table.plan2.feature2" %>
-					</li>
-				</ul>
-				<div class="pricing-footer">
+	<!-- Pricing -->
+  
+  <!-- Enterprise Plan -->
+  <div class="col-md-3">
+    <div class="pricing hover-effect">
+      <div class="pricing-head">
+        <h3><%= t "pages.pricing.table.plan1.name" %> <span>
+        <%= t "pages.pricing.table.plan1.desc" %> </span>
+        </h3>
+        <h4><i><%= t "pages.pricing.table.plan1.price" %></i>
+        <span>
+        <%= t "pages.pricing.table.plan1.billing" %> </span>
+        </h4>
+      </div>
+      <ul class="pricing-content list-unstyled">
+        <li>
+          <%= t "pages.pricing.table.plan1.feature1" %>
+        </li>
+        <li>
+          <%= t "pages.pricing.table.plan1.feature2" %>
+        </li>
+      </ul>
+      <div class="pricing-footer">
+        <div class="btn-container">
+          <a class="btn btn-secondary btn-large faa-parent animated-hover" href="tel:02081232715" role="button">
+            <i class="fa fa-phone faa-wrench faa-slow"></i> <%= t "pages.pricing.table.plan1.btn" %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <!-- Pro Plan -->
+  <div class="col-md-3">
+    <div class="pricing hover-effect">
+      <div class="pricing-head">
+        <h3><%= t "pages.pricing.table.plan2.name" %> <span>
+        <%= t "pages.pricing.table.plan2.desc" %> </span>
+        </h3>
+        <h4><i><%= t "pages.pricing.table.plan2.currency" %></i><%= t "pages.pricing.table.plan2.price" %><i><%= t "pages.pricing.table.plan2.month" %></i>
+        <span>
+        <%= t "pages.pricing.table.plan2.billing" %></span>
+        </h4>
+      </div>
+      <ul class="pricing-content list-unstyled">
+        <li>
+          <%= t "pages.pricing.table.plan2.feature1" %>
+        </li>
+        <li>
+          <%= t "pages.pricing.table.plan2.feature2" %>
+        </li>
+      </ul>
+      <div class="pricing-footer">
+  
+        <div class="btn-container">
+          <a class="btn btn-secondary btn-large" href="/users/sign_up?plan=3040" role="button"><%= t "pages.pricing.table.plan2.btn" %></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-					<div class="btn-container">
-						<a class="btn btn-secondary btn-large" href="/users/sign_up?plan=3040" role="button"><%= t "pages.pricing.table.plan2.btn" %></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="pricing pricing-active hover-effect">
-				<div class="pricing-head pricing-head-active">
-					<h3><%= t "pages.pricing.table.plan3.name" %> <span>
-					<%= t "pages.pricing.table.plan3.desc" %> </span>
-					</h3>
-					<h4><i><%= t "pages.pricing.table.plan3.currency" %></i><%= t "pages.pricing.table.plan3.price" %><i><%= t "pages.pricing.table.plan3.month" %></i>
-					<span>
-					<%= t "pages.pricing.table.plan3.billing" %></span>
-					</h4>
-				</div>
-				<ul class="pricing-content list-unstyled">
-					<li>
-						<%= t "pages.pricing.table.plan3.feature1" %>
-					</li>
-					<li>
-						<%= t "pages.pricing.table.plan3.feature2" %>
-					</li>
-				</ul>
-				<div class="pricing-footer faa-parent animated-hover">
+  <!-- Business Plan -->
+  <div class="col-md-3">
+    <div class="pricing pricing-active hover-effect">
+      <div class="pricing-head pricing-head-active">
+        <h3><%= t "pages.pricing.table.plan3.name" %> <span>
+        <%= t "pages.pricing.table.plan3.desc" %> </span>
+        </h3>
+        <h4><i><%= t "pages.pricing.table.plan3.currency" %></i><%= t "pages.pricing.table.plan3.price" %><i><%= t "pages.pricing.table.plan3.month" %></i>
+        <span>
+        <%= t "pages.pricing.table.plan3.billing" %></span>
+        </h4>
+      </div>
+      <ul class="pricing-content list-unstyled">
+        <li>
+          <%= t "pages.pricing.table.plan3.feature1" %>
+        </li>
+        <li>
+          <%= t "pages.pricing.table.plan3.feature2" %>
+        </li>
+      </ul>
+      <div class="pricing-footer faa-parent animated-hover">
+  
+        <div class="btn-container ">
+          <a class="btn btn-primary btn-large" href="/users/sign_up?plan=2030" role="button"><%= t "pages.pricing.table.plan3.btn" %></a>
+        </div>
+        <p class="faa-parent animated-hover">
+           <i class="glyphicon glyphicon-star faa-spin faa-fast"></i>  <%= t "pages.pricing.table.plan3.most_popular" %>
+        </p>
+      </div>
+    </div>
+  </div>
 
-					<div class="btn-container ">
-						<a class="btn btn-primary btn-large" href="/users/sign_up?plan=2030" role="button"><%= t "pages.pricing.table.plan3.btn" %></a>
-					</div>
-					<p class="faa-parent animated-hover">
-						 <i class="glyphicon glyphicon-star faa-spin faa-fast"></i>	<%= t "pages.pricing.table.plan3.most_popular" %>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="pricing hover-effect">
-				<div class="pricing-head">
-					<h3><%= t "pages.pricing.table.plan4.starter" %><span>
-					<%= t "pages.pricing.table.plan4.desc" %></span>
-					</h3>
-					<h4><i><%= t "pages.pricing.table.plan4.currency" %></i><%= t "pages.pricing.table.plan4.price" %><i>/<%= t "pages.pricing.table.plan4.month" %></i>
-					<span>
-					<%= t "pages.pricing.table.plan4.billing" %></span>
-					</h4>
-				</div>
-				<ul class="pricing-content list-unstyled">
-					<li>
-						<%= t "pages.pricing.table.plan4.feature1" %>
-					</li>
-					<li>
-						<%= t "pages.pricing.table.plan4.feature2" %>
-					</li>
-				</ul>
-				<div class="pricing-footer">
-					<div class="btn-container">
-						<a class="btn btn-secondary btn-large" href="/users/sign_up?plan=1020" role="button"><%= t "pages.pricing.table.plan4.btn" %></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--//End Pricing -->
-	</div>
+  <!-- Start Plan -->
+  <div class="col-md-3">
+    <div class="pricing hover-effect">
+      <div class="pricing-head">
+        <h3><%= t "pages.pricing.table.plan4.starter" %><span>
+        <%= t "pages.pricing.table.plan4.desc" %></span>
+        </h3>
+        <h4><i><%= t "pages.pricing.table.plan4.currency" %></i><%= t "pages.pricing.table.plan4.price" %><i>/<%= t "pages.pricing.table.plan4.month" %></i>
+        <span>
+        <%= t "pages.pricing.table.plan4.billing" %></span>
+        </h4>
+      </div>
+      <ul class="pricing-content list-unstyled">
+        <li>
+          <%= t "pages.pricing.table.plan4.feature1" %>
+        </li>
+        <li>
+          <%= t "pages.pricing.table.plan4.feature2" %>
+        </li>
+      </ul>
+      <div class="pricing-footer">
+        <div class="btn-container">
+          <a class="btn btn-secondary btn-large" href="/users/sign_up?plan=1020" role="button"><%= t "pages.pricing.table.plan4.btn" %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--//End Pricing -->
 
 <div class="col-md-12">
 	<div class="minibarra-usp">
