@@ -106,16 +106,16 @@ en:
       text: "Everyone on the Minibarra team has extensive experience in hospitality. We were founded by two former chefs, and a commis waiter. Everybody on our team interacts with customers on a regular basis."
       meehan:
         job_title: "Founder & Tech"
-        bio: "Self-professed geek. Food nut. Former commis-waiter."
+        bio: "Self-professed geek. Former commis-waiter."
       simkins:
         job_title: "Product Developlent"
-        bio: "Lorem"
+        bio: "Product developerment guru. Former kitchen porter."
       zak: 
-        job_title: "User Experience Design"
-        bio: "Lorem"
+        job_title: "Product design genius. Former chef."
+        bio: ""
       olivia:
         job_title: "Translator"
-        bio: "Lorem"
+        bio: "Multilingual language specialist. Former waitress. "
     pricing: 
       title: "Get started with Minibarra"
     header:
