@@ -108,7 +108,7 @@ var _rollbarConfig = {
                     <%= link_to t("pages.header.nav.tasks"), tasks_path %>
                   </li>
                   <li>
-                    <a href="http://meehanbox.herokuapp.com/users/sign_in">My Files</a>
+                    <a class="btn btn-primary btn-block logout" data-toggle="modal" data-target=".bs-example-modal-sm">Logout</a>
                   </li>
                   <li>
                     <a href="/users/edit" class="btn btn-default btn-account" data-position="left">
@@ -179,6 +179,23 @@ var _rollbarConfig = {
 <% else %>
 <%= render "pages/footer.html.erb" %>
 <% end %>
+
+
+      <div class="modal bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header"><h4>Logout <i class="fa fa-lock"></i></h4></div>
+            <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want to log-out?</div>
+            <div class="modal-footer ">
+              <div class="new-btn">
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn btn-primary btn-block logout" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   </body>
