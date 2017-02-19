@@ -59,14 +59,6 @@ ActiveRecord::Schema.define(version: 20170124190049) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "schedules", force: :cascade do |t|
-    t.boolean  "open"
-    t.boolean  "mid"
-    t.boolean  "close"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "staffs", force: :cascade do |t|
     t.string   "first_name"
     t.string   "surname"
@@ -89,10 +81,6 @@ ActiveRecord::Schema.define(version: 20170124190049) do
     t.integer  "category_id"
     t.integer  "user_id"
     t.integer  "regularity_id"
-    t.integer  "schedule_id"
-    t.boolean  "opening"
-    t.boolean  "middle"
-    t.boolean  "closing"
     t.boolean  "starting"
     t.boolean  "midday"
     t.boolean  "ending"
@@ -106,7 +94,6 @@ ActiveRecord::Schema.define(version: 20170124190049) do
     t.datetime "updated_at",                   null: false
     t.integer  "task_id"
     t.integer  "user_id"
-    t.integer  "staff_id"
     t.boolean  "active",        default: true
     t.string   "stage"
     t.integer  "regularity_id"
