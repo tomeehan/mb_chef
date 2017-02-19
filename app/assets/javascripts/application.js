@@ -17,7 +17,6 @@
 //= require turbolinks
 //= require_tree .
 //= require select2
-//= require turbolinks_transitions
 //= require bootstrap-datepicker
 //= require rails_script
 //= require rails.validations
