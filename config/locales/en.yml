@@ -105,10 +105,10 @@ en:
       subtitle: "This is the team that make Minibarra, and support our customers."
       text: "Everyone on the Minibarra team has extensive experience in hospitality. We were founded by two former chefs, and a commis waiter. Everybody on our team interacts with customers on a regular basis."
       meehan:
-        job_title: "Founder & Tech"
+        job_title: "Co-founder & Tech"
         bio: "Self-professed geek. Former commis-waiter."
       zak: 
-        job_title: "Design"
+        job_title: "Co-founder & Designer"
         bio: "Product design genius. Former chef."
       olivia:
         job_title: "Translator"
