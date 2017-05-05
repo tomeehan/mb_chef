@@ -204,15 +204,15 @@ en:
         feature1:
           title: "Multiple languages" 
           desc: "Minibarra will be available in multiple languages, starting with Spanish & French."
-          start_date: "Starting Feburary 2017"
+          start_date: "Starting Summer 2017"
         feature2:
           title: "Food temperature logs" 
           desc: "We're buildng extended support for temperature logging to make it easier to log hot food temperatures."
-          start_date: "Starting Feburary 2017"
+          start_date: "Starting Summer 2017"
         feature3:
           title: "Export to PDF" 
           desc: "Export your logs to PDF with one-click."
-          start_date: "Starting Feburary 2017"
+          start_date: "Starting Summer 2017"
         feature4:
           title: "Powerful iOS app" 
           desc: "We're in the process of testing our dedicated native iOS app. Android to follow soon after."
